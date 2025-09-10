@@ -135,7 +135,9 @@ body {
     color: white;
     text-align: center;
     padding: 20px;
-    border-radius: 8px;
+    margin-left: -20px;
+    margin-right: -20px;
+    border-radius: 0;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
