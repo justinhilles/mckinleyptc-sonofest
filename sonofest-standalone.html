@@ -120,11 +120,12 @@
             color: white;
             text-align: center;
             padding: 20px;
-            margin-left: -40px;
-            margin-right: -40px;
+            /* Make the banner full-bleed across the viewport */
+            width: 100vw;
+            margin-left: calc(50% - 50vw);
+            margin-right: calc(50% - 50vw);
             border-radius: 0;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            width: calc(100% + 80px);
         }
 
         #countdown-text {
@@ -276,10 +277,11 @@
         /* Footer Navigation */
         .footer-nav {
             background-color: #2d4a2b;
-            margin-top: auto;
-            margin-left: -20px;
-            margin-right: -20px;
-            margin-bottom: -40px;
+            margin-top: -40px; /* pull up to negate poster's top padding */
+            /* Make the bar full-bleed across the viewport */
+            width: 100vw;
+            margin-left: calc(50% - 50vw);
+            margin-right: calc(50% - 50vw);
         }
 
         .nav-container {
@@ -287,7 +289,7 @@
             justify-content: center;
             flex-wrap: wrap;
             gap: 40px;
-            padding: 25px 20px;
+            padding: 12px 20px; /* reduced height */
         }
 
         .nav-link {
@@ -426,6 +428,17 @@
 </head>
 <body>
     <main class="festival-poster">
+        <!-- Top Navigation (moved from footer) -->
+        <footer class="footer-nav">
+            <div class="nav-container">
+                <a href="#tickets" class="nav-link">TICKETS</a>
+                <a href="#chili-entry" class="nav-link">CHILI ENTRY</a>
+                <a href="#merch" class="nav-link">MERCH</a>
+                <a href="#faq" class="nav-link">FAQ</a>
+                <a href="#contact" class="nav-link">CONTACT</a>
+            </div>
+        </footer>
+
         <!-- Header Section -->
         <header class="header">
             <div class="logo-section">
@@ -474,7 +487,7 @@
                 </div>
                 <div class="feature-card">
                     <i class="fas fa-beer feature-icon"></i>
-                    <h4>BEER<br>GARDEN</h4>
+                    <h4>BOOZE<br>GARDEN</h4>
                 </div>
             </div>
         </section>
@@ -506,16 +519,7 @@
             </div>
         </section>
 
-        <!-- Footer Navigation -->
-        <footer class="footer-nav">
-            <div class="nav-container">
-                <a href="#tickets" class="nav-link">TICKETS</a>
-                <a href="#chili-entry" class="nav-link">CHILI ENTRY</a>
-                <a href="#merch" class="nav-link">MERCH</a>
-                <a href="#faq" class="nav-link">FAQ</a>
-                <a href="#contact" class="nav-link">CONTACT</a>
-            </div>
-        </footer>
+        
     </main>
 
     <script>
