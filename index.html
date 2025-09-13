@@ -438,6 +438,31 @@
             75% { transform: rotate(-1deg) scale(1.05); }
         }
 
+        /* Hero with background image */
+        .hero {
+            position: relative;
+            width: 100vw;
+            margin-left: calc(50% - 50vw);
+            margin-right: calc(50% - 50vw);
+            padding: 40px 0 20px;
+            isolation: isolate; /* keeps pseudo elements behind content */
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: url("https://sonofestchilicookoff.com/wp-content/uploads/2022/07/l1220656-1.jpg") center / cover no-repeat;
+            opacity: 0.18; /* reduced opacity */
+            z-index: -1;
+        }
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(245,240,232,0.0) 0%, rgba(245,240,232,0.25) 60%, rgba(245,240,232,0.5) 100%);
+            z-index: -1;
+        }
+
         /* Bottom Footer Bar */
         .bottom-footer {
             background-color: #2d4a2b; /* green */
@@ -461,33 +486,36 @@
             </div>
         </footer>
 
-        <!-- Header Section -->
-        <header class="header">
-            <div class="logo-section">
-                <div class="logo-s">
-                    <!-- If this image exists, it will show and hide the SVG fallback -->
-                    <img id="site-logo" src="assets/sonofest-2025-logo.png" alt="Sonofest 2025 logo"
-                         onload="document.getElementById('logo-fallback').style.display='none'; this.style.display='block';"
-                         onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='block';">
-                    <!-- Fallback placeholder SVG -->
-                    <svg id="logo-fallback" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="10" y="10" width="100" height="100" fill="none" stroke="#2d4a2b" stroke-width="6" rx="8"/>
-                        <path d="M25 40 Q25 25 40 25 L70 25 Q85 25 85 40 Q85 50 70 50 L45 50 Q30 50 30 65 Q30 80 45 80 L80 80 Q95 80 95 95"
-                              fill="none" stroke="#2d4a2b" stroke-width="8" stroke-linecap="round"/>
-                    </svg>
+        <!-- Hero: Header + Action Buttons over background image -->
+        <section class="hero">
+            <!-- Header Section -->
+            <header class="header">
+                <div class="logo-section">
+                    <div class="logo-s">
+                        <!-- If this image exists, it will show and hide the SVG fallback -->
+                        <img id="site-logo" src="assets/sonofest-2025-logo.png" alt="Sonofest 2025 logo"
+                             onload="document.getElementById('logo-fallback').style.display='none'; this.style.display='block';"
+                             onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='block';">
+                        <!-- Fallback placeholder SVG -->
+                        <svg id="logo-fallback" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="10" y="10" width="100" height="100" fill="none" stroke="#2d4a2b" stroke-width="6" rx="8"/>
+                            <path d="M25 40 Q25 25 40 25 L70 25 Q85 25 85 40 Q85 50 70 50 L45 50 Q30 50 30 65 Q30 80 45 80 L80 80 Q95 80 95 95"
+                                  fill="none" stroke="#2d4a2b" stroke-width="8" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="title-section">
+                        <h1 class="main-title">SONOFEST</h1>
+                        <h2 class="year">2025</h2>
+                    </div>
                 </div>
-                <div class="title-section">
-                    <h1 class="main-title">SONOFEST</h1>
-                    <h2 class="year">2025</h2>
-                </div>
-            </div>
-        </header>
+            </header>
 
-        <!-- Action Buttons -->
-        <section class="action-buttons">
-            <a href="#tickets" class="btn btn-primary">BUY TICKETS</a>
-            <a href="#chili-entry" class="btn btn-primary">ENTER CHILI COOK-OFF</a>
-            <a href="#volunteer" class="btn btn-primary">VOLUNTEER</a>
+            <!-- Action Buttons -->
+            <section class="action-buttons">
+                <a href="#tickets" class="btn btn-primary">BUY TICKETS</a>
+                <a href="#chili-entry" class="btn btn-primary">ENTER CHILI COOK-OFF</a>
+                <a href="#volunteer" class="btn btn-primary">VOLUNTEER</a>
+            </section>
         </section>
 
         <!-- Countdown Section -->
