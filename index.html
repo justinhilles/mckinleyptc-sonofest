@@ -36,7 +36,7 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            padding: 40px 20px 0; /* no bottom padding to keep footer flush */
+            padding: 100px 20px 0; /* reserve space for fixed nav */
         }
 
         /* Header Section */
@@ -47,49 +47,27 @@
 
         .logo-section {
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 30px;
-            margin-bottom: 20px;
+            gap: 24px;
+            margin-bottom: 28px;
         }
 
         .logo-s {
-            flex-shrink: 0;
+            width: min(100%, 920px);
         }
         
         /* Logo image + fallback */
         .logo-s img {
-            width: 120px;
+            width: 100%;
             height: auto;
             display: none; /* hidden until loaded */
         }
         .logo-s svg {
-            width: 120px;
-            height: 120px;
+            width: 100%;
+            height: auto;
             display: block; /* default fallback visible */
-        }
-
-        .title-section {
-            text-align: left;
-        }
-
-        .main-title {
-            font-family: 'Anton', sans-serif;
-            font-size: 4.5rem;
-            font-weight: 400;
-            color: #2d4a2b;
-            line-height: 0.8;
-            letter-spacing: 3px;
-            margin-bottom: 5px;
-        }
-
-        .year {
-            font-family: 'Anton', sans-serif;
-            font-size: 3rem;
-            font-weight: 400;
-            color: #2d4a2b;
-            line-height: 0.8;
-            letter-spacing: 2px;
         }
 
         /* Action Buttons */
@@ -288,13 +266,16 @@
 
         /* Footer Navigation */
         .footer-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
             background-color: #2d4a2b;
-            margin-top: -40px; /* pull up to negate poster's top padding */
-            /* Make the bar full-bleed across the viewport */
             width: 100vw;
             margin-left: calc(50% - 50vw);
             margin-right: calc(50% - 50vw);
-            margin-bottom: 2px; /* small gap below top nav */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
 
         .nav-container {
@@ -324,24 +305,19 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             .festival-poster {
-                padding: 20px 15px 0; /* keep footer flush on mobile too */
+                padding: 90px 15px 0; /* keep footer flush on mobile too */
             }
             
             .logo-section {
                 flex-direction: column;
                 gap: 20px;
             }
-            
-            .title-section {
-                text-align: center;
+            .logo-s {
+                width: min(100%, 820px);
             }
-            
-            .main-title {
-                font-size: 3.5rem;
-            }
-            
-            .year {
-                font-size: 2.5rem;
+
+            .hero {
+                margin-top: -90px;
             }
             
             .action-buttons {
@@ -386,14 +362,14 @@
         }
 
         @media (max-width: 480px) {
-            .main-title {
-                font-size: 2.8rem;
+            .logo-s {
+                width: 100%;
             }
             
-            .year {
-                font-size: 2rem;
+            .hero {
+                margin-top: -90px;
             }
-            
+
             #countdown-text {
                 font-size: 1.5rem;
             }
@@ -445,6 +421,7 @@
             margin-left: calc(50% - 50vw);
             margin-right: calc(50% - 50vw);
             padding: 40px 0 20px;
+            margin-top: -100px; /* pulls hero up under fixed nav */
             isolation: isolate; /* keeps pseudo elements behind content */
         }
         .hero::before {
@@ -493,7 +470,7 @@
                 <div class="logo-section">
                     <div class="logo-s">
                         <!-- If this image exists, it will show and hide the SVG fallback -->
-                        <img id="site-logo" src="assets/sonofest-2025-logo.png" alt="Sonofest 2025 logo"
+                        <img id="site-logo" src="assets/Sonofest-2025_Combo-Logo-Green.png?v=20250112" alt="Sonofest 2025 final logo"
                              onload="document.getElementById('logo-fallback').style.display='none'; this.style.display='block';"
                              onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='block';">
                         <!-- Fallback placeholder SVG -->
@@ -502,10 +479,6 @@
                             <path d="M25 40 Q25 25 40 25 L70 25 Q85 25 85 40 Q85 50 70 50 L45 50 Q30 50 30 65 Q30 80 45 80 L80 80 Q95 80 95 95"
                                   fill="none" stroke="#2d4a2b" stroke-width="8" stroke-linecap="round"/>
                         </svg>
-                    </div>
-                    <div class="title-section">
-                        <h1 class="main-title">SONOFEST</h1>
-                        <h2 class="year">2025</h2>
                     </div>
                 </div>
             </header>
@@ -569,7 +542,7 @@
         // Countdown Timer Functionality
         function updateCountdown() {
             // Calculate days until the festival (using a future date)
-            const festivalDate = new Date('2025-06-15'); // Example festival date
+            const festivalDate = new Date('2025-12-07'); // Festival date
             const now = new Date();
             const timeDiff = festivalDate.getTime() - now.getTime();
             const daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
