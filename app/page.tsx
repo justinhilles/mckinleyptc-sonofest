@@ -42,7 +42,7 @@ export default function HomePage() {
     {
       title: 'Live Music',
       description: 'Two stages featuring San Diego bands all afternoon.',
-      href: '/faq/#music',
+      href: '/music/',
       icon: 'fa-music',
     },
     {
