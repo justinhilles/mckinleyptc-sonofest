@@ -1,4 +1,5 @@
 import Hero from '@/app/components/Hero';
+import ContactForm from '@/app/components/ContactForm';
 import { createPageMetadata } from '@/app/lib/metadata';
 
 export const metadata = createPageMetadata({
@@ -24,34 +25,7 @@ export default function ContactPage() {
       />
       <section className="contact">
         <div className="contact__grid">
-          <form
-            name="contact"
-            method="POST"
-            data-netlify="true"
-            netlify-honeypot="bot-field"
-            className="contact__form"
-          >
-            <input type="hidden" name="form-name" value="contact" />
-            <p className="visually-hidden">
-              <label>
-                Don’t fill this out if you’re human:
-                <input name="bot-field" />
-              </label>
-            </p>
-            <div className="form-field">
-              <label htmlFor="name">Name</label>
-              <input id="name" name="name" type="text" required autoComplete="name" />
-            </div>
-            <div className="form-field">
-              <label htmlFor="email">Email</label>
-              <input id="email" name="email" type="email" required autoComplete="email" />
-            </div>
-            <div className="form-field">
-              <label htmlFor="message">Message</label>
-              <textarea id="message" name="message" rows={6} required />
-            </div>
-            <button className="btn" type="submit">Send Message</button>
-          </form>
+          <ContactForm />
           <aside className="contact__aside">
             <h2 className="section__title">Role-Based Contacts</h2>
             <ul>
@@ -68,3 +42,4 @@ export default function ContactPage() {
     </>
   );
 }
+
