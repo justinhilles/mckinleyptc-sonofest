@@ -1,0 +1,488 @@
+body {
+  font-family: var(--font-body), 'Oswald', sans-serif;
+  background-color: var(--sono-cream);
+  color: var(--sono-green);
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+  padding: 12px 16px;
+  background: #fff;
+  border: 2px solid var(--sono-maroon);
+  z-index: 2000;
+}
+
+.skip-link:focus {
+  left: 16px;
+  top: 16px;
+}
+
+.site-header {
+  display: flex;
+  justify-content: center;
+}
+
+.site-header__list {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.site-header__item {
+  text-transform: uppercase;
+}
+
+.site-header .nav-container {
+  width: min(1100px, 95vw);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.btn--ticket {
+  background-color: var(--sono-maroon);
+  white-space: nowrap;
+}
+
+.hero--full {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.hero--short {
+  margin-top: 0;
+  padding: 20px 0 20px;
+}
+
+.hero--short::before,
+.hero--short::after {
+  display: none;
+}
+
+.hero__container {
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.hero__logo {
+  width: min(1024px);
+  margin: 0 auto 16px;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.2));
+}
+
+.hero__logo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hero__title {
+  font-family: var(--font-display), 'Anton', sans-serif;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.hero__kicker {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--sono-maroon);
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.hero__subhead {
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  line-height: 1.5;
+  width: min(620px, 100%);
+  margin: 0 auto;
+}
+
+.hero__actions {
+  margin-top: 20px;
+}
+
+.hero__cta {
+  min-width: 200px;
+}
+
+.impact-strip {
+  background: var(--sono-maroon);
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  margin: 40px auto 60px;
+  width: min(720px, 90vw);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.section__title {
+  font-family: var(--font-display), 'Anton', sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.feature-card__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: inherit;
+}
+
+.feature-card__title {
+  font-size: 1.25rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.feature-card__description {
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.pricing-table {
+  margin: 60px auto;
+  background: #fff;
+  border: 3px solid var(--sono-green);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-table__grid {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 24px;
+}
+
+.pricing-table__grid th,
+.pricing-table__grid td {
+  border-bottom: 1px solid rgba(45, 74, 43, 0.2);
+  padding: 16px 12px;
+  text-align: left;
+}
+
+.pricing-table__grid th {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+}
+
+.pricing-table__grid tr:last-child th,
+.pricing-table__grid tr:last-child td {
+  border-bottom: none;
+}
+
+.pricing-table__cta {
+  text-align: center;
+}
+
+.pickup {
+
+  margin: 0 auto 60px;
+}
+
+.pickup__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 16px;
+}
+
+.pickup__item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: #fff;
+  border: 2px solid var(--sono-green);
+  border-radius: 12px;
+  padding: 18px 24px;
+}
+
+.pickup__when {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.faq {
+  margin: 0 auto 80px;
+}
+
+.faq__items {
+  display: grid;
+  gap: 16px;
+}
+
+.faq__item {
+  border: 2px solid var(--sono-green);
+  border-radius: 12px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.faq__toggle {
+  width: 100%;
+  padding: 20px;
+  background: transparent;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.1rem;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.faq__toggle span:last-child {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.faq__panel {
+  padding: 0 20px 20px;
+}
+
+.faq__panel[hidden] {
+  display: none;
+}
+
+.content-block {
+  margin: 0 auto 60px;
+  background: #fff;
+  border: 3px solid var(--sono-green);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.content-block__list {
+  margin: 0 0 24px 24px;
+  display: grid;
+  gap: 12px;
+}
+
+.content-block__note {
+  font-style: italic;
+}
+
+.merch {
+  width: min(1100px, 95vw);
+  margin: 40px auto 80px;
+}
+
+.merch__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.merch__item {
+  background: #fff;
+  border: 3px solid var(--sono-green);
+  border-radius: 16px;
+  padding: 24px;
+  display: grid;
+  gap: 12px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.merch__item img {
+  border-radius: 12px;
+}
+
+.contact {
+  margin: 40px auto 80px;
+}
+
+.contact__grid {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.contact__form,
+.contact__aside {
+  background: #fff;
+  border: 3px solid var(--sono-green);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.form-field input,
+.form-field textarea {
+  border: 2px solid var(--sono-green);
+  border-radius: 8px;
+  padding: 12px;
+  font: inherit;
+  background: #fff;
+}
+
+.contact__aside ul {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+  display: grid;
+  gap: 12px;
+}
+
+.contact__aside li {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.map-block {
+  margin: 40px auto 80px;
+  display: grid;
+  gap: 32px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  align-items: start;
+}
+
+.map-block__media {
+  background: #fff;
+  border: 3px solid var(--sono-green);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.map-block__image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.map-block__content {
+  display: grid;
+  gap: 20px;
+}
+
+.map-block__legend {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.map-block__legend li {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.map-block__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.site-footer {
+  margin-top: 80px;
+  background: #fff;
+  border-top: 3px solid var(--sono-green);
+}
+
+.site-footer__primary {
+  width: 800px;
+  margin: 0 auto;
+  display: grid;
+  gap: 32px;
+  padding: 40px 0;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.site-footer__links,
+.site-footer__social ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.site-footer__social-label {
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .site-header .nav-container {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .site-header__list {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero--short {
+    padding: 20px;
+  }
+
+  .pricing-table {
+    padding: 24px;
+  }
+}
+
+.site-footer__about {
+  display: grid;
+  gap: 8px;
+}
+
+.site-footer__statement {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.site-footer__location {
+  font-size: 0.95rem;
+}
+
+.faq__panel--open {
+  display: block;
+}
+
+.site-header__brand {
+  font-family: var(--font-display), 'Anton', sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.hero::before {
+  background: url('https://sonofestchilicookoff.com/wp-content/uploads/2022/07/l1220656-1.jpg') center / cover no-repeat;
+  opacity: 0.25;
+}

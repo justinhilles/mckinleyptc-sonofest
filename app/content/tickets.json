@@ -1,0 +1,14 @@
+{
+  "options": [
+    {"name": "Ceramic Bowl", "price": 30, "tastings": 5, "channel": "in-person"},
+    {"name": "Commemorative Mug", "price": 30, "tastings": 5, "channel": "online"},
+    {"name": "Paper Bowl", "price": 25, "tastings": 5, "channel": "online"},
+    {"name": "Add-on Tastings", "price": 22, "tastings": 5, "channel": "booth"}
+  ],
+  "pickup": [
+    {"when": "Fri Dec 5, 2–5 PM", "where": "McKinley Elementary"},
+    {"when": "Fri Dec 5, 6–8 PM", "where": "San Diego Ceramic Connection, 3216 Thorn St"},
+    {"when": "Sat Dec 6, 1–4 PM", "where": "San Diego Ceramic Connection"},
+    {"when": "Sun Dec 7, 11–5 PM", "where": "Ticket Booth (limited)"}
+  ]
+}

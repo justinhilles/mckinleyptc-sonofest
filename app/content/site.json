@@ -1,0 +1,33 @@
+{
+  "year": 2025,
+  "eventDate": "2025-12-07T11:00:00-08:00",
+  "location": "32nd & Thorn St, North Park, San Diego",
+  "ticketTailorUrl": "https://www.tickettailor.com/events/sonofest/123456",
+  "organizer": {
+    "name": "McKinley Elementary Foundation",
+    "url": "https://mckinleyfriends.org"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/sonofest",
+    "instagram": "https://www.instagram.com/sonofest"
+  },
+  "links": {
+    "chiliEntryForm": "https://forms.gle/placeholder",
+    "volunteerSignup": "",
+    "merchShop": "https://shop.sonofest.org"
+  },
+  "sponsors": [
+    {
+      "name": "McKinley Elementary Foundation",
+      "href": "https://mckinleyfriends.org"
+    },
+    {
+      "name": "North Park Main Street",
+      "href": "https://northparkmainstreet.com"
+    },
+    {
+      "name": "San Diego Ceramic Connection",
+      "href": "https://sdceramic.com"
+    }
+  ]
+}

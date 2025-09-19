@@ -1,0 +1,56 @@
+@import "../styles/prototype.css";
+@import "../styles/site.css";
+
+:root {
+  --sono-green: #2d4a2b;
+  --sono-maroon: #490001;
+  --sono-cream: #f5f0e8;
+  color-scheme: light;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  max-width: 100vw;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--sono-maroon);
+  outline-offset: 3px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+main {
+  width: 100%;
+}
+
+.btn--secondary {
+  background-color: var(--sono-green);
+}
+
+.btn--light {
+  background-color: #fff;
+  color: var(--sono-green);
+}
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}

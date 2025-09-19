@@ -1,0 +1,6 @@
+# legacy slugs to new pages
+/booze      /faq       301
+/vendors    /shop-eat  301
+/volunteers /contact   301
+/map-old    /map       301
+/shop-eat   /merch     301
