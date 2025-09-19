@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { siteContent } from '@/app/lib/content';
 
 const FOOTER_LINKS = [
-  { href: '/tickets/', label: 'Tickets' },
+  { href: '/tickets/', label: 'Tasting Passes' },
   { href: '/sponsor/', label: 'Sponsors' },
   { href: '/faq/', label: 'FAQ' },
   { href: '/contact/', label: 'Contact & Map' },

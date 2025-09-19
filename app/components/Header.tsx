@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { siteContent } from '@/app/lib/content';
 
 const NAV_ITEMS = [
-  { href: '/tickets/', label: 'Tickets' },
+  { href: '/tickets/', label: 'Tasting Passes' },
   { href: '/sponsor/', label: 'Sponsors' },
   { href: '/chili-entry/', label: 'Chili' },
   { href: '/merch/', label: 'Merch' },
@@ -35,7 +35,7 @@ export default function Header() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Buy Tickets
+          Buy Tasting Passes
         </a>
       </div>
     </header>

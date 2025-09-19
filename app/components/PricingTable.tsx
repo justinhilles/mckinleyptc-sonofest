@@ -47,7 +47,7 @@ export default function PricingTable({ options, ticketUrl }: PricingTableProps) 
       </table>
       <div className="pricing-table__cta">
         <a className="btn btn--ticket" href={ticketUrl} target="_blank" rel="noopener noreferrer">
-          Buy Tickets on TicketTailor
+          Buy Tasting Passes on TicketTailor
         </a>
       </div>
     </section>

@@ -6,12 +6,12 @@ import { faqItems, siteContent, ticketsContent } from '@/app/lib/content';
 import { createPageMetadata, getEventJsonLd } from '@/app/lib/metadata';
 
 export const metadata = createPageMetadata({
-  title: 'Tickets',
+  title: 'Tasting Passes',
   description: 'Secure your tasting pass, commemorative mugs, and pickup details for SoNo Fest & Chili Cook-Off 2025.',
   path: '/tickets/',
 });
 
-export default function TicketsPage() {
+export default function TastingPassesPage() {
   const ticketFaq = faqItems.filter((item) => /ticket|tasting|pickup|veg/i.test(item.q));
   const eventJsonLd = getEventJsonLd({ path: '/tickets/' });
 
@@ -19,11 +19,11 @@ export default function TicketsPage() {
     <>
       <Hero
         variant="short"
-        title="Tickets & Tastings"
+        title="Tasting Passes"
         subhead="Choose your tasting pass and plan your pickup."
         ctas={[
           {
-            label: 'Buy Tickets',
+            label: 'Buy Tasting Passes',
             href: siteContent.ticketTailorUrl,
           },
         ]}
@@ -38,3 +38,4 @@ export default function TicketsPage() {
     </>
   );
 }
+

@@ -16,7 +16,7 @@ export default function HomePage() {
   const volunteerLink = siteContent.links.volunteerSignup || '/contact/';
   const ctaButtons = [
     {
-      label: 'Buy Tickets',
+      label: 'Buy Tasting Passes',
       href: siteContent.ticketTailorUrl,
       variant: 'primary' as const,
     },
