@@ -6,6 +6,7 @@ const NAV_ITEMS = [
   { href: '/tickets/', label: 'Tasting Passes' },
   { href: '/sponsor/', label: 'Sponsors' },
   { href: '/chili-entry/', label: 'Chili' },
+  { href: '/booze/', label: 'Booze Garden' },
   { href: '/merch/', label: 'Merch' },
   { href: '/faq/', label: 'FAQ' },
   { href: '/contact/', label: 'Contact & Map' },

@@ -1,5 +1,5 @@
 # legacy slugs to new pages
-/booze      /faq       301
+/booze      /booze/    301
 /vendors    /shop-eat  301
 /volunteers /contact   301
 /map        /contact   301

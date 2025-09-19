@@ -1,4 +1,5 @@
 import Hero from '@/app/components/Hero';
+import SponsorStrip from '@/app/components/SponsorStrip';
 import { siteContent } from '@/app/lib/content';
 import { createPageMetadata } from '@/app/lib/metadata';
 
@@ -41,6 +42,7 @@ export default function ChiliEntryPage() {
           Questions? Email <a href="mailto:vendors@sonofest.org">vendors@sonofest.org</a> and our team will follow up.
         </p>
       </section>
+      <SponsorStrip title="Recent Sponsors & Partners" sponsors={siteContent.sponsors} />
     </>
   );
 }

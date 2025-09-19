@@ -54,7 +54,7 @@ export default function HomePage() {
     {
       title: 'Booze Garden',
       description: 'Local beer, wine, and craft cocktails for 21+ guests.',
-      href: '/faq/#booze',
+      href: '/booze/',
       icon: 'fa-beer',
     },
   ];
