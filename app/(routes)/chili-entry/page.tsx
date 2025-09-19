@@ -16,7 +16,7 @@ const steps = [
 ];
 
 export default function ChiliEntryPage() {
-  const entryUrl = siteContent.links.chiliEntryForm || '/contact/';
+  const entryUrl = siteContent.links.chiliEntryForm || '/information/#contact';
 
   return (
     <>

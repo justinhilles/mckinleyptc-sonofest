@@ -41,15 +41,15 @@ Structured data lives in JSON files so content editors do not need to touch Type
 
 - `app/content/site.json` — global details (event date, ticket URL, sponsors, social links).
 - `app/content/tickets.json` — ticket options and pickup schedule powering `/tickets/`.
-- `app/content/faq.json` — question/answer pairs rendered on `/faq/`.
+- `app/content/faq.json` — question/answer pairs rendered on `/information/`.
 
 Updating these files automatically refreshes the relevant components.
 
 ## Key Features
-- Routes: `/`, `/tickets/` (Tasting Passes), `/chili-entry/`, `/music/`, `/booze/`, `/merch/`, `/faq/`, `/contact/` (includes map & directions).
+- Routes: `/`, `/tickets/` (Tasting Passes), `/chili-entry/`, `/music/`, `/booze/`, `/merch/`, `/information/`.
 - Reusable components for hero layouts, countdown, pricing, FAQs, map, and more under `app/components/`.
 - Accessible FAQ accordion (keyboard + ARIA), Netlify-ready contact form, and lazy-loaded imagery.
-- Event JSON-LD injected on Home and Tasting Passes pages for richer search results; Booze Garden and Music highlight beverage partners and band lineups.
+- Event JSON-LD injected on Home and Tasting Passes pages for richer search results; Information combines FAQs, contact, and map content alongside Booze Garden and Music highlights.
 - Netlify-ready `_redirects` in `public/` for legacy slug support.
 
 ## Deployment

@@ -13,7 +13,7 @@ export const metadata = createPageMetadata({
 });
 
 export default function HomePage() {
-  const volunteerLink = siteContent.links.volunteerSignup || '/contact/';
+  const volunteerLink = siteContent.links.volunteerSignup || '/information/#volunteer';
   const ctaButtons = [
     {
       label: 'Buy Tasting Passes',
@@ -48,7 +48,7 @@ export default function HomePage() {
     {
       title: 'Kids Zone',
       description: 'Crafts, games, and family activities on 32nd Street.',
-      href: '/faq/#kids',
+      href: '/information/#faq',
       icon: 'fa-child',
     },
     {

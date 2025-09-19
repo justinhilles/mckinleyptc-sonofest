@@ -8,8 +8,8 @@ const FOOTER_LINKS = [
   { href: '/chili-entry/', label: 'Chili' },
   { href: '/music/', label: 'Music' },
   { href: '/booze/', label: 'Booze Garden' },
-  { href: '/faq/', label: 'FAQ' },
-  { href: '/contact/', label: 'Contact & Map' },
+  { href: '/merch/', label: 'Merch' },
+  { href: '/information/', label: 'Information' },
 ];
 
 export default function Footer() {

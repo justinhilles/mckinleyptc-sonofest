@@ -3,14 +3,12 @@ import Link from 'next/link';
 import { siteContent } from '@/app/lib/content';
 
 const NAV_ITEMS = [
-  { href: '/tickets/', label: 'Tasting Passes' },
   { href: '/sponsor/', label: 'Sponsors' },
   { href: '/chili-entry/', label: 'Chili' },
   { href: '/music/', label: 'Music' },
-  { href: '/booze/', label: 'Booze Garden' },
+  { href: '/booze/', label: 'Booze' },
   { href: '/merch/', label: 'Merch' },
-  { href: '/faq/', label: 'FAQ' },
-  { href: '/contact/', label: 'Contact & Map' },
+  { href: '/information/', label: 'Information' },
 ];
 
 export default function Header() {
@@ -33,7 +31,7 @@ export default function Header() {
         </nav>
         <a
           className="btn btn--ticket"
-          href={siteContent.ticketTailorUrl}
+          href='/tickets/'
           target="_blank"
           rel="noopener noreferrer"
         >
