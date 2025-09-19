@@ -64,7 +64,7 @@ export default function HomePage() {
   return (
     <>
       <Hero
-        title = ""
+        title=""
         subhead={`Sunday, December 7, 2025 · 11 AM – 5 PM · ${siteContent.location}`}
         ctas={ctaButtons}
         media={{
@@ -79,7 +79,7 @@ export default function HomePage() {
         <p>100% of proceeds benefit the McKinley Elementary Foundation.</p>
       </section>
       <FeatureTiles items={featureItems} />
-      <SponsorStrip sponsors={siteContent.sponsors} />
+      <SponsorStrip title="Sponsors & Partners" sponsors={siteContent.sponsors} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(eventJsonLd) }}
@@ -87,3 +87,4 @@ export default function HomePage() {
     </>
   );
 }
+

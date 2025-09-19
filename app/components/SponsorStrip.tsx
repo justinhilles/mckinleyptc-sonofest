@@ -4,17 +4,28 @@ import type { Sponsor } from '@/app/lib/types';
 
 type SponsorStripProps = {
   sponsors?: Sponsor[];
+  title?: string;
+  className?: string;
 };
 
-export default function SponsorStrip({ sponsors = [] }: SponsorStripProps) {
+export default function SponsorStrip({
+  sponsors = [],
+  title = 'Sponsors & Partners',
+  className = '',
+}: SponsorStripProps) {
   const filtered = sponsors.filter((sponsor) => sponsor.name?.trim().length);
   if (filtered.length === 0) {
     return null;
   }
 
+  const sectionClasses = ['sponsors-section'];
+  if (className) {
+    sectionClasses.push(className);
+  }
+
   return (
-    <section className="sponsors-section">
-      <h2 className="sponsors-title">Sponsors &amp; Partners</h2>
+    <section className={sectionClasses.join(' ')}>
+      {title ? <h2 className="sponsors-title">{title}</h2> : null}
       <ul className="sponsors-grid">
         {filtered.map((sponsor) => (
           <li key={sponsor.name} className="sponsor-logo">
@@ -49,3 +60,4 @@ function SponsorLink({ sponsor }: { sponsor: Sponsor }) {
 
   return content;
 }
+

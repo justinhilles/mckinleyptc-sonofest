@@ -4,6 +4,7 @@ import { siteContent } from '@/app/lib/content';
 
 const NAV_ITEMS = [
   { href: '/tickets/', label: 'Tickets' },
+  { href: '/sponsor/', label: 'Sponsors' },
   { href: '/chili-entry/', label: 'Chili' },
   { href: '/merch/', label: 'Merch' },
   { href: '/faq/', label: 'FAQ' },
@@ -41,3 +42,4 @@ export default function Header() {
     </header>
   );
 }
+
