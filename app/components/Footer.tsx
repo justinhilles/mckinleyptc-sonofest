@@ -6,8 +6,7 @@ const FOOTER_LINKS = [
   { href: '/tickets/', label: 'Tickets' },
   { href: '/sponsor/', label: 'Sponsors' },
   { href: '/faq/', label: 'FAQ' },
-  { href: '/map/', label: 'Map' },
-  { href: '/contact/', label: 'Contact' },
+  { href: '/contact/', label: 'Contact & Map' },
 ];
 
 export default function Footer() {

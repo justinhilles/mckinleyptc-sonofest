@@ -46,7 +46,7 @@ Structured data lives in JSON files so content editors do not need to touch Type
 Updating these files automatically refreshes the relevant components.
 
 ## Key Features
-- Routes: `/`, `/tickets/`, `/chili-entry/`, `/merch/`, `/faq/`, `/contact/`, `/map/`.
+- Routes: `/`, `/tickets/`, `/chili-entry/`, `/merch/`, `/faq/`, `/contact/` (includes map & directions).
 - Reusable components for hero layouts, countdown, pricing, FAQs, map, and more under `app/components/`.
 - Accessible FAQ accordion (keyboard + ARIA), Netlify-ready contact form, and lazy-loaded imagery.
 - Event JSON-LD injected on Home and Tickets pages for richer search results.

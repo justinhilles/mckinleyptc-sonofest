@@ -2,5 +2,6 @@
 /booze      /faq       301
 /vendors    /shop-eat  301
 /volunteers /contact   301
-/map-old    /map       301
+/map        /contact   301
+/map-old    /contact   301
 /shop-eat   /merch     301

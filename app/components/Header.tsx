@@ -8,8 +8,7 @@ const NAV_ITEMS = [
   { href: '/chili-entry/', label: 'Chili' },
   { href: '/merch/', label: 'Merch' },
   { href: '/faq/', label: 'FAQ' },
-  { href: '/contact/', label: 'Contact' },
-  { href: '/map/', label: 'Map' },
+  { href: '/contact/', label: 'Contact & Map' },
 ];
 
 export default function Header() {
