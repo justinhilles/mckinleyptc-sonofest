@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // Align routing with Netlify redirects that enforce trailing slashes to avoid loops
+  trailingSlash: true,
 };
 
 export default nextConfig;
