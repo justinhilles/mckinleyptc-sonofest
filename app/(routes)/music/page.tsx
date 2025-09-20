@@ -1,4 +1,5 @@
 import Hero from '@/app/components/Hero';
+import SponsorStrip from '@/app/components/SponsorStrip';
 import { siteContent } from '@/app/lib/content';
 import { createPageMetadata } from '@/app/lib/metadata';
 
@@ -123,7 +124,7 @@ export default function MusicPage() {
           with links to recent live recordings and availability.
         </p>
       </section>
+      <SponsorStrip title="Sponsors & Partners" sponsors={siteContent.sponsors} />
     </>
   );
 }
-

@@ -1,6 +1,8 @@
-import Link from 'next/link';
+"use client";
 
-import { siteContent } from '@/app/lib/content';
+import { useEffect, useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const NAV_ITEMS = [
   { href: '/sponsor/', label: 'Sponsors' },
@@ -12,17 +14,62 @@ const NAV_ITEMS = [
 ];
 
 export default function Header() {
+  const [isNavOpen, setIsNavOpen] = useState(false);
+
+  useEffect(() => {
+    const closeOnResize = () => {
+      if (window.innerWidth > 768) {
+        setIsNavOpen(false);
+      }
+    };
+
+    window.addEventListener('resize', closeOnResize);
+    return () => window.removeEventListener('resize', closeOnResize);
+  }, []);
+
+  const toggleNav = () => setIsNavOpen((prev) => !prev);
+  const closeNav = () => setIsNavOpen(false);
+
+  const navListClasses = ['site-header__list'];
+  if (isNavOpen) {
+    navListClasses.push('site-header__list--open');
+  }
+
   return (
     <header className="site-header footer-nav" role="banner">
       <div className="nav-container">
         <Link href="/" className="site-header__brand">
-          SoNo Fest
+          <Image
+            src="/images/red-flag.png"
+            alt="SoNo Fest"
+            width={150}
+            height={109}
+            priority
+            className="site-header__brand-image"
+          />
+          <span className="site-header__brand-text">SoNo Fest</span>
         </Link>
-        <nav aria-label="Primary">
-          <ul className="site-header__list">
+        <button
+          type="button"
+          className="site-header__toggle"
+          aria-expanded={isNavOpen}
+          aria-controls="primary-navigation"
+          onClick={toggleNav}
+        >
+          <span className="visually-hidden">Toggle navigation</span>
+          <span className="site-header__toggle-line" aria-hidden="true" />
+          <span className="site-header__toggle-line" aria-hidden="true" />
+          <span className="site-header__toggle-line" aria-hidden="true" />
+        </button>
+        <nav
+          aria-label="Primary"
+          id="primary-navigation"
+          className={`site-header__nav${isNavOpen ? ' site-header__nav--open' : ''}`}
+        >
+          <ul className={navListClasses.join(' ')}>
             {NAV_ITEMS.map((item) => (
               <li key={item.href} className="site-header__item">
-                <Link href={item.href} className="nav-link">
+                <Link href={item.href} className="nav-link" onClick={closeNav}>
                   {item.label}
                 </Link>
               </li>
@@ -31,7 +78,7 @@ export default function Header() {
         </nav>
         <a
           className="btn btn--ticket"
-          href='/tickets/'
+          href="/tickets/"
           target="_blank"
           rel="noopener noreferrer"
         >

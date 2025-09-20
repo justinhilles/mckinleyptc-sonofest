@@ -24,6 +24,11 @@ body {
   justify-content: center;
 }
 
+.site-header.footer-nav {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 .site-header__list {
   list-style: none;
   display: flex;
@@ -43,6 +48,30 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 32px;
+}
+
+.site-header__nav {
+  display: flex;
+  align-items: center;
+}
+
+.site-header__toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px;
+  border: none;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+
+.site-header__toggle-line {
+  display: block;
+  width: 26px;
+  height: 3px;
+  border-radius: 2px;
+  background: currentColor;
 }
 
 .btn--ticket {
@@ -436,18 +465,65 @@ body {
 }
 
 @media (max-width: 768px) {
+
+  .site-footer__primary {
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    gap: 32px;
+    padding: 40px 10px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+
   .site-header .nav-container {
     flex-direction: column;
-    gap: 16px;
+    align-items: stretch;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .site-header__toggle {
+    display: inline-flex;
+  }
+
+  .site-header__nav {
+    width: 100%;
   }
 
   .site-header__list {
-    flex-wrap: wrap;
-    justify-content: center;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 16px;
+    margin: 0;
+    background: rgba(45, 74, 43, 0.95);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  }
+
+  .site-header__list--open {
+    display: flex;
+  }
+
+  .site-header__item {
+    width: 100%;
+  }
+
+  .nav-link {
+    display: block;
+    padding: 10px 4px;
+  }
+
+  .site-header .btn--ticket {
+    width: 100%;
+    text-align: center;
   }
 
   .hero--short {
     padding: 20px;
+    margin-top: 60px;
   }
 
   .pricing-table {
@@ -474,12 +550,44 @@ body {
   display: block;
 }
 
+/* Float the SoNo flag slightly below the fixed header */
 .site-header__brand {
+  position: relative;
+  display: inline-block;
   font-family: var(--font-display), 'Anton', sans-serif;
   font-size: 1.5rem;
   letter-spacing: 1px;
   color: #fff;
   text-transform: uppercase;
+  padding-left: 120px;
+  padding-bottom: 10px;
+}
+
+.site-header__brand-image {
+  display: none
+}
+
+.site-header__brand-text {
+  display: block;
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .site-header__brand {
+    padding-left: 96px;
+    padding-bottom: 8px;
+    font-size: 1.35rem;
+  }
+
+  .site-header__brand-image {
+    width: 84px;
+    bottom: -12px;
+  }
+
+  .site-header.footer-nav {
+  margin-left: 0;
+  margin-right: 0;
+  }
 }
 
 .hero::before {
