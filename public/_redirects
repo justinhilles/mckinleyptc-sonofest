@@ -1,6 +1,4 @@
 # legacy slugs to new pages
-/booze      /booze/           301
-/music      /music/           301
 /faq        /information/#faq 301
 /contact    /information/#contact 301
 /map        /information/#map 301
