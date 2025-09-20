@@ -466,6 +466,10 @@ body {
 
 @media (max-width: 768px) {
 
+.hero__logo img {
+  display: none;
+}
+
   .site-footer__primary {
     width: 100%;
     margin: 0 auto;
@@ -519,6 +523,7 @@ body {
   .site-header .btn--ticket {
     width: 100%;
     text-align: center;
+    align-items: center;
   }
 
   .hero--short {
@@ -587,6 +592,15 @@ body {
   .site-header.footer-nav {
   margin-left: 0;
   margin-right: 0;
+  }
+
+  .site-header__brand-text {
+    display: none;
+  }
+
+   .btn--ticket {
+    width: 100%;
+    max-width: 100%;
   }
 }
 
