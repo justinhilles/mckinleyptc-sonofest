@@ -30,6 +30,10 @@ export type SiteContent = {
     chiliEntryForm?: string;
     volunteerSignup?: string;
     merchShop?: string;
+    vendorApplicationForm: string;
+    foodTruckApplicationForm: string;
+    sponsorPacket: string;
+    donate: string;
   };
   sponsors?: Sponsor[];
 };

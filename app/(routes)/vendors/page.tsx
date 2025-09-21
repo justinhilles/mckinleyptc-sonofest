@@ -11,51 +11,7 @@ export const metadata = createPageMetadata({
   path: '/vendors/',
 });
 
-const merchItems = [
-  {
-    title: '2025 Commemorative Mug',
-    description: 'Handcrafted locally and perfect for refills year after year and comes with 5 tastings',
-    image: {
-      src: '/images/merch-mug.png',
-      width: 640,
-      height: 640,
-      alt: '2025 SoNo Fest commemorative mug',
-    },
-  },
-  {
-    title: 'SoNo Fest Tee',
-    description: 'A soft unisex tee celebrating our 2025 lineup.',
-    image: {
-      src: '/images/merch-tee.png',
-      width: 640,
-      height: 640,
-      alt: 'SoNo Fest t-shirt mockup',
-    },
-  },
-    {
-    title: 'SoNo Fest Zip Hoodie',
-    description: 'A cozy zip hoodie to keep you warm during the festival.',
-    image: {
-      src: '/images/merch-tee.png',
-      width: 640,
-      height: 640,
-      alt: 'SoNo Fest t-shirt mockup',
-    },
-  },
-  {
-    title: 'SoNo Fest Hat',
-    description: 'A stylish hat to keep the sun out of your eyes while you enjoy the festival.',
-    image: {
-      src: '/images/merch-tee.png',
-      width: 640,
-      height: 640,
-      alt: 'SoNo Fest t-shirt mockup',
-    },
-  }
-];
-
-export default function MerchPage() {
-  const shopUrl = siteContent.links.merchShop || siteContent.ticketTailorUrl;
+export default function VendorsPage() {
 
   return (
     <>
@@ -66,12 +22,12 @@ export default function MerchPage() {
         ctas={[
           {
             label: 'Vendor Application',
-            href: shopUrl,
+            href: siteContent.links.vendorApplicationForm,
             variant: 'primary' as const,
           },
           {
             label: 'Food Truck Application',
-            href: '#pickup',
+            href: siteContent.links.foodTruckApplicationForm  ,
             variant: 'secondary' as const,
           }
         ]}

@@ -46,17 +46,17 @@ export default function InformationPage() {
     <>
       <Hero
         variant="short"
-        title="Information Center"
+        title="OK, Soo..?"
         subhead={`All the details you need for the ${siteContent.year} SoNo Fest - contact the team, find the map, and browse FAQs.`}
         ctas={[
           {
             label: 'Buy Tasting Passes',
-            href: siteContent.ticketTailorUrl,
+            href: '/tickets/',
             variant: 'primary',
           },
           {
             label: 'Volunteer Sign-Up',
-            href: volunteerUrl,
+            href: siteContent.links.volunteerSignup || '/information/#volunteer',
             variant: 'secondary',
           },
           {
@@ -66,9 +66,9 @@ export default function InformationPage() {
           },          
         ]}
       />
-                                    <section className="content-block">
-                      <Image src="/images/featured/info.jpg" alt="Collage of bands performing at SoNo Fest" width={1200} height={800} style={{ width: '100%', height: 'auto', borderRadius: '8px' }} />
-                    </section>
+      <section className="content-block">
+        <Image src="/images/featured/info.jpg" alt="Collage of bands performing at SoNo Fest" width={1200} height={800} style={{ width: '100%', height: 'auto', borderRadius: '8px' }} />
+      </section>
       <section className="content-block" id="details">
         <h2 className="section__title">Festival Basics</h2>
         <ul className="content-block__list">
