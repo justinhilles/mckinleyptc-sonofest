@@ -52,7 +52,7 @@ export default function ChiliEntryPage() {
         <h2 className="section__title">How It Works</h2>
         <p>
           Competing in the Chili Cook-Off is a chance to showcase your culinary skills and gain exposure to a large audience.
-          Plus, the title of "Best Chili in San Diego" comes with bragging rights and a trophy!
+          Plus, the title of &quot;Best Chili in San Diego&quot; comes with bragging rights and a trophy!
         </p>
         <br />
         <ol className="content-block__list">

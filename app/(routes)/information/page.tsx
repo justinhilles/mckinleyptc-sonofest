@@ -1,17 +1,16 @@
 import FAQAccordion from '@/app/components/FAQAccordion';
-import ContactForm from '@/app/components/ContactForm';
 import Hero from '@/app/components/Hero';
 import MapBlock from '@/app/components/MapBlock';
 import { faqItems, siteContent } from '@/app/lib/content';
 import { createPageMetadata } from '@/app/lib/metadata';
 import Image from 'next/image';
 
-const roleContacts = [
-  { role: 'Sponsorships', email: 'sponsors@sonofest.org' },
-  { role: 'Press', email: 'press@sonofest.org' },
-  { role: 'Vendors', email: 'vendors@sonofest.org' },
-  { role: 'Volunteers', email: 'volunteers@sonofest.org' },
-];
+// const roleContacts = [
+//   { role: 'Sponsorships', email: 'sponsors@sonofest.org' },
+//   { role: 'Press', email: 'press@sonofest.org' },
+//   { role: 'Vendors', email: 'vendors@sonofest.org' },
+//   { role: 'Volunteers', email: 'volunteers@sonofest.org' },
+// ];
 
 const mapLegend = [
   { label: 'Entrances & Info' },

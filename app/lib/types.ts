@@ -9,7 +9,7 @@ export type Sponsor = {
   href?: string;
   logo?: string;
   active?: boolean;
-  category?: Array<'sponsor' | 'partner'>[number];
+  category?: Array<'sponsor' | 'partner' | 'chili' | 'music' | 'booze' | 'foodtruck' | 'merch' | 'vendor'>;
 };
 
 export type SiteContent = {
