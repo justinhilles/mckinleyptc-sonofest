@@ -10,7 +10,8 @@ const NAV_ITEMS = [
   { href: '/music/', label: 'Music' },
   { href: '/booze/', label: 'Booze' },
   { href: '/merch/', label: 'Merch' },
-  { href: '/information/', label: 'Information' },
+  { href: '/vendors/', label: 'Vendors' },
+  { href: '/information/', label: 'Info' },
 ];
 
 export default function Header() {
@@ -42,7 +43,7 @@ export default function Header() {
           <Image
             src="/images/red-flag.png"
             alt="SoNo Fest"
-            width={150}
+            width={400}
             height={109}
             priority
             className="site-header__brand-image"

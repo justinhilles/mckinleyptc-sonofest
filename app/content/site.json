@@ -1,99 +1,172 @@
-{
-  "year": 2025,
-  "eventDate": "2025-12-07T11:00:00-08:00",
-  "location": "32nd & Thorn St, North Park, San Diego",
-  "ticketTailorUrl": "https://www.tickettailor.com/events/sonofest/123456",
-  "organizer": {
-    "name": "McKinley Elementary Foundation",
-    "url": "https://mckinleyfriends.org"
-  },
-  "social": {
-    "facebook": "https://www.facebook.com/sonofest",
-    "instagram": "https://www.instagram.com/sonofest"
-  },
-  "links": {
-    "chiliEntryForm": "https://forms.gle/placeholder",
-    "volunteerSignup": "",
-    "merchShop": "https://shop.sonofest.org"
-  },
-  "sponsors": [
-    {
+  {
+    "year": 2025,
+    "eventDate": "2025-12-07T11:00:00-08:00",
+    "location": "32nd & Thorn St, North Park, San Diego",
+    "ticketTailorUrl": "https://www.tickettailor.com/events/sonofest/123456",
+    "contactEmail": "info@sonofestchilicookoff.com",
+    "organizer": {
       "name": "McKinley Elementary Foundation",
-      "href": "https://mckinleyfriends.org"
+      "url": "https://mckinleyfriends.org"
     },
-    {
-      "name": "North Park Main Street",
-      "href": "https://northparkmainstreet.com"
+    "social": {
+      "facebook": "https://www.facebook.com/sonofest",
+      "instagram": "https://www.facebook.com/SoNoFestandChiliCookOff"
     },
-    {
-      "name": "San Diego Ceramic Connection",
-      "href": "https://sdceramic.com"
+    "links": {
+      "chiliEntryForm": "https://docs.google.com/forms/d/e/1FAIpQLSexsA3ojwHwaSEuTOLhhcHMrpSWpxxYvZ02wdMFMRJ_wtDIyg/viewform",
+      "volunteerSignup": "",
+      "merchShop": "https://mckinleyptc.org/product-category/sono-fest/"
     },
-    {
-      "name": "Casbah",
-      "href": "https://www.instagram.com/casbahsandiego/?hl=en"
-    },
-    {
-      "name": "Pretzels & Pints",
-      "href": "https://www.instagram.com/pretzelsandpintsnp/?hl=en"
-    },
-    {
-      "name": "Milberg Orthodontics"
-    },
-    {
-      "name": "Fernside"
-    },
-    {
-      "name": "Grand Ole BBQ"
-    },
-    {
-      "name": "Gemstone Gymnastics"
-    },
-    {
-      "name": "Ruland Design Group",
-      "href": "https://rulanddesigngroup.com"
-    },
-    {
-      "name": "Camille Camacho Photography"
-    },
-    {
-      "name": "Party Pop"
-    },
-    {
-      "name": "The UPS Store"
-    },
-    {
-      "name": "Digital Joy"
-    },
-    {
-      "name": "Sunrun"
-    },
-    {
-      "name": "Fairplay North Park"
-    },
-    {
-      "name": "Baja Bound"
-    },
-    {
-      "name": "Kaleo Marketing"
-    },
-    {
-      "name": "Brooke Russo Realtor"
-    },
-    {
-      "name": "Snell & Wilmer"
-    },
-    {
-      "name": "Park & Rec"
-    },
-    {
-      "name": "Prospera"
-    },
-    {
-      "name": "AKA Screen Printing"
-    },
-    {
-      "name": "Aloha Pacific Builders"
-    }
-  ]
-}
+    "sponsors": [
+      {
+        "name": "North Park Main Street",
+        "href": "https://northparkmainstreet.com",
+        "logo": "/images/logos/northparkmainstreet.png",
+        "active": true,
+        "category": ["sponsor"]
+      },
+      {
+        "name": "San Diego Ceramic Connection",
+        "href": "https://sdceramic.com",
+        "active": true,
+        "category": ["partner"]
+      },
+      {
+        "name": "Casbah",
+        "href": "https://www.instagram.com/casbahsandiego/?hl=en",
+        "active": true,
+        "category": ["sponsor"]
+      },
+      {
+        "name": "Pretzels & Pints",
+        "href": "https://www.instagram.com/pretzelsandpintsnp/?hl=en",
+        "active": true,
+        "category": ["sponsor"]
+      },
+      {
+        "name": "Milberg Orthodontics",
+        "active": true,
+        "category": ["sponsor"]
+      },
+      {
+        "name": "Fernside",
+        "active": true,
+        "category": ["sponsor"]
+      },
+      {
+        "name": "Grand Ole BBQ",
+        "active": true,
+        "category": ["sponsor"]
+      },
+      {
+        "name": "Gemstone Gymnastics",
+        "active": true,
+        "category": ["sponsor"]
+      },
+      {
+        "name": "Ruland Design Group",
+        "href": "https://rulanddesigngroup.com",
+        "active": true,
+        "category": ["sponsor"]
+      },
+      {
+        "name": "Camille Camacho Photography",
+        "active": true,
+        "category": ["sponsor"]
+      },
+      {
+        "name": "Party Pop",
+        "active": true,
+        "category": ["sponsor"]
+      },
+      {
+        "name": "The UPS Store",
+        "active": true,
+        "category": ["sponsor"]
+      },
+      {
+        "name": "Digital Joy",
+        "active": true,
+        "category": ["sponsor"]
+      },
+      {
+        "name": "Sunrun",
+        "active": true,
+        "category": ["sponsor"]
+      },
+      {
+        "name": "Fairplay North Park",
+        "active": true,
+        "category": ["sponsor"]
+      },
+      {
+        "name": "Baja Bound",
+        "active": true,
+        "category": ["sponsor"]
+      },
+      {
+        "name": "Kaleo Marketing",
+        "active": true,
+        "category": ["sponsor"]
+      },
+      {
+        "name": "Brooke Russo Realtor",
+        "active": true,
+        "category": ["sponsor"]
+      },
+      {
+        "name": "Snell & Wilmer",
+        "active": true,
+        "category": ["sponsor"]
+      },
+      {
+        "name": "Park & Rec",
+        "active": true,
+        "category": ["sponsor"]
+      },
+      {
+        "name": "Prospera",
+        "active": true,
+        "category": ["sponsor"]
+      },
+      {
+        "name": "AKA Screen Printing",
+        "active": true,
+        "category": ["merch"]
+      },
+      {
+        "name": "Aloha Pacific Builders",
+        "active": true,
+        "category": ["sponsor"]
+      },
+      {
+        "name": "San Diego Music Foundation",
+        "active": true,
+        "category": ["partner"]
+      },
+      {
+        "name": "The Original 40",
+        "href": "https://www.northparkthursdaymarket.com",
+        "active": true,
+        "category": ["chili"]
+      },
+      {
+        "name": "San Diego Brewers Guild",
+        "href": "https://sdbrewersguild.org",
+        "active": true,
+        "category": ["partner"]
+      },
+      {
+        "name": "San Diego Food Trucks",
+        "href": "https://www.sandiegofoodtrucks.com",
+        "active": true,
+        "category": ["partner"]
+      },
+      {
+        "name": "SoCal Chiliheads",
+        "href": "https://www.socalchiliheads.com",
+        "active": true,
+        "category": ["partner"]
+      }
+    ]
+  }

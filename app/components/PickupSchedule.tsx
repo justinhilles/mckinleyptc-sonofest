@@ -10,7 +10,7 @@ export default function PickupSchedule({ items }: PickupScheduleProps) {
   }
 
   return (
-    <section className="pickup">
+    <section className="pickup" id="pickup">
       <h2 className="section__title">Pickup Schedule</h2>
       <ul className="pickup__list">
         {items.map((item) => (

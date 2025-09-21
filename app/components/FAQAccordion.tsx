@@ -28,7 +28,7 @@ export default function FAQAccordion({ items }: FAQAccordionProps) {
   };
 
   return (
-    <section className="faq">
+    <section className="faq" id="faqs">
       <h2 className="section__title">FAQs</h2>
       <div className="faq__items">
         {items.map((item, index) => {

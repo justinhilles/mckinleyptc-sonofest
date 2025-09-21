@@ -32,14 +32,14 @@ export default function MapBlock({ image, legend, downloadUrl, googleMapUrl }: M
       </div>
       <div className="map-block__content">
         <h2 className="section__title">Festival Map</h2>
-        <ul className="map-block__legend">
+        {/* <ul className="map-block__legend">
           {legend.map((item) => (
             <li key={item.label}>
               {item.icon ? <span aria-hidden="true">{item.icon}</span> : null}
               <span>{item.label}</span>
             </li>
           ))}
-        </ul>
+        </ul> */}
         <div className="map-block__links">
           <a className="btn btn--secondary" href={downloadUrl} download>
             Download Map PDF

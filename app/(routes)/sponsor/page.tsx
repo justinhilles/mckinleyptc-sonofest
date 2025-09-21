@@ -2,6 +2,7 @@ import Hero from '@/app/components/Hero';
 import SponsorStrip from '@/app/components/SponsorStrip';
 import { siteContent } from '@/app/lib/content';
 import { createPageMetadata } from '@/app/lib/metadata';
+import Image from 'next/image';
 
 const sponsorApplicationUrl =
   'https://docs.google.com/forms/d/e/1FAIpQLSfrfx-Nzn7BUCzxKk4RiUB01QcMj-0gzs-pU-SCoDMpxvrbjg/viewform';
@@ -12,8 +13,8 @@ const sponsorProspectusPdf =
 
 const audienceHighlights = [
   '20,000+ attendees travel from across San Diego County and Southern California for the one-day festival.',
-  '35+ acclaimed restaurants compete in the legendary Chili Cook-Off alongside local breweries, cideries, and distilleries.',
-  'Two live-music stages, 30 handmade vendors, food trucks, and family programming keep guests on-site all afternoon.',
+  '35+ acclaimed restaurants compete in the legendary Chili Cook-Off for the chance to be crowned Best Chili in San Diego.',
+  'Two live-music stages, 30 vendors, food trucks, and kids zone keep guests on-site all afternoon.',
 ];
 
 const sponsorBenefits = [
@@ -33,7 +34,7 @@ export const metadata = createPageMetadata({
 export default function SponsorPage() {
   const ctas = [
     {
-      label: 'Apply to Sponsor',
+      label: 'Become A Sponsor',
       href: sponsorApplicationUrl,
       variant: 'primary' as const,
     },
@@ -43,7 +44,7 @@ export default function SponsorPage() {
       variant: 'secondary' as const,
     },
     {
-      label: 'Download Prospectus',
+      label: 'Sponsorship Opportunities',
       href: sponsorProspectusPdf,
       variant: 'light' as const,
     },
@@ -53,13 +54,15 @@ export default function SponsorPage() {
     <>
       <Hero
         variant="short"
-        kicker={`Support the ${siteContent.year} festival`}
-        title="Sponsor SoNo Fest & Chili Cook-Off"
-        subhead="Align your brand with San Diego&apos;s favorite neighborhood festival and help fund essential arts education for 600+ students."
+        title="Sponsor A Party That Gives Back"
+        subhead="Support San Diego&apos;s favorite neighborhood chili festival and help fund essential arts education at McKinley Elementary."
         ctas={ctas}
       />
+       <section className="content-block">
+            <Image src="/images/featured/group.jpg" alt="Collage of bands performing at SoNo Fest" width={1200} height={800} style={{ width: '100%', height: 'auto', borderRadius: '8px' }} />
+            </section>
       <section className="impact-strip">
-        <p>100% of sponsorship dollars power McKinley Elementary&apos;s art, music, dance, language, and garden programs.</p>
+        <p>100% of proceeds power McKinley Elementary&apos;s art, music, dance, language, and garden programs.</p>
       </section>
       <section className="content-block">
         <h2 className="section__title">Reach a Passionate Audience</h2>
@@ -69,33 +72,35 @@ export default function SponsorPage() {
           ))}
         </ul>
         <p>
-          Since debuting in 2010, SoNo Fest has become a must-attend SoCal tradition. Even after a virtual pivot in 2020,
+          Since debuting in 2010, SoNo Fest has become a must-attend San Diego tradition. Even after a virtual pivot in 2020,
           the festival returned to the streets in 2021 with record-breaking attendance and continues to grow each year with
           expansive media coverage and community buzz.
         </p>
       </section>
+            <SponsorStrip title="Past Sponsors & Partners" sponsors={siteContent.sponsors} category={["sponsor","partner"]} />
+
       <section className="content-block">
-        <h2 className="section__title">What Sponsors Receive</h2>
+        <h2 className="section__title">What Sponsors Can Receive</h2>
         <ul className="content-block__list">
           {sponsorBenefits.map((benefit) => (
             <li key={benefit}>{benefit}</li>
           ))}
         </ul>
         <p className="content-block__note">
-          Download the benefits deck for tier-by-tier deliverables and activation details, or reach out for a custom package.
+          Download the Sponsor Benefits Deck for tier-by-tier deliverables and activation details.
         </p>
       </section>
-      <SponsorStrip title="Recent Sponsors & Partners" sponsors={siteContent.sponsors} />
       <section className="content-block">
         <h2 className="section__title">Ready to Join the SoNo Family?</h2>
         <p>
           Submit the application and our sponsorship team will follow up with availability, deadlines, and next steps. You can
-          also email <a href="mailto:sponsors@sonofest.org">sponsors@sonofest.org</a> to start the conversation or request a
+          also email <a href="mailto:info@sonofestchilicookoff.com">info@sonofestchilicookoff.com</a> to start the conversation or request a
           custom activation.
         </p>
+        <br />
         <p>
-          Together we can showcase your brand to thousands of engaged festival-goers while ensuring every McKinley Elementary
-          student keeps access to vibrant arts education.
+          <b>Join us in making a difference for kids!</b> Together we can showcase your business to thousands of engaged festival-goers while ensuring every McKinley Elementary
+          student keeps access to a vibrant education.
         </p>
       </section>
     </>

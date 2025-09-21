@@ -4,6 +4,7 @@ import Hero from '@/app/components/Hero';
 import MapBlock from '@/app/components/MapBlock';
 import { faqItems, siteContent } from '@/app/lib/content';
 import { createPageMetadata } from '@/app/lib/metadata';
+import Image from 'next/image';
 
 const roleContacts = [
   { role: 'Sponsorships', email: 'sponsors@sonofest.org' },
@@ -59,38 +60,16 @@ export default function InformationPage() {
             href: volunteerUrl,
             variant: 'secondary',
           },
+          {
+            label: 'FAQs',
+            href: "#faq",
+            variant: 'light',
+          },          
         ]}
       />
-      <section className="contact" id="contact">
-        <h2 className="section__title">Get In Touch</h2>
-        <div className="contact__grid">
-          <ContactForm />
-          <aside className="contact__aside">
-            <h3 className="section__title">Role-Based Contacts</h3>
-            <ul>
-              {roleContacts.map((entry) => (
-                <li key={entry.role}>
-                  <span>{entry.role}</span>
-                  <a href={`mailto:${entry.email}`}>{entry.email}</a>
-                </li>
-              ))}
-            </ul>
-          </aside>
-        </div>
-      </section>
-      <div id="map">
-        <MapBlock
-          image={{
-            src: '/images/map.png',
-            width: 1200,
-            height: 800,
-            alt: 'Festival map showing entrances, stages, booze garden, kids zone, and restrooms',
-          }}
-          legend={mapLegend}
-          downloadUrl="/docs/map.pdf"
-          googleMapUrl="https://maps.app.goo.gl/3dXjQuQ7Vw3zSonofest"
-        />
-      </div>
+                                    <section className="content-block">
+                      <Image src="/images/featured/info.jpg" alt="Collage of bands performing at SoNo Fest" width={1200} height={800} style={{ width: '100%', height: 'auto', borderRadius: '8px' }} />
+                    </section>
       <section className="content-block" id="details">
         <h2 className="section__title">Festival Basics</h2>
         <ul className="content-block__list">
@@ -109,13 +88,29 @@ export default function InformationPage() {
           SoNo Fest is 100% volunteer powered. If you would like to lend a hand before or during the event, sign up and our
           crew leads will follow up with available shifts.
         </p>
+        <br/>
+        <br />
         <a className="btn btn--ticket" href={volunteerUrl}>
           Volunteer Registration
-        </a>
+        </a>  
+         </section>                  
+      <section className="content-block"  id="map">
+        <MapBlock
+          image={{
+            src: '/images/map.png',
+            width: 1200,
+            height: 800,
+            alt: 'Festival map showing entrances, stages, booze garden, kids zone, and restrooms',
+          }}
+          legend={mapLegend}
+          downloadUrl="/docs/map.pdf"
+          googleMapUrl="https://maps.app.goo.gl/6ZWpkAWJfG86tQcR8"
+        />
       </section>
-      <div id="faq">
+
+      <section className="content-block" id="faq">
         <FAQAccordion items={faqItems} />
-      </div>
+      </section>
     </>
   );
 }

@@ -1,6 +1,6 @@
 {
   "options": [
-    {"name": "Ceramic Bowl", "price": 30, "tastings": 5, "channel": "in-person"},
+    {"name": "Ceramic Bowl", "price": 30, "tastings": 5, "channel": "ceramic-connection"},
     {"name": "Commemorative Mug", "price": 30, "tastings": 5, "channel": "online"},
     {"name": "Paper Bowl", "price": 25, "tastings": 5, "channel": "online"},
     {"name": "Add-on Tastings", "price": 22, "tastings": 5, "channel": "booth"}

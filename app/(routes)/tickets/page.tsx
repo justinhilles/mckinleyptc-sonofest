@@ -4,6 +4,7 @@ import PickupSchedule from '@/app/components/PickupSchedule';
 import PricingTable from '@/app/components/PricingTable';
 import { faqItems, siteContent, ticketsContent } from '@/app/lib/content';
 import { createPageMetadata, getEventJsonLd } from '@/app/lib/metadata';
+import Image from 'next/image';
 
 export const metadata = createPageMetadata({
   title: 'Tasting Passes',
@@ -23,11 +24,27 @@ export default function TastingPassesPage() {
         subhead="Choose your tasting pass and plan your pickup."
         ctas={[
           {
-            label: 'Buy Tasting Passes',
-            href: siteContent.ticketTailorUrl,
+            label: 'Get Tasting Passes',
+            href: "#pricing",
+          },
+          {
+            label: 'Pickup Info',
+            href: "#pickup",
+            variant: 'secondary',
+          },
+          {
+            label: 'FAQs',
+            href: "#faqs",
+            variant: 'light',
           },
         ]}
       />
+      <section className="content-block">
+        <Image src="/images/featured/tickets.jpg" alt="Collage of bands performing at SoNo Fest" width={1200} height={800} style={{ width: '100%', height: 'auto', borderRadius: '8px' }} />
+      </section>
+      <section className="impact-strip">
+        <p>100% of proceeds power McKinley Elementary&apos;s art, music, dance, language, and garden programs.</p>
+      </section>
       <PricingTable options={ticketsContent.options} ticketUrl={siteContent.ticketTailorUrl} />
       <PickupSchedule items={ticketsContent.pickup} />
       <FAQAccordion items={ticketFaq} />

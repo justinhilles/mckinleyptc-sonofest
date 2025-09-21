@@ -6,14 +6,27 @@ type SponsorStripProps = {
   sponsors?: Sponsor[];
   title?: string;
   className?: string;
+  category?: Array<'sponsor' | 'partner' | 'chili' | 'music' | 'booze' | 'foodtruck' | 'merch' | 'vendor'>;
 };
 
 export default function SponsorStrip({
   sponsors = [],
   title = 'Sponsors & Partners',
   className = '',
+  category = ['sponsor']
 }: SponsorStripProps) {
-  const filtered = sponsors.filter((sponsor) => sponsor.name?.trim().length);
+  const filtered = sponsors.filter((sponsor) =>
+    sponsor.name?.trim().length &&
+    sponsor.active !== false &&
+    (
+      !category ||
+      category === undefined ||
+      (
+        Array.isArray(sponsor.category) &&
+        sponsor.category.some(cat => category.includes(cat))
+      )
+    )
+  );
   if (filtered.length === 0) {
     return null;
   }

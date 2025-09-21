@@ -2,6 +2,7 @@ import Hero from '@/app/components/Hero';
 import SponsorStrip from '@/app/components/SponsorStrip';
 import { siteContent } from '@/app/lib/content';
 import { createPageMetadata } from '@/app/lib/metadata';
+import Image from 'next/image';
 
 const donationFormUrl =
   'https://docs.google.com/forms/d/e/1FAIpQLScjJt2cmkmzpAjEjZXBjclMiRK2ENM56gKH4v0HM9P-MZsx-A/viewform';
@@ -46,7 +47,7 @@ export default function BoozePage() {
       <Hero
         variant="short"
         title="Booze Garden"
-        subhead="Sip your way through San Diego's top breweries, cideries, and craft beverage makers--all supporting SoNo Fest."
+        subhead="Sip your way through San Diego's top breweries, cideries, and craft beverage makers--all while supporting McKinley Elementary."
         ctas={[
           {
             label: 'Buy Tasting Passes',
@@ -60,6 +61,9 @@ export default function BoozePage() {
           },
         ]}
       />
+                      <section className="content-block">
+                      <Image src="/images/featured/booze.jpg" alt="Collage of bands performing at SoNo Fest" width={1200} height={800} style={{ width: '100%', height: 'auto', borderRadius: '8px' }} />
+                    </section>
       <section className="impact-strip">
         <p>Cheers! 100% of festival proceeds support McKinley Elementary&#39;s art, music, and enrichment programs.</p>
       </section>
@@ -95,7 +99,7 @@ export default function BoozePage() {
           up with availability, logistics, and pour details.
         </p>
       </section>
-      <SponsorStrip title="Sponsors & Partners" sponsors={siteContent.sponsors} />
+      <SponsorStrip title="Sponsors & Partners" sponsors={siteContent.sponsors} category={["booze"]} />
     </>
   );
 }

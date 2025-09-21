@@ -9,6 +9,7 @@ const channelCopy: Record<TicketOption['channel'], string> = {
   booth: 'Event Booth',
   'in-person': 'In-Person Pickup',
   online: 'Online',
+  'ceramic-connection': 'Ceramic Connection',
 };
 
 const currency = new Intl.NumberFormat('en-US', {
@@ -23,7 +24,7 @@ export default function PricingTable({ options, ticketUrl }: PricingTableProps) 
   }
 
   return (
-    <section className="pricing-table">
+    <section className="pricing-table" id="pricing">
       <h2 className="section__title">Tasting Passes</h2>
       <table className="pricing-table__grid">
         <thead>
@@ -45,11 +46,18 @@ export default function PricingTable({ options, ticketUrl }: PricingTableProps) 
           ))}
         </tbody>
       </table>
-      <div className="pricing-table__cta">
-        <a className="btn btn--ticket" href={ticketUrl} target="_blank" rel="noopener noreferrer">
-          Buy Tasting Passes on TicketTailor
-        </a>
-      </div>
+      {new Date() >= new Date('2025-11-07') && (
+        <div className="pricing-table__cta">
+          <a className="btn btn--ticket" href={ticketUrl} target="_blank" rel="noopener noreferrer">
+        Buy Tasting Passes on TicketTailor
+          </a>
+        </div>
+      )}
+      {new Date() < new Date('2025-11-07') && (
+        <div className="pricing-table__cta">
+          Tasting Passes Not Yet Available. Check Back Here November 7th!
+        </div>
+      )}
     </section>
   );
 }

@@ -8,6 +8,8 @@ export type Sponsor = {
   name: string;
   href?: string;
   logo?: string;
+  active?: boolean;
+  category?: Array<'sponsor' | 'partner'>[number];
 };
 
 export type SiteContent = {
@@ -15,6 +17,7 @@ export type SiteContent = {
   eventDate: string;
   location: string;
   ticketTailorUrl: string;
+  contactEmail?: string;
   organizer?: {
     name: string;
     url?: string;
@@ -35,7 +38,7 @@ export type TicketOption = {
   name: string;
   price: number;
   tastings: number;
-  channel: 'in-person' | 'online' | 'booth';
+  channel: 'in-person' | 'online' | 'booth' | 'ceramic-connection';
 };
 
 export type PickupStop = {
