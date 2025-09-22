@@ -36,7 +36,7 @@ export default function HomePage() {
     {
       title: 'Chili Cook-Off',
       description: 'Taste from 40+ local chefs and vote for your favorite.',
-      href: '/chili/',
+      href: '/chili-entry/',
       icon: 'fa-pepper-hot',
     },
     {
