@@ -36,6 +36,7 @@
       {
         "name": "Casbah",
         "href": "https://www.instagram.com/casbahsandiego/?hl=en",
+        "logo": "/images/logos/casbah.png",
         "active": true,
         "category": ["sponsor"]
       },
@@ -43,132 +44,131 @@
         "name": "Pretzels & Pints",
         "href": "https://www.instagram.com/pretzelsandpintsnp/?hl=en",
         "active": true,
+        "logo": "/images/logos/pretzelspints.jpg",
         "category": ["sponsor"]
       },
       {
         "name": "Milberg Orthodontics",
         "active": true,
+        "logo": "/images/logos/milberg.jpg",
         "category": ["sponsor"]
       },
       {
         "name": "Fernside",
         "active": true,
+        "logo": "/images/logos/fernside.png",
         "category": ["sponsor"]
       },
       {
         "name": "Grand Ole BBQ",
         "active": true,
+        "logo": "/images/logos/grandoldbbq.png",
         "category": ["sponsor"]
       },
       {
         "name": "Gemstone Gymnastics",
         "active": true,
+        "logo": "/images/logos/gemstone.jpg",
         "category": ["sponsor"]
       },
       {
         "name": "Ruland Design Group",
         "href": "https://rulanddesigngroup.com",
         "active": true,
+        "logo": "/images/logos/rdg.png",
         "category": ["sponsor"]
       },
       {
         "name": "Camille Camacho Photography",
         "active": true,
+        "logo": "/images/logos/camille.png",
         "category": ["sponsor"]
       },
       {
         "name": "Party Pop",
         "active": true,
+        "logo": "/images/logos/partypop.png",
         "category": ["sponsor"]
       },
       {
         "name": "The UPS Store",
         "active": true,
+        "logo": "/images/logos/ups.png",
         "category": ["sponsor"]
       },
       {
         "name": "Digital Joy",
         "active": true,
+        "logo": "/images/logos/digitaljoy.png",
         "category": ["sponsor"]
       },
       {
         "name": "Sunrun",
         "active": true,
+        "logo": "/images/logos/sunrun.jpg",
         "category": ["sponsor"]
       },
       {
         "name": "Fairplay North Park",
         "active": true,
+        "logo": "/images/logos/fairplay.png",
         "category": ["sponsor"]
       },
       {
         "name": "Baja Bound",
         "active": true,
+        "logo": "/images/logos/baja.png",
         "category": ["sponsor"]
       },
       {
         "name": "Kaleo Marketing",
         "active": true,
+        "logo": "/images/logos/kaleo.png",
         "category": ["sponsor"]
       },
       {
         "name": "Brooke Russo Realtor",
         "active": true,
+        "logo": "/images/logos/brooke.png",
         "category": ["sponsor"]
       },
       {
         "name": "Snell & Wilmer",
         "active": true,
+        "logo": "/images/logos/snellwilmer.jpg",
         "category": ["sponsor"]
       },
       {
         "name": "Park & Rec",
         "active": true,
+        "logo": "/images/logos/parkrec.png",
         "category": ["sponsor"]
       },
       {
         "name": "Prospera",
         "active": true,
+        "logo": "/images/logos/prospera.jpg",
         "category": ["sponsor"]
       },
       {
         "name": "AKA Screen Printing",
         "active": true,
+        "logo": "/images/logos/aka.png",
         "category": ["merch"]
       },
       {
         "name": "Aloha Pacific Builders",
         "active": true,
+        "logo": "/images/logos/aloha.png",
         "category": ["sponsor"]
       },
       {
-        "name": "San Diego Music Foundation",
-        "active": true,
-        "category": ["partner"]
-      },
-      {
         "name": "The Original 40",
-        "href": "https://www.northparkthursdaymarket.com",
+        "href": "https://original40brewing.com/",
+        "instagram": "original40beer",
+        "logo": "/images/logos/original40.png",
         "active": true,
         "category": ["chili"]
-      },
-      {
-        "name": "San Diego Brewers Guild",
-        "href": "https://sdbrewersguild.org",
-        "active": true,
-        "category": ["partner"]
-      },
-      {
-        "name": "San Diego Food Trucks",
-        "href": "https://www.sandiegofoodtrucks.com",
-        "active": true,
-        "category": ["partner"]
-      },
-      {
-        "name": "SoCal Chiliheads",
-        "href": "https://www.socalchiliheads.com",
-        "active": true,
-        "category": ["partner"]
       }
     ]
   }
