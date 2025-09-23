@@ -584,9 +584,7 @@ body {
 
 @media (max-width: 768px) {
   .site-header__brand {
-    padding-left: 96px;
-    padding-bottom: 8px;
-    font-size: 1.35rem;
+    display: none;
   }
 
   .site-header__brand-image {
