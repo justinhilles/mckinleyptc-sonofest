@@ -12,6 +12,7 @@ const NAV_ITEMS = [
   { href: '/merch/', label: 'Merch' },
   { href: '/vendors/', label: 'Vendors' },
   { href: '/information/', label: 'Info' },
+  { href: '/volunteers/', label: 'Volunteers' },
 ];
 
 export default function Header() {

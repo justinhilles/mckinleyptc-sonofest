@@ -10,6 +10,7 @@ const FOOTER_LINKS = [
   { href: '/music/', label: 'Music' },
   { href: '/booze/', label: 'Booze Garden' },
   { href: '/merch/', label: 'Merch' },
+  { href: '/volunteers/', label: 'Volunteers' },
   { href: '/information/', label: 'Information' },
 ];
 
@@ -64,4 +65,3 @@ export default function Footer() {
     </footer>
   );
 }
-

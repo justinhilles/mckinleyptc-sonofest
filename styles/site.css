@@ -43,11 +43,11 @@ body {
 }
 
 .site-header .nav-container {
-  width: min(1100px, 120vw);
+  width: min(1200px, 150vw);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 32px;
+  gap: 16px;
 }
 
 .site-header__nav {
@@ -568,7 +568,7 @@ body {
   letter-spacing: 1px;
   color: #fff;
   text-transform: uppercase;
-  padding-left: 120px;
+  padding-left: 100px;
   padding-bottom: 50px;
 }
 
