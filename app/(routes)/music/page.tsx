@@ -120,8 +120,8 @@ export default function MusicPage() {
             <p>{stage.sponsor}</p>
             <ul className="content-block__list">
               {stage.slots.map((slot) => (
-                <li key={`${stage.name}-${slot.time}-${slot.artist}`}>
-                  <strong>{slot.time}:</strong> {slot.artist}
+                <li key={`${stage.name}-${slot.time}-TBD`}>
+                  <strong>{slot.time}:</strong> TBD
                 </li>
               ))}
             </ul>
