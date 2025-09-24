@@ -38,7 +38,7 @@
         "href": "https://www.instagram.com/casbahsandiego/?hl=en",
         "logo": "/images/logos/casbah.png",
         "active": true,
-        "category": ["sponsor"]
+        "category": ["sponsor","music"]
       },
       {
         "name": "Pretzels & Pints",
