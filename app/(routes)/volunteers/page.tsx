@@ -32,7 +32,7 @@ export default function VolunteersPage() {
     <>
       <Hero
         variant="short"
-        title="Volunteer With SoNo Fest"
+        title="Volunteers"
         subhead="Hundreds of neighbors lend a hand every December to make SoNo Fest happen. Join the crew and help McKinley Elementary thrive."
         ctas={[
           {

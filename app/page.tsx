@@ -27,7 +27,7 @@ export default function HomePage() {
     },
     {
       label: 'Volunteer',
-      href: volunteerLink,
+      href: '/volunteers/',
       variant: 'secondary' as const,
     },
   ];

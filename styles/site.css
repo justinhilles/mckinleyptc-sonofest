@@ -161,7 +161,6 @@ body {
 
 .sponsors-section {
   margin: 80px auto;
-  width: min(960px, 90vw);
   text-align: center;
   display: grid;
   gap: 32px;
