@@ -15,6 +15,24 @@ const FOOTER_LINKS = [
 ];
 
 export default function Footer() {
+  const socialLinks: Array<{ href: string; label: string; icon: string }> = [];
+
+  if (siteContent.social.facebook) {
+    socialLinks.push({
+      href: siteContent.social.facebook,
+      label: 'Facebook',
+      icon: 'fa-facebook-f',
+    });
+  }
+
+  if (siteContent.social.instagram) {
+    socialLinks.push({
+      href: siteContent.social.instagram,
+      label: 'Instagram',
+      icon: 'fa-instagram',
+    });
+  }
+
   return (
     <footer className="site-footer" role="contentinfo">
       <div className="site-footer__primary">
@@ -28,24 +46,28 @@ export default function Footer() {
             })}
             </p>
           <p className="site-footer__location">{siteContent.location}</p>
- 
-                  <span className="site-footer__social-label">Follow SoNo Fest</span>
-          <ul>
-            {siteContent.social.facebook ? (
-              <li>
-                <a href={siteContent.social.facebook} target="_blank" rel="noopener noreferrer">
-                  Facebook
-                </a>
-              </li>
-            ) : null}
-            {siteContent.social.instagram ? (
-              <li>
-                <a href={siteContent.social.instagram} target="_blank" rel="noopener noreferrer">
-                  Instagram
-                </a>
-              </li>
-            ) : null}
-          </ul>
+
+          {socialLinks.length ? (
+            <>
+              <span className="site-footer__social-label">Follow SoNo Fest</span>
+              <ul className="site-footer__social-list">
+                {socialLinks.map((social) => (
+                  <li key={social.label}>
+                    <a
+                      className="site-footer__social-link"
+                      href={social.href}
+                      aria-label={social.label}
+                      title={social.label}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <i className={`fa-brands ${social.icon}`} aria-hidden="true"></i>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </>
+          ) : null}
         </div>
         <nav aria-label="Footer">
           <ul className="site-footer__links">

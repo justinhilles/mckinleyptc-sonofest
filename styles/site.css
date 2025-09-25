@@ -531,6 +531,35 @@ body {
   text-transform: uppercase;
 }
 
+.site-footer__social-list {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+.site-footer__social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: inherit;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.site-footer__social-link:hover,
+.site-footer__social-link:focus-visible {
+  color: var(--sono-maroon);
+  transform: scale(1.1);
+}
+
+.site-footer__social-link:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
 @media (max-width: 768px) {
 
 .hero__logo img {
