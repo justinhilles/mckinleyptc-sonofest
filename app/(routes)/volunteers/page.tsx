@@ -49,7 +49,7 @@ export default function VolunteersPage() {
       />
       <section className="content-block">
         <Image
-          src="/images/featured/group.jpg"
+          src="/images/featured/volunteers.webp"
           alt="Volunteers smiling while pouring chili and greeting guests at SoNo Fest"
           width={1200}
           height={800}
