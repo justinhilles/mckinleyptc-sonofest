@@ -633,6 +633,8 @@ body {
   padding: 0;
   display: grid;
   gap: 8px;
+  list-style-type: none;
+
 }
 
 .site-footer__social-label {

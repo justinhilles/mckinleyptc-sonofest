@@ -23,25 +23,75 @@ const merchItems = [
     },
   },
   {
+    title: 'SoNo Fest Baseball Tee',
+    description: 'A soft unisex tee celebrating our 2025 lineup.',
+    image: {
+      src: '/images/merch/baseball-tee.png',
+      width: 640,
+      height: 640,
+      alt: 'SoNo Fest t-shirt mockup',
+    },
+  },  
+  {
+    title: 'SoNo Fest Ringer Tee',
+    description: 'A soft unisex tee celebrating our 2025 lineup.',
+    image: {
+      src: '/images/merch/ringer-tee.png',
+      width: 640,
+      height: 640,
+      alt: 'SoNo Fest t-shirt mockup',
+    },
+  },   
+  {
     title: 'SoNo Fest Tee',
     description: 'A soft unisex tee celebrating our 2025 lineup.',
     image: {
-      src: '/images/merch-tee.png',
+      src: '/images/merch/tee.png',
       width: 640,
       height: 640,
       alt: 'SoNo Fest t-shirt mockup',
     },
   },
-    {
+  {
+    title: 'SoNo Fest FlagTee',
+    description: 'A soft unisex tee celebrating our 2025 lineup.',
+    image: {
+      src: '/images/merch/flag-tee-front.png',
+      width: 640,
+      height: 640,
+      alt: 'SoNo Fest t-shirt mockup',
+    },
+  },  
+  {
     title: 'SoNo Fest Zip Hoodie',
     description: 'A cozy zip hoodie to keep you warm during the festival.',
     image: {
-      src: '/images/merch-tee.png',
+      src: '/images/merch/hoodie-front.png',
       width: 640,
       height: 640,
       alt: 'SoNo Fest t-shirt mockup',
     },
   },
+  {
+    title: 'SoNo Fest Flag Zip Hoodie',
+    description: 'A cozy zip hoodie to keep you warm during the festival.',
+    image: {
+      src: '/images/merch/flag-hoodie-front.png',
+      width: 640,
+      height: 640,
+      alt: 'SoNo Fest t-shirt mockup',
+    },
+  },  
+  {
+    title: 'SoNo Fest Crew Sweatshirt',
+    description: 'A cozy zip hoodie to keep you warm during the festival.',
+    image: {
+      src: '/images/merch/crew.png',
+      width: 640,
+      height: 640,
+      alt: 'SoNo Fest t-shirt mockup',
+    },
+  },    
   {
     title: 'SoNo Fest Hat',
     description: 'A stylish hat to keep the sun out of your eyes while you enjoy the festival.',
