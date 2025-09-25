@@ -20,7 +20,7 @@ const anton = Anton({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://sonofest.org'),
+  metadataBase: new URL('https://sonofestchilicookoff.com/'),
   title: {
     default: `SoNo Fest & Chili Cook-Off ${siteContent.year}`,
     template: `%s | SoNo Fest & Chili Cook-Off ${siteContent.year}`,
@@ -36,7 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${oswald.variable} ${anton.variable}`}>
       <head>
         {ticketTailorOrigin ? <link rel="preconnect" href={ticketTailorOrigin} /> : null}
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon/favicon.ico" />
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"

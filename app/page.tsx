@@ -13,7 +13,6 @@ export const metadata = createPageMetadata({
 });
 
 export default function HomePage() {
-  const volunteerLink = siteContent.links.volunteerSignup || '/information/#volunteer';
   const ctaButtons = [
     {
       label: 'Get Tasting Passes',
@@ -22,13 +21,13 @@ export default function HomePage() {
     },
     {
       label: 'Enter Chili Cook-Off',
-      href: '/chili-entry/',
+      href: '/chili/',
       variant: 'secondary' as const,
     },
     {
       label: 'Volunteer',
       href: '/volunteers/',
-      variant: 'secondary' as const,
+      variant: 'light' as const,
     },
   ];
 
@@ -36,7 +35,7 @@ export default function HomePage() {
     {
       title: 'Chili Cook-Off',
       description: 'Taste from 40+ local chefs and vote for your favorite.',
-      href: '/chili-entry/',
+      href: '/chili/',
       icon: 'fa-pepper-hot',
     },
     {

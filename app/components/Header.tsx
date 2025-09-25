@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 const NAV_ITEMS = [
   { href: '/sponsor/', label: 'Sponsors' },
-  { href: '/chili-entry/', label: 'Chili' },
+  { href: '/chili/', label: 'Chili' },
   { href: '/music/', label: 'Music' },
   { href: '/booze/', label: 'Booze' },
   { href: '/merch/', label: 'Merch' },

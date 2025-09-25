@@ -99,7 +99,7 @@ export default function BoozePage() {
           up with availability, logistics, and pour details.
         </p>
       </section>
-      <SponsorStrip title="Sponsors & Partners" sponsors={siteContent.sponsors} category={["booze"]} />
+      <SponsorStrip title="Past Breweries & Distilleries" sponsors={siteContent.sponsors} category={["booze"]} />
     </>
   );
 }

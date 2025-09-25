@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { siteContent } from '@/app/lib/content';
 import { createPageMetadata } from '@/app/lib/metadata';
 
-const volunteerSignupUrl = siteContent.links.volunteerSignup?.trim() || '/information/#volunteer';
+const volunteerSignupUrl = siteContent.links.volunteerSignup?.trim();
 
 const volunteerHighlights = [
   'Shift lengths range from 2-3 hours so you can still enjoy the festival.',
@@ -42,7 +42,7 @@ export default function VolunteersPage() {
           },
           {
             label: 'Questions? Email Us',
-            href: siteContent.contactEmail ? `mailto:${siteContent.contactEmail}` : 'mailto:info@sonofestchilicookoff.com',
+            href: `mailto:${siteContent.contactEmail}`,
             variant: 'secondary' as const,
           },
         ]}
@@ -88,12 +88,12 @@ export default function VolunteersPage() {
       </section>
       <section className="content-block">
         <h2 className="section__title">Group & Corporate Volunteering</h2>
-        <p>
+        <p>-
           Want to bring a team from your company, club, or community group? We love welcoming new partners. Reach out and we
           will reserve blocks of shifts so your crew can serve together.
         </p>
         <br />
-        <a className="btn btn--ticket" href={siteContent.contactEmail ? `mailto:${siteContent.contactEmail}` : 'mailto:info@sonofestchilicookoff.com'}>
+        <a className="btn btn--ticket" href={`mailto:${siteContent.contactEmail}`}>
           Coordinate a Group Shift
         </a>
       </section>

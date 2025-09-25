@@ -58,9 +58,9 @@ export default function SponsorPage() {
         subhead="Support San Diego&apos;s favorite neighborhood chili festival and help fund essential arts education at McKinley Elementary."
         ctas={ctas}
       />
-       <section className="content-block">
-            <Image src="/images/featured/group.jpg" alt="Collage of bands performing at SoNo Fest" width={1200} height={800} style={{ width: '100%', height: 'auto', borderRadius: '8px' }} />
-            </section>
+      <section className="content-block">
+        <Image src="/images/featured/group.jpg" alt="Collage of bands performing at SoNo Fest" width={1200} height={800} style={{ width: '100%', height: 'auto', borderRadius: '8px' }} />
+      </section>
       <section className="impact-strip">
         <p>100% of proceeds power McKinley Elementary&apos;s art, music, dance, language, and garden programs.</p>
       </section>
@@ -77,7 +77,7 @@ export default function SponsorPage() {
           expansive media coverage and community buzz.
         </p>
       </section>
-            <SponsorStrip title="Past Sponsors & Partners" sponsors={siteContent.sponsors} category={["sponsor","partner"]} />
+      <SponsorStrip title="Past Sponsors & Partners" sponsors={siteContent.sponsors} category={["sponsor","partner"]} />
 
       <section className="content-block">
         <h2 className="section__title">What Sponsors Can Receive</h2>

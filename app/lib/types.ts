@@ -10,7 +10,25 @@ export type Sponsor = {
   logo?: string;
   active?: boolean;
   category?: Array<'sponsor' | 'partner' | 'chili' | 'music' | 'booze' | 'foodtruck' | 'merch' | 'vendor'>;
+  type?: 'community' | 'best-friend' | 'neighbor' | 'benefactor';
 };
+
+export type Vendor = {
+  name: string;
+  href?: string;
+  logo?: string;
+  active?: boolean;
+  instagram?: string;
+  facebook?: string;
+  twitter?: string;
+};
+
+export type Band = {
+  name: string;
+  href?: string;
+  logo?: string;
+  active?: boolean;
+}
 
 export type SiteContent = {
   year: number;
@@ -36,6 +54,8 @@ export type SiteContent = {
     donate: string;
   };
   sponsors?: Sponsor[];
+  vendors?: Vendor[];
+  bands?: Band[];
 };
 
 export type TicketOption = {

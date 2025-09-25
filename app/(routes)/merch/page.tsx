@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Hero from '@/app/components/Hero';
 import { siteContent } from '@/app/lib/content';
 import { createPageMetadata } from '@/app/lib/metadata';
+import SponsorStrip from '@/app/components/SponsorStrip';
 
 export const metadata = createPageMetadata({
   title: 'Merch',
@@ -112,6 +113,8 @@ export default function MerchPage() {
           <li><strong>Sunday, October 6:</strong> 10 AM - 3 PM at SoNo Fest (Broadway Ave & Bancroft St, San Diego, CA 92104)</li>
         </ul>
       </section>
+      <SponsorStrip title="Partners" sponsors={siteContent.sponsors} category={['merch']} />
+      
     </>
   );
 }

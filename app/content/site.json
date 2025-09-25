@@ -2,7 +2,7 @@
     "year": 2025,
     "eventDate": "2025-12-07T11:00:00-08:00",
     "location": "32nd & Thorn St, North Park, San Diego",
-    "ticketTailorUrl": "https://www.tickettailor.com/events/sonofest/123456",
+    "ticketTailorUrl": "https://buytickets.at/sonofestchilicookoff/1876396",
     "contactEmail": "info@sonofestchilicookoff.com",
     "organizer": {
       "name": "McKinley Elementary Foundation",
@@ -10,7 +10,7 @@
     },
     "social": {
       "facebook": "https://www.facebook.com/sonofest",
-      "instagram": "https://www.facebook.com/SoNoFestandChiliCookOff"
+      "instagram": "https://www.instagram.com/sonofest"
     },
     "links": {
       "chiliEntryForm": "https://docs.google.com/forms/d/e/1FAIpQLSexsA3ojwHwaSEuTOLhhcHMrpSWpxxYvZ02wdMFMRJ_wtDIyg/viewform",
@@ -43,7 +43,7 @@
       {
         "name": "Pretzels & Pints",
         "href": "https://www.instagram.com/pretzelsandpintsnp/?hl=en",
-        "active": true,
+        "active": false,
         "logo": "/images/logos/pretzelspints.jpg",
         "category": ["sponsor"]
       },
@@ -55,80 +55,80 @@
       },
       {
         "name": "Fernside",
-        "active": true,
+        "active": false,
         "logo": "/images/logos/fernside.png",
         "category": ["sponsor"]
       },
       {
         "name": "Grand Ole BBQ",
-        "active": true,
+        "active": false,
         "logo": "/images/logos/grandoldbbq.png",
         "category": ["sponsor"]
       },
       {
         "name": "Gemstone Gymnastics",
-        "active": true,
+        "active": false,
         "logo": "/images/logos/gemstone.jpg",
         "category": ["sponsor"]
       },
       {
         "name": "Ruland Design Group",
         "href": "https://rulanddesigngroup.com",
-        "active": true,
+        "active": false,
         "logo": "/images/logos/rdg.png",
         "category": ["sponsor"]
       },
       {
         "name": "Camille Camacho Photography",
-        "active": true,
+        "active": false,
         "logo": "/images/logos/camille.png",
         "category": ["sponsor"]
       },
       {
         "name": "Party Pop",
-        "active": true,
+        "active": false,
         "logo": "/images/logos/partypop.png",
         "category": ["sponsor"]
       },
       {
         "name": "The UPS Store",
-        "active": true,
+        "active": false,
         "logo": "/images/logos/ups.png",
         "category": ["sponsor"]
       },
       {
         "name": "Digital Joy",
-        "active": true,
+        "active": false,
         "logo": "/images/logos/digitaljoy.png",
         "category": ["sponsor"]
       },
       {
         "name": "Sunrun",
-        "active": true,
+        "active": false,
         "logo": "/images/logos/sunrun.jpg",
         "category": ["sponsor"]
       },
       {
         "name": "Fairplay North Park",
-        "active": true,
+        "active": false,
         "logo": "/images/logos/fairplay.png",
         "category": ["sponsor"]
       },
       {
         "name": "Baja Bound",
-        "active": true,
+        "active": false,
         "logo": "/images/logos/baja.png",
         "category": ["sponsor"]
       },
       {
         "name": "Kaleo Marketing",
-        "active": true,
+        "active": false,
         "logo": "/images/logos/kaleo.png",
         "category": ["sponsor"]
       },
       {
         "name": "Brooke Russo Realtor",
-        "active": true,
+        "active": false,
         "logo": "/images/logos/brooke.png",
         "category": ["sponsor"]
       },
@@ -140,13 +140,13 @@
       },
       {
         "name": "Park & Rec",
-        "active": true,
+        "active": false,
         "logo": "/images/logos/parkrec.png",
         "category": ["sponsor"]
       },
       {
         "name": "Prospera",
-        "active": true,
+        "active": false,
         "logo": "/images/logos/prospera.jpg",
         "category": ["sponsor"]
       },
@@ -154,11 +154,11 @@
         "name": "AKA Screen Printing",
         "active": true,
         "logo": "/images/logos/aka.png",
-        "category": ["merch"]
+        "category": ["merch","sponsor"]
       },
       {
         "name": "Aloha Pacific Builders",
-        "active": true,
+        "active": false,
         "logo": "/images/logos/aloha.png",
         "category": ["sponsor"]
       },
@@ -167,8 +167,67 @@
         "href": "https://original40brewing.com/",
         "instagram": "original40beer",
         "logo": "/images/logos/original40.png",
-        "active": true,
+        "active": false,
         "category": ["chili"]
+      },
+      {
+        "name": "VanBerg Construction",
+        "active": true,
+        "logo": "/images/logos/aloha.png",
+        "category": ["sponsor"],
+        "type": "community"
+      }
+    ],
+    "vendors": [
+      {
+        "name": "The Spice & Tea Exchange",
+        "href": "https://www.spiceandtea.com/locations/san-diego-north-park/",
+        "logo": "/images/logos/spiceandtea.png",
+        "active": true,
+        "instagram": "spiceandteexchangenorthpark",
+        "category": ["vendor"]
+      },
+      {
+        "name": "San Diego Ceramic Connection",
+        "href": "https://sdceramic.com",
+        "logo": "/images/logos/sdceramic.png",
+        "active": true,
+        "instagram": "sdceramicconnection",
+        "category": ["vendor"]
+      },
+      {
+        "name": "Pretzels & Pints",
+        "href": "https://www.instagram.com/pretzelsandpintsnp/?hl=en",
+        "logo": "/images/logos/pretzelspints.jpg",
+        "active": true,
+        "instagram": "pretzelsandpintsnp",
+        "category": ["vendor","foodtruck"]
+      }
+    ],
+    "bands": [
+      {
+        "name": "The Good Hurt",
+        "href": "https://thegoodhurt.com",
+        "logo": "/images/logos/thegoodhurt.png",
+        "active": true,
+        "instagram": "thegoodhurt",
+        "category": ["music"]
+      },
+      {
+        "name": "The Whiskey Gentry",
+        "href": "https://thewhiskeygentry.com",
+        "logo": "/images/logos/whiskeygentry.png",
+        "active": true,
+        "instagram": "thewhiskeygentry",
+        "category": ["music"]
+      },
+      {
+        "name": "The Mighty Pines",
+        "href": "https://themightypines.com",
+        "logo": "/images/logos/mightypines.png",
+        "active": true,
+        "instagram": "themightypines",
+        "category": ["music"]
       }
     ]
   }
