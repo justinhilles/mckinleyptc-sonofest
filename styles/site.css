@@ -239,6 +239,30 @@ body {
   color: inherit;
 }
 
+.feature-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: 2px solid var(--sono-green);
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--sono-maroon);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.feature-card__icon svg {
+  width: 36px;
+  height: 36px;
+}
+
+.feature-card__link:hover .feature-card__icon,
+.feature-card__link:focus-visible .feature-card__icon {
+  color: var(--sono-green);
+  transform: scale(1.05);
+}
+
 .feature-card__title {
   font-size: 1.25rem;
   text-align: center;
@@ -558,6 +582,17 @@ body {
 .site-footer__social-link:focus-visible {
   outline: 2px solid currentColor;
   outline-offset: 3px;
+}
+
+.site-footer__social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.site-footer__social-icon svg {
+  width: 20px;
+  height: 20px;
 }
 
 @media (max-width: 768px) {

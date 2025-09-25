@@ -37,10 +37,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         {ticketTailorOrigin ? <link rel="preconnect" href={ticketTailorOrigin} /> : null}
         <link rel="icon" href="/favicon/favicon.ico" />
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-        />
       </head>
       <body>
         <a href="#main" className="skip-link">

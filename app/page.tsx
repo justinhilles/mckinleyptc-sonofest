@@ -2,6 +2,7 @@ import Hero from '@/app/components/Hero';
 import Countdown from '@/app/components/Countdown';
 import FeatureTiles from '@/app/components/FeatureTiles';
 import SponsorStrip from '@/app/components/SponsorStrip';
+import { BeerIcon, KidsIcon, MusicIcon, PepperIcon } from '@/app/components/icons';
 import { siteContent } from '@/app/lib/content';
 import { createPageMetadata, getEventJsonLd } from '@/app/lib/metadata';
 
@@ -36,25 +37,25 @@ export default function HomePage() {
       title: 'Chili Cook-Off',
       description: 'Taste from 40+ local chefs and vote for your favorite.',
       href: '/chili/',
-      icon: 'fa-pepper-hot',
+      icon: <PepperIcon />,
     },
     {
       title: 'Live Music',
       description: 'Two stages featuring San Diego bands all afternoon.',
       href: '/music/',
-      icon: 'fa-music',
+      icon: <MusicIcon />,
     },
     {
       title: 'Kids Zone',
       description: 'Crafts, games, and family activities on 32nd Street.',
       href: '/information/#faq',
-      icon: 'fa-child',
+      icon: <KidsIcon />,
     },
     {
       title: 'Booze Garden',
       description: 'Local beer, wine, and craft cocktails for 21+ guests.',
       href: '/booze/',
-      icon: 'fa-beer',
+      icon: <BeerIcon />,
     },
   ];
 
@@ -86,4 +87,3 @@ export default function HomePage() {
     </>
   );
 }
-

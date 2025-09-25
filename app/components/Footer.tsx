@@ -1,6 +1,8 @@
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
+import type { ReactNode } from 'react';
 
+import { FacebookIcon, InstagramIcon } from '@/app/components/icons';
 import { siteContent } from '@/app/lib/content';
 
 const FOOTER_LINKS = [
@@ -15,13 +17,13 @@ const FOOTER_LINKS = [
 ];
 
 export default function Footer() {
-  const socialLinks: Array<{ href: string; label: string; icon: string }> = [];
+  const socialLinks: Array<{ href: string; label: string; icon: ReactNode }> = [];
 
   if (siteContent.social.facebook) {
     socialLinks.push({
       href: siteContent.social.facebook,
       label: 'Facebook',
-      icon: 'fa-facebook-f',
+      icon: <FacebookIcon />,
     });
   }
 
@@ -29,7 +31,7 @@ export default function Footer() {
     socialLinks.push({
       href: siteContent.social.instagram,
       label: 'Instagram',
-      icon: 'fa-instagram',
+      icon: <InstagramIcon />,
     });
   }
 
@@ -61,7 +63,9 @@ export default function Footer() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <i className={`fa-brands ${social.icon}`} aria-hidden="true"></i>
+                      <span className="site-footer__social-icon" aria-hidden="true">
+                        {social.icon}
+                      </span>
                     </a>
                   </li>
                 ))}

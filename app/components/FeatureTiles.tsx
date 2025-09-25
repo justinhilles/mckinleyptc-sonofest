@@ -24,8 +24,13 @@ export default function FeatureTiles({ items }: FeatureTilesProps) {
           return (
             <article key={item.href} className="feature-card" role="listitem">
               <Link href={item.href} className="feature-card__link">
-                <i className={`fas ${item.icon} feature-icon`}></i>
+                <span className="feature-card__icon" aria-hidden="true">
+                  {item.icon}
+                </span>
                 <h3 className="feature-card__title">{item.title}</h3>
+                {item.description ? (
+                  <p className="feature-card__description">{item.description}</p>
+                ) : null}
               </Link>
             </article>
           );
