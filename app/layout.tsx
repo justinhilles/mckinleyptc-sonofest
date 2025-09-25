@@ -35,7 +35,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${oswald.variable} ${anton.variable}`}>
       <head>
-        {ticketTailorOrigin ? <link rel="preconnect" href={ticketTailorOrigin} /> : null}
         <link rel="icon" href="/favicon/favicon.ico" />
       </head>
       <body>
