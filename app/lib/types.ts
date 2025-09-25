@@ -50,8 +50,8 @@ export type SiteContent = {
     merchShop?: string;
     vendorApplicationForm: string;
     foodTruckApplicationForm: string;
-    sponsorPacket: string;
-    donate: string;
+    sponsorPacket?: string;
+    donate?: string;
   };
   sponsors?: Sponsor[];
   vendors?: Vendor[];
