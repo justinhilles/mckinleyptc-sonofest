@@ -1,5 +1,6 @@
 import Hero from '@/app/components/Hero';
 import SponsorStrip from '@/app/components/SponsorStrip';
+import SponsorSpotlight from '@/app/components/SponsorSpotlight';
 import { siteContent } from '@/app/lib/content';
 import { createPageMetadata } from '@/app/lib/metadata';
 import Image from 'next/image';
@@ -50,6 +51,11 @@ export default function SponsorPage() {
     },
   ];
 
+  const spotlightSponsors =
+    siteContent.sponsors
+      ?.filter((sponsor) => sponsor.active !== false && sponsor.name?.trim())
+      .map((sponsor) => sponsor.name!.trim()) ?? [];
+
   return (
     <>
       <Hero
@@ -58,6 +64,7 @@ export default function SponsorPage() {
         subhead="Support San Diego&apos;s favorite neighborhood chili festival and help fund essential arts education at McKinley Elementary."
         ctas={ctas}
       />
+
       <section className="content-block">
         <Image src="/images/featured/group.jpg" alt="Collage of bands performing at SoNo Fest" width={1200} height={800} style={{ width: '100%', height: 'auto', borderRadius: '8px' }} />
       </section>
@@ -77,6 +84,7 @@ export default function SponsorPage() {
           expansive media coverage and community buzz.
         </p>
       </section>
+      <SponsorSpotlight items={spotlightSponsors} />
       <SponsorStrip title="Past Sponsors & Partners" sponsors={siteContent.sponsors} category={["sponsor","partner"]} />
 
       <section className="content-block">
@@ -106,4 +114,3 @@ export default function SponsorPage() {
     </>
   );
 }
-

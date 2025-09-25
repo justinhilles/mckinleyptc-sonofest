@@ -275,6 +275,91 @@ body {
   text-align: center;
 }
 
+.sponsor-spotlight {
+  margin: 60px auto;
+  max-width: 640px;
+  background: #fff;
+  border: 3px solid var(--sono-green);
+  border-radius: 18px;
+  padding: 32px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.sponsor-spotlight__body {
+  display: grid;
+  gap: 20px;
+  text-align: center;
+}
+
+.sponsor-spotlight__eyebrow {
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--sono-maroon);
+  font-size: 0.85rem;
+}
+
+.sponsor-spotlight__title {
+  font-family: var(--font-display), 'Anton', sans-serif;
+  font-size: clamp(1.75rem, 3vw, 2.4rem);
+  margin: 0;
+}
+
+.sponsor-spotlight__description {
+  margin: 0 auto;
+  max-width: 440px;
+  font-size: 1rem;
+}
+
+.sponsor-spotlight__machine {
+  position: relative;
+  background: rgba(45, 74, 43, 0.08);
+  border-radius: 12px;
+  padding: 24px 16px;
+  display: grid;
+  gap: 8px;
+}
+
+.sponsor-spotlight__row {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: rgba(45, 74, 43, 0.6);
+}
+
+.sponsor-spotlight__row--active {
+  font-size: 1.4rem;
+  color: var(--sono-maroon);
+}
+
+.sponsor-spotlight__divider {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  right: 12px;
+  height: 2px;
+  background: rgba(45, 74, 43, 0.2);
+  transform: translateY(-50%);
+}
+
+.sponsor-spotlight__button {
+  justify-self: center;
+  min-width: 220px;
+}
+
+.sponsor-spotlight__result {
+  margin: 0;
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.sponsor-spotlight__result strong {
+  font-size: 1.25rem;
+  color: var(--sono-maroon);
+}
+
 .pricing-table {
   margin: 60px auto;
   background: #fff;
@@ -542,7 +627,7 @@ body {
 }
 
 .site-footer__links,
-.site-footer__primary ul {
+.site-footer__primary ul:not(.site-footer__social-list) {
   list-style: none;
   margin: 0;
   padding: 0;
