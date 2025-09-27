@@ -24,7 +24,7 @@
         "name": "North Park Main Street",
         "href": "https://northparkmainstreet.com",
         "logo": "/images/logos/northparkmainstreet.png",
-        "active": true,
+        "active": false,
         "category": ["sponsor"]
       },
       {
@@ -136,7 +136,9 @@
         "name": "Snell & Wilmer",
         "active": true,
         "logo": "/images/logos/snellwilmer.jpg",
-        "category": ["sponsor"]
+        "category": ["sponsor"],
+        "type": "community",
+        "instagram": "swlawnews"
       },
       {
         "name": "Park & Rec",
@@ -173,35 +175,267 @@
       {
         "name": "VanBerg Construction",
         "active": true,
-        "logo": "/images/logos/aloha.png",
+        "href": "https://vanbergconstruction.com",
+        "logo": "/images/logos/vanberg.png",
         "category": ["sponsor"],
         "type": "community"
+      },
+      {
+        "name": "Winning Ways",
+        "href": "https://www.winningwaysusa.com",
+        "logo": "/images/logos/winningways.png",
+        "active": true,
+        "type": "neighbor",
+        "category": ["sponsor"]
       }
     ],
     "vendors": [
       {
-        "name": "The Spice & Tea Exchange",
-        "href": "https://www.spiceandtea.com/locations/san-diego-north-park/",
-        "logo": "/images/logos/spiceandtea.png",
+        "name": "San Diego Crystals & Jewelry",
+        "contact": "Hussain Hamidi",
+        "email": "sdcrystalsandjewelry@gmail.com",
+        "phone": "619-626-9990",
+        "description": "Middle Eastern jewelry including necklaces, bracelets, rings, earrings, headpieces, anklets, belly chains, finger-to-wrist chains, and more.",
+        "href": "https://sdjnc.com/",
+        "instagram": "sdcrystlasnandjewelry",
         "active": true,
-        "instagram": "spiceandteexchangenorthpark",
         "category": ["vendor"]
       },
       {
-        "name": "San Diego Ceramic Connection",
-        "href": "https://sdceramic.com",
-        "logo": "/images/logos/sdceramic.png",
-        "active": true,
-        "instagram": "sdceramicconnection",
-        "category": ["vendor"]
+        "name": "MONA Botanical Jewelry",
+        "contact": "Julyanna Roza",
+        "email": "julyanna.pinheiro@gmail.com",
+        "phone": "619-530-5147",
+        "description": "Real flower jewelry.",
+        "href": "https://monabotanicaljewelry.net",
+        "instagram": "mona.botanicaljewelry",
+        "active": true
       },
       {
-        "name": "Pretzels & Pints",
-        "href": "https://www.instagram.com/pretzelsandpintsnp/?hl=en",
-        "logo": "/images/logos/pretzelspints.jpg",
-        "active": true,
-        "instagram": "pretzelsandpintsnp",
-        "category": ["vendor","foodtruck"]
+        "name": "The Art of MVP",
+        "contact": "Michele Pruyn",
+        "email": "theartofmvp@gmail.com",
+        "phone": "619-850-7449",
+        "description": "Hand painted functional resin art and on-site laser engraving.",
+        "href": "https://theartofmvp.com",
+        "instagram": "theartofmvp",
+        "facebook": "theartofmvp",
+        "active": true
+      },
+      {
+        "name": "mountain creations",
+        "contact": "Bill Sexton",
+        "email": "bsexton071@gmail.com",
+        "phone": "714-269-7878",
+        "description": "Wood cutting boards, earrings, pendants, and Christmas ornaments.",
+        "active": true
+      },
+      {
+        "name": "Olive wood crafts",
+        "contact": "Mohamed Belhajabdallah",
+        "email": "olivewoodware@gmail.com",
+        "phone": "551-998-4082",
+        "description": "Handmade olive wood kitchenware.",
+        "href": "https://www.olivewoodware.com",
+        "instagram": "olivewoodware",
+        "active": true
+      },
+      {
+        "name": "Jess Makes Macrame",
+        "contact": "Jessica Pickering",
+        "email": "jessmakesmacrame@gmail.com",
+        "phone": "516-287-4241",
+        "description": "Crochet plushies.",
+        "href": "https://www.jessmakesmacrame.com",
+        "instagram": "jessmakesmacrame",
+        "active": true
+      },
+      {
+        "name": "Action Bevel",
+        "contact": "Randolph Raum",
+        "email": "randy@actionbevel.com",
+        "phone": "619-281-2671",
+        "description": "Ceramics.",
+        "href": "https://actionbevel.com",
+        "active": true
+      },
+      {
+        "name": "Shooska Scented Car Jewelry",
+        "contact": "Stephanie Wells",
+        "email": "stephanie068@gmail.com",
+        "phone": "858-254-0007",
+        "description": "Decor for cars, home, and personal accessories.",
+        "href": "https://shooska.com",
+        "instagram": "shoosksvibe",
+        "active": true
+      },
+      {
+        "name": "Down To Ferment",
+        "contact": "Ryan Minor",
+        "email": "ryan@downtoferment.com",
+        "phone": "978-400-1974",
+        "description": "Locally-made fermented hot sauces.",
+        "href": "https://www.downtoferment.com",
+        "instagram": "down2ferment",
+        "active": true
+      },
+      {
+        "name": "Handmadebymahta",
+        "contact": "Mahta Taba",
+        "email": "mahta.taba@gmail.com",
+        "phone": "619-547-6879",
+        "description": "Handmade, one-of-a-kind accessories primarily crafted from polymer clay.",
+        "instagram": "handmadebymahta",
+        "active": true
+      },
+      {
+        "name": "Spice is Life",
+        "contact": "Sean Landholt",
+        "email": "Sean@spiceislife.com",
+        "phone": "858-232-6582",
+        "description": "Small-batch \"Choils\" chili oils.",
+        "href": "https://spiceislife.com",
+        "notes": "Social: Instagram, TikTok, Facebook.",
+        "active": true
+      },
+      {
+        "name": "Atomic Space Snacks",
+        "contact": "Jessy Dokken",
+        "email": "dokkenconsulting@gmail.com",
+        "phone": "310-613-0901",
+        "description": "Freeze-dried candy.",
+        "href": "https://atomicspacesnacks.myshopify.com",
+        "instagram": "atomicspacesnacks",
+        "active": true
+      },
+      {
+        "name": "Rock Your World",
+        "contact": "Kimberly Blunk",
+        "email": "Rockyourworld1@yahoo.com",
+        "phone": "619-357-2140",
+        "description": "Crystals, handcrafted gemstone jewelry, beaded suncatchers, Anza knives, macrame decor, and gifts.",
+        "href": "https://www.etsy.com/shop/rockyourworld1",
+        "facebook": "rockyourworld123",
+        "active": true
+      },
+      {
+        "name": "Golden tribe boutique",
+        "contact": "Taylor Medina",
+        "email": "Shopgoldentribe@gmail.com",
+        "phone": "909-618-5233",
+        "description": "Women's clothing.",
+        "href": "https://www.shopgoldentribe.com",
+        "instagram": "shopgoldentribe",
+        "active": true
+      },
+      {
+        "name": "BARKS & CRAFTS",
+        "contact": "Jessica Nguyen",
+        "email": "Jess@barksandcrafts.co",
+        "description": "Handcrafted snap-on pet bandanas in five sizes with matching accessories and seasonal designs.",
+        "href": "https://www.barksandcrafts.co",
+        "instagram": "barksandcraftsco",
+        "active": true
+      },
+      {
+        "name": "(Coloring Book Factory DBA) San Diego Caricature",
+        "contact": "Genevieve Zzyzyx",
+        "email": "ColoringBookFactory@gmail.com",
+        "phone": "619-490-5471",
+        "description": "Caricature entertainment and gifts.",
+        "href": "https://www.sandiegocaricature.com",
+        "instagram": "coloringbookfactory",
+        "active": true
+      },
+      {
+        "name": "Ninfasland",
+        "contact": "Maria Gonzalez",
+        "email": "ninfasland@gmail.com",
+        "phone": "619-941-8303",
+        "description": "Low-sugar fruit spreads, jams, and jellies.",
+        "instagram": "ninfasland",
+        "facebook": "Ninfasland Spreads",
+        "active": true
+      },
+      {
+        "name": "Iris Studio Jewelry",
+        "contact": "Kenyotta Boone",
+        "email": "Irisstudiojewelry@gmail.com",
+        "phone": "702-857-9734",
+        "description": "Handmade statement jewelry plus curated waterproof stainless steel pieces.",
+        "href": "https://www.irisstudiojewelry.com",
+        "instagram": "irisstudiojewelry",
+        "active": true
+      },
+      {
+        "name": "Retrend Jewelry",
+        "contact": "Katty Markey",
+        "email": "escobarmejiak@gmail.com",
+        "phone": "415-350-9391",
+        "description": "Handmade jewelry from Colombia, including gold-plated designs.",
+        "href": "https://retrendjewelry.com/",
+        "instagram": "rt_retrend",
+        "facebook": "rtretrend",
+        "active": true
+      },
+      {
+        "name": "Candle Cocoa & Co LLC",
+        "contact": "Sakshi Jain",
+        "email": "Candlecocoaco@gmail.com",
+        "phone": "619-943-7972",
+        "description": "Handmade candles, gel designs, and complementary self-care products.",
+        "href": "https://candlecocoa.com",
+        "instagram": "candlecocoa",
+        "active": true
+      },
+      {
+        "name": "Villas Chile",
+        "contact": "Nicholas Cabrera",
+        "email": "Villaschile@artofmexico.co",
+        "phone": "951-335-1635",
+        "description": "Gourmet chili oil and spicy jams.",
+        "href": "https://artofmexico.co",
+        "instagram": "villasgourmetchiles",
+        "active": true
+      },
+      {
+        "name": "O'Sweet Edith's",
+        "contact": "Tiffany Byars",
+        "email": "tiffanyrby@gmail.com",
+        "phone": "619-541-5090",
+        "description": "Packaged desserts like peach cobbler, rum bundt cake, coconut pineapple bundt, and more.",
+        "href": "https://osweetediths.com",
+        "instagram": "osweetediths",
+        "active": true
+      },
+      {
+        "name": "Botanic Beetle",
+        "contact": "Libby Daniele",
+        "email": "libby@botanicbeetle.com",
+        "phone": "619-738-2924",
+        "description": "Stained glass art.",
+        "href": "https://botanicbeetle.com",
+        "instagram": "botanicbeetle",
+        "active": true
+      },
+      {
+        "name": "Wynne by Design",
+        "contact": "Wynne Levy",
+        "email": "wynnelevy93@gmail.com",
+        "phone": "215-275-9159",
+        "description": "Handmade jewelry and resin products including coasters.",
+        "instagram": "wynnebydesign",
+        "active": true
+      },
+      {
+        "name": "Celestial Spaces LLC",
+        "contact": "Bryanna Ellul",
+        "email": "Celestialspacesbybry@gmail.com",
+        "phone": "586-292-5906",
+        "description": "Tarot readings.",
+        "href": "https://www.celestialspacesbybry.com",
+        "instagram": "celestialspacesbybry",
+        "active": true
       }
     ],
     "bands": [

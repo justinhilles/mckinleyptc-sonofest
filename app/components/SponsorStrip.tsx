@@ -19,7 +19,7 @@ export default function SponsorStrip({
     sponsor.name?.trim().length &&
     sponsor.active !== false &&
     (
-      !category ||
+      !(category.length == 0)  ||
       category === undefined ||
       (
         Array.isArray(sponsor.category) &&

@@ -7,10 +7,8 @@ import Image from 'next/image';
 
 const sponsorApplicationUrl =
   'https://docs.google.com/forms/d/e/1FAIpQLSfrfx-Nzn7BUCzxKk4RiUB01QcMj-0gzs-pU-SCoDMpxvrbjg/viewform';
-const sponsorBenefitsPdf =
-  'https://sonofestchilicookoff.com/wp-content/uploads/2025/09/2025-6-sono-sponsorship-levels.pdf';
-const sponsorProspectusPdf =
-  'https://sonofestchilicookoff.com/wp-content/uploads/2025/09/2025-26-sono-sponsorletter.pdf';
+const sponsorBenefitsPdf = '/docs/sponsorship-benefits.pdf';
+const sponsorProspectusPdf = '/docs/sponsorship-oppurtunities.pdf';
 
 const audienceHighlights = [
   '20,000+ attendees travel from across San Diego County and Southern California for the one-day festival.',

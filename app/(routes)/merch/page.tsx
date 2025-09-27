@@ -158,10 +158,10 @@ export default function MerchPage() {
           All Merch is available for pickup before the event by following the schedule below. If you are unable to pick up during these times, you can pickup the day of the event or please email <a href="mailto:{siteContent.contactEmail}">{siteContent.contactEmail}</a> to make alternate arrangements.
         </p>
         <br />
-        <ul className="content-block__list">
+        {/* <ul className="content-block__list">
           <li><strong>Friday, October 4:</strong> 5 PM - 7 PM at McKinley Elementary (4340 Bancroft St, San Diego, CA 92104)</li>
           <li><strong>Sunday, October 6:</strong> 10 AM - 3 PM at SoNo Fest (Broadway Ave & Bancroft St, San Diego, CA 92104)</li>
-        </ul>
+        </ul> */}
       </section>
       <SponsorStrip title="Partners" sponsors={siteContent.sponsors} category={['merch']} />
       

@@ -18,9 +18,14 @@ export type Vendor = {
   href?: string;
   logo?: string;
   active?: boolean;
+  contact?: string;
+  email?: string;
+  phone?: string;
+  description?: string;
   instagram?: string;
   facebook?: string;
   twitter?: string;
+  notes?: string;
 };
 
 export type Band = {
@@ -54,7 +59,7 @@ export type SiteContent = {
     donate?: string;
   };
   sponsors?: Sponsor[];
-  vendors?: Vendor[];
+  vendors?: Sponsor[];
   bands?: Band[];
 };
 
