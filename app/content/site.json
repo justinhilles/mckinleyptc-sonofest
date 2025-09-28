@@ -209,7 +209,8 @@
         "description": "Real flower jewelry.",
         "href": "https://monabotanicaljewelry.net",
         "instagram": "mona.botanicaljewelry",
-        "active": true
+        "active": true,
+        "category": ["vendor"]
       },
       {
         "name": "The Art of MVP",
@@ -220,7 +221,8 @@
         "href": "https://theartofmvp.com",
         "instagram": "theartofmvp",
         "facebook": "theartofmvp",
-        "active": true
+        "active": true,
+        "category": ["vendor"]
       },
       {
         "name": "mountain creations",
@@ -228,7 +230,8 @@
         "email": "bsexton071@gmail.com",
         "phone": "714-269-7878",
         "description": "Wood cutting boards, earrings, pendants, and Christmas ornaments.",
-        "active": true
+        "active": true,
+        "category": ["vendor"]
       },
       {
         "name": "Olive wood crafts",
@@ -238,7 +241,8 @@
         "description": "Handmade olive wood kitchenware.",
         "href": "https://www.olivewoodware.com",
         "instagram": "olivewoodware",
-        "active": true
+        "active": true,
+        "category": ["vendor"]
       },
       {
         "name": "Jess Makes Macrame",
@@ -248,7 +252,8 @@
         "description": "Crochet plushies.",
         "href": "https://www.jessmakesmacrame.com",
         "instagram": "jessmakesmacrame",
-        "active": true
+        "active": true,
+        "category": ["vendor"]
       },
       {
         "name": "Action Bevel",
@@ -257,7 +262,8 @@
         "phone": "619-281-2671",
         "description": "Ceramics.",
         "href": "https://actionbevel.com",
-        "active": true
+        "active": true,
+        "category": ["vendor"]
       },
       {
         "name": "Shooska Scented Car Jewelry",
@@ -267,7 +273,8 @@
         "description": "Decor for cars, home, and personal accessories.",
         "href": "https://shooska.com",
         "instagram": "shoosksvibe",
-        "active": true
+        "active": true,
+        "category": ["vendor"]
       },
       {
         "name": "Down To Ferment",
@@ -277,7 +284,8 @@
         "description": "Locally-made fermented hot sauces.",
         "href": "https://www.downtoferment.com",
         "instagram": "down2ferment",
-        "active": true
+        "active": true,
+        "category": ["vendor"]
       },
       {
         "name": "Handmadebymahta",
@@ -286,7 +294,8 @@
         "phone": "619-547-6879",
         "description": "Handmade, one-of-a-kind accessories primarily crafted from polymer clay.",
         "instagram": "handmadebymahta",
-        "active": true
+        "active": true,
+        "category": ["vendor"]
       },
       {
         "name": "Spice is Life",
@@ -296,7 +305,8 @@
         "description": "Small-batch \"Choils\" chili oils.",
         "href": "https://spiceislife.com",
         "notes": "Social: Instagram, TikTok, Facebook.",
-        "active": true
+        "active": true,
+        "category": ["vendor"]
       },
       {
         "name": "Atomic Space Snacks",
@@ -306,7 +316,8 @@
         "description": "Freeze-dried candy.",
         "href": "https://atomicspacesnacks.myshopify.com",
         "instagram": "atomicspacesnacks",
-        "active": true
+        "active": true,
+        "category": ["vendor"]
       },
       {
         "name": "Rock Your World",
@@ -316,7 +327,8 @@
         "description": "Crystals, handcrafted gemstone jewelry, beaded suncatchers, Anza knives, macrame decor, and gifts.",
         "href": "https://www.etsy.com/shop/rockyourworld1",
         "facebook": "rockyourworld123",
-        "active": true
+        "active": true,
+        "category": ["vendor"]
       },
       {
         "name": "Golden tribe boutique",
@@ -326,7 +338,8 @@
         "description": "Women's clothing.",
         "href": "https://www.shopgoldentribe.com",
         "instagram": "shopgoldentribe",
-        "active": true
+        "active": true,
+        "category": ["vendor"]
       },
       {
         "name": "BARKS & CRAFTS",
@@ -335,7 +348,8 @@
         "description": "Handcrafted snap-on pet bandanas in five sizes with matching accessories and seasonal designs.",
         "href": "https://www.barksandcrafts.co",
         "instagram": "barksandcraftsco",
-        "active": true
+        "active": true,
+        "category": ["vendor"]
       },
       {
         "name": "(Coloring Book Factory DBA) San Diego Caricature",
@@ -345,7 +359,8 @@
         "description": "Caricature entertainment and gifts.",
         "href": "https://www.sandiegocaricature.com",
         "instagram": "coloringbookfactory",
-        "active": true
+        "active": true,
+        "category": ["vendor"]
       },
       {
         "name": "Ninfasland",
@@ -355,7 +370,8 @@
         "description": "Low-sugar fruit spreads, jams, and jellies.",
         "instagram": "ninfasland",
         "facebook": "Ninfasland Spreads",
-        "active": true
+        "active": true,
+        "category": ["vendor"]
       },
       {
         "name": "Iris Studio Jewelry",
@@ -365,7 +381,8 @@
         "description": "Handmade statement jewelry plus curated waterproof stainless steel pieces.",
         "href": "https://www.irisstudiojewelry.com",
         "instagram": "irisstudiojewelry",
-        "active": true
+        "active": true,
+        "category": ["vendor"]
       },
       {
         "name": "Retrend Jewelry",
@@ -376,7 +393,8 @@
         "href": "https://retrendjewelry.com/",
         "instagram": "rt_retrend",
         "facebook": "rtretrend",
-        "active": true
+        "active": true,
+        "category": ["vendor"]
       },
       {
         "name": "Candle Cocoa & Co LLC",
@@ -386,7 +404,8 @@
         "description": "Handmade candles, gel designs, and complementary self-care products.",
         "href": "https://candlecocoa.com",
         "instagram": "candlecocoa",
-        "active": true
+        "active": true,
+        "category": ["vendor"]
       },
       {
         "name": "Villas Chile",
@@ -396,7 +415,8 @@
         "description": "Gourmet chili oil and spicy jams.",
         "href": "https://artofmexico.co",
         "instagram": "villasgourmetchiles",
-        "active": true
+        "active": true,
+        "category": ["vendor"]
       },
       {
         "name": "O'Sweet Edith's",
@@ -406,7 +426,8 @@
         "description": "Packaged desserts like peach cobbler, rum bundt cake, coconut pineapple bundt, and more.",
         "href": "https://osweetediths.com",
         "instagram": "osweetediths",
-        "active": true
+        "active": true,
+        "category": ["vendor"]
       },
       {
         "name": "Botanic Beetle",
@@ -416,7 +437,8 @@
         "description": "Stained glass art.",
         "href": "https://botanicbeetle.com",
         "instagram": "botanicbeetle",
-        "active": true
+        "active": true,
+        "category": ["vendor"]
       },
       {
         "name": "Wynne by Design",
@@ -425,7 +447,8 @@
         "phone": "215-275-9159",
         "description": "Handmade jewelry and resin products including coasters.",
         "instagram": "wynnebydesign",
-        "active": true
+        "active": true,
+        "category": ["vendor"]
       },
       {
         "name": "Celestial Spaces LLC",
@@ -435,7 +458,8 @@
         "description": "Tarot readings.",
         "href": "https://www.celestialspacesbybry.com",
         "instagram": "celestialspacesbybry",
-        "active": true
+        "active": true,
+        "category": ["vendor"]
       }
     ],
     "bands": [

@@ -39,7 +39,7 @@ export default function VendorsPage() {
         <p>Teamwork makes the dream work! Join us in supporting our amazing vendors & food trucks that support McKinley Elementary!</p>
       </section>
 
-      <SponsorStrip title="Vendors" sponsors={siteContent.vendors} />
+      <SponsorStrip title="Vendors" sponsors={siteContent.vendors} category={["vendor"]} />
 
     </>
   );

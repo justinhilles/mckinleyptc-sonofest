@@ -15,18 +15,27 @@ export default function SponsorStrip({
   className = '',
   category = ['sponsor']
 }: SponsorStripProps) {
-  const filtered = sponsors.filter((sponsor) =>
-    sponsor.name?.trim().length &&
-    sponsor.active !== false &&
-    (
-      !(category.length == 0)  ||
-      category === undefined ||
-      (
-        Array.isArray(sponsor.category) &&
-        sponsor.category.some(cat => category.includes(cat))
-      )
-    )
-  );
+  const hasCategoryFilter = category.length > 0;
+
+  const filtered = sponsors.filter((sponsor) => {
+    if (!sponsor.name?.trim()) {
+      return false;
+    }
+
+    if (sponsor.active === false) {
+      return false;
+    }
+
+    if (!hasCategoryFilter) {
+      return true;
+    }
+
+    if (!Array.isArray(sponsor.category)) {
+      return false;
+    }
+
+    return sponsor.category.some((cat) => category.includes(cat));
+  });
   if (filtered.length === 0) {
     return null;
   }
@@ -73,4 +82,3 @@ function SponsorLink({ sponsor }: { sponsor: Sponsor }) {
 
   return content;
 }
-
