@@ -688,7 +688,10 @@ body {
 @media (max-width: 768px) {
 
 .hero__logo img {
-  display: none;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  display: block;
 }
 
   .site-footer__primary {
@@ -804,6 +807,11 @@ body {
     display: none;
   }
 
+  .festival-poster
+  {
+    margin-top: 20px;
+  }
+
   .site-header__brand-image {
     width: 80px;
     height: auto;
@@ -819,12 +827,11 @@ body {
   }
 
    .btn--ticket {
-    width: 100%;
-    max-width: 100%;
+    display: none;
   }
 }
 
 .hero::before {
-  background: url('https://sonofestchilicookoff.com/wp-content/uploads/2022/07/l1220656-1.jpg') center / cover no-repeat;
+  background: url('https://sonofestchilicookoffcom.wordpress.com/wp-content/uploads/2022/07/l1220656-1.jpg') center / cover no-repeat;
   opacity: 0.25;
 }

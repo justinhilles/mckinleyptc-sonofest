@@ -64,7 +64,7 @@ export function getEventJsonLd({ path }: { path: string }) {
         }
       : undefined,
     url: canonical,
-    image: ['https://sonofestchilicookoff.com/wp-content/uploads/2022/07/l1220656-1.jpg'],
+    image: ['https://sonofestchilicookoffcom.wordpress.com/wp-content/uploads/2022/07/l1220656-1.jpg'],
     offers: {
       '@type': 'Offer',
       url: siteContent.ticketTailorUrl,
