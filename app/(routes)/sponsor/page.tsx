@@ -82,7 +82,7 @@ export default function SponsorPage() {
           expansive media coverage and community buzz.
         </p>
       </section>
-      <SponsorSpotlight items={spotlightSponsors} />
+      {/* <SponsorSpotlight items={spotlightSponsors} /> */}
       <SponsorStrip title="Past Sponsors & Partners" sponsors={siteContent.sponsors} category={["sponsor","partner"]} />
 
       <section className="content-block">

@@ -3,6 +3,9 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   // Align routing with Netlify redirects that enforce trailing slashes to avoid loops
   trailingSlash: true,
+  images: {
+    unoptimized: true,
+  },
   experimental: {
     // Enable CSS optimization/minification during production builds
     optimizeCss: true,
