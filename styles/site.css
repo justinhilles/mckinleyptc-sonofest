@@ -199,6 +199,124 @@ body {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
 }
 
+.instagram {
+  margin: 80px auto;
+  display: grid;
+  gap: 24px;
+}
+
+.instagram__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.instagram__title {
+  font-family: var(--font-display), 'Anton', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.instagram__profile {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background-color: var(--sono-green);
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.instagram__profile:hover,
+.instagram__profile:focus-visible {
+  background-color: var(--sono-maroon);
+}
+
+.instagram__profile-icon {
+  display: inline-flex;
+  font-size: 1.1rem;
+}
+
+.instagram__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.instagram__embed {
+  display: flex;
+  justify-content: center;
+}
+
+.instagram__embed .instagram-media {
+  width: min(540px, 100%);
+  margin: 0;
+}
+
+.instagram__item {
+  position: relative;
+  display: block;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.instagram__item:hover,
+.instagram__item:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15);
+}
+
+.instagram__media {
+  position: relative;
+  aspect-ratio: 1 / 1;
+}
+
+.instagram__media img {
+  object-fit: cover;
+}
+
+.instagram__item-overlay {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 640px) {
+  .instagram {
+    gap: 20px;
+    margin: 60px auto;
+  }
+
+  .instagram__header {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .instagram__profile {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
 .sponsor-logo a {
   display: flex;
   align-items: center;

@@ -13,6 +13,13 @@ export type Sponsor = {
   type?: 'community' | 'best-friend' | 'neighbor' | 'benefactor';
 };
 
+export type InstagramPost = {
+  id: string;
+  href: string;
+  image: string;
+  alt: string;
+};
+
 export type Vendor = {
   name: string;
   href?: string;

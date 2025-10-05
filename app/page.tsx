@@ -2,8 +2,9 @@ import Hero from '@/app/components/Hero';
 import Countdown from '@/app/components/Countdown';
 import FeatureTiles from '@/app/components/FeatureTiles';
 import SponsorStrip from '@/app/components/SponsorStrip';
+import InstagramFeed from '@/app/components/InstagramFeed';
 import { BeerIcon, KidsIcon, MusicIcon, PepperIcon } from '@/app/components/icons';
-import { siteContent } from '@/app/lib/content';
+import { instagramPosts, siteContent } from '@/app/lib/content';
 import { createPageMetadata, getEventJsonLd } from '@/app/lib/metadata';
 
 export const metadata = createPageMetadata({
@@ -59,6 +60,27 @@ export default function HomePage() {
     },
   ];
 
+  const instagramUrl = siteContent.social.instagram ?? null;
+  let instagramHandle: string | null = null;
+
+  if (instagramUrl) {
+    try {
+      const parsed = new URL(instagramUrl);
+      const segments = parsed.pathname.split('/').filter(Boolean);
+      instagramHandle = segments[0] ?? null;
+    } catch {
+      instagramHandle = instagramUrl
+        .replace(/^https?:\/\/(www\.)?instagram\.com\//, '')
+        .replace(/\?.*$/, '')
+        .replace(/#.*/, '')
+        .replace(/\/.*/, '') || null;
+    }
+
+    if (instagramHandle) {
+      instagramHandle = instagramHandle.replace(/^@/, '');
+    }
+  }
+
   const eventJsonLd = getEventJsonLd({ path: '/' });
 
   return (
@@ -79,6 +101,7 @@ export default function HomePage() {
         <p>100% of proceeds benefit the McKinley Elementary Foundation.</p>
       </section>
       <FeatureTiles items={featureItems} />
+      <InstagramFeed posts={instagramPosts} profileUrl={instagramUrl ?? undefined} handle={instagramHandle} />
       <SponsorStrip title="Sponsors & Partners" sponsors={siteContent.sponsors} />
       <script
         type="application/ld+json"
