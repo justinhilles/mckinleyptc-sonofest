@@ -91,7 +91,7 @@ export default function Header() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          {ticketsAvailable ? 'Buy Tasting Passes' : 'Tasting Passes Available Nov 7'}
+          {ticketsAvailable ? 'Buy Tasting Passes' : 'Buy Passes - Nov 7'}
         </a>
       </div>
     </header>
