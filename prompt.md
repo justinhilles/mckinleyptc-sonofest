@@ -8,7 +8,7 @@ You are a senior front-end engineer. Implement the SoNo Fest & Chili Cook-Off we
 
 ## Deliverables
 1) A runnable Next.js app with the following routes:
-   - `/` (Home), `/tickets/`, `/chili-entry/`, `/merch/`, `/faq/`, `/contact/`, `/map/`
+   - `/` (Home), `/tickets/`, `/chili/`, `/merch/`, `/faq/`, `/contact/`, `/map/`
 2) Reusable components (one directory):
    - Header, Hero (full + short), Countdown, FeatureTiles, SponsorStrip,
      PricingTable, PickupSchedule, FAQAccordion (a11y), MapBlock, Footer
@@ -27,7 +27,7 @@ You are a senior front-end engineer. Implement the SoNo Fest & Chili Cook-Off we
 ## Source material & behavior
 - Follow `integration-plan.md` for structure and copy.
 - Clone layout patterns from the prototype (header, hero, content sections, footer).
-- Home Hero CTAs: Buy Tickets → `site.ticketTailorUrl`; Enter Chili → `/chili-entry/`; Volunteer (placeholder to be wired later or link provided in config).
+- Home Hero CTAs: Buy Tickets → `site.ticketTailorUrl`; Enter Chili → `/chili/`; Volunteer (placeholder to be wired later or link provided in config).
 - Countdown reads from `site.eventDate`.
 - Tickets page uses PricingTable + PickupSchedule with data from `tickets.json`.
 - FAQ page uses accordion fed by `faq.json`.
@@ -39,7 +39,7 @@ You are a senior front-end engineer. Implement the SoNo Fest & Chili Cook-Off we
   - `layout.tsx` (global HTML, header/footer wrappers, metadata defaults)
   - `page.tsx` (Home)
   - `(routes)/tickets/page.tsx`
-  - `(routes)/chili-entry/page.tsx`
+  - `(routes)/chili/page.tsx`
   - `(routes)/merch/page.tsx`
   - `(routes)/faq/page.tsx`
   - `(routes)/contact/page.tsx`
@@ -117,7 +117,7 @@ You are a senior front-end engineer. Implement the SoNo Fest & Chili Cook-Off we
 ## Home content (seed now; can refine later)
 - H1: “SoNo Fest & Chili Cook-Off 2025”
 - Subhead: “Sunday, December 7, 2025 · 11 AM – 5 PM · 32nd & Thorn St, North Park, San Diego”
-- CTAs: Buy Tickets → `site.ticketTailorUrl`; Enter Chili → `/chili-entry/`; Volunteer → `site.links.volunteerSignup || "/contact/"`
+- CTAs: Buy Tickets → `site.ticketTailorUrl`; Enter Chili → `/chili/`; Volunteer → `site.links.volunteerSignup || "/contact/"`
 - Tiles: Chili Cook-Off (/tickets, later /chili), Live Music (/music placeholder), Kids Zone (#kids in FAQ), Booze Garden (/booze placeholder)
 - Impact strip: “100% of proceeds benefit McKinley Elementary Foundation.”
 

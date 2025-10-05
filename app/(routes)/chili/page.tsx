@@ -7,7 +7,7 @@ import Image from 'next/image';
 export const metadata = createPageMetadata({
   title: 'Chili Entry',
   description: 'Restaurants and chefs—submit your chili and join the SoNo Fest 2025 lineup.',
-  path: '/chili-entry/',
+  path: '/chili/',
 });
 
 const steps = [

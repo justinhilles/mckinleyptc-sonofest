@@ -8,7 +8,7 @@ import { siteContent } from '@/app/lib/content';
 const FOOTER_LINKS = [
   { href: '/tickets/', label: 'Tasting Passes' },
   { href: '/sponsor/', label: 'Sponsors' },
-  { href: '/chili-entry/', label: 'Chili' },
+  { href: '/chili/', label: 'Chili' },
   { href: '/music/', label: 'Music' },
   { href: '/booze/', label: 'Booze Garden' },
   { href: '/merch/', label: 'Merch' },

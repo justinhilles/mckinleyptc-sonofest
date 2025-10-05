@@ -46,7 +46,7 @@ Structured data lives in JSON files so content editors do not need to touch Type
 Updating these files automatically refreshes the relevant components.
 
 ## Key Features
-- Routes: `/`, `/tickets/` (Tasting Passes), `/chili-entry/`, `/music/`, `/booze/`, `/merch/`, `/information/`.
+- Routes: `/`, `/tickets/` (Tasting Passes), `/chili/`, `/music/`, `/booze/`, `/merch/`, `/information/`.
 - Reusable components for hero layouts, countdown, pricing, FAQs, map, and more under `app/components/`.
 - Accessible FAQ accordion (keyboard + ARIA), Netlify-ready contact form, and lazy-loaded imagery.
 - Event JSON-LD injected on Home and Tasting Passes pages for richer search results; Information combines FAQs, contact, and map content alongside Booze Garden and Music highlights.
@@ -58,8 +58,6 @@ Deploy to Netlify using the default Next.js build command:
 - **Build command:** `npm run build`
 - **Publish directory:** `.next`
 - Ensure the `_redirects` file under `public/` is included.
-
-Set environment variables (if any) in Netlify’s dashboard. No server-side secrets are required for this build.
 
 ## License
 Content and assets are provided for SoNo Fest & Chili Cook-Off 2025. Use with permission from the McKinley Elementary Foundation.

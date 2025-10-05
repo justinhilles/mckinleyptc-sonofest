@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
+const TICKET_ON_SALE_DATE = new Date('2025-11-07T00:00:00-08:00');
+
 const NAV_ITEMS = [
   { href: '/sponsor/', label: 'Sponsors' },
   { href: '/chili/', label: 'Chili' },
@@ -17,6 +19,7 @@ const NAV_ITEMS = [
 
 export default function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const [ticketsAvailable, setTicketsAvailable] = useState(false);
 
   useEffect(() => {
     const closeOnResize = () => {
@@ -27,6 +30,10 @@ export default function Header() {
 
     window.addEventListener('resize', closeOnResize);
     return () => window.removeEventListener('resize', closeOnResize);
+  }, []);
+
+  useEffect(() => {
+    setTicketsAvailable(new Date() >= TICKET_ON_SALE_DATE);
   }, []);
 
   const toggleNav = () => setIsNavOpen((prev) => !prev);
@@ -84,10 +91,9 @@ export default function Header() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Buy Tasting Passes
+          {ticketsAvailable ? 'Buy Tasting Passes' : 'Tasting Passes Available Nov 7'}
         </a>
       </div>
     </header>
   );
 }
-

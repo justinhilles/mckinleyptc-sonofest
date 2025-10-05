@@ -3,3 +3,7 @@
 /contact    /information/#contact 301
 /map        /information/#map 301
 /map-old    /information/#map 301
+/merchandise /merch/ 301
+/sono-fest-chili-cook-off/ /chili/ 301
+/wp-login.php / 404!
+/xmlrpc.php / 404!

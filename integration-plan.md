@@ -26,7 +26,7 @@ This document tells the build agent how to integrate the new Netlify prototype d
 
 - `/` → Home
 - `/tickets/` → Tickets
-- `/chili-entry/` → Chili Entry (restaurant signup)
+- `/chili/` → Chili Entry (restaurant signup)
 - `/merch/` → Merch
 - `/faq/` → FAQ
 - `/contact/` → Contact
@@ -77,7 +77,7 @@ Build these reusable components:
 - TicketTailor CTA button.  
 - FAQ subset: tastings per pass, veg/vegan availability, add-ons.
 
-### Chili Entry (`/chili-entry/`)
+### Chili Entry (`/chili/`)
 - Hero.  
 - Steps list: eligibility, rules, deadlines.  
 - CTA → Restaurant application form.
@@ -141,7 +141,7 @@ Build these reusable components:
 
 ## Build Tasks (for Codex Agent)
 
-1. **Set up routes** `/`, `/tickets/`, `/chili-entry/`, `/merch/`, `/faq/`, `/contact/`, `/map/`.  
+1. **Set up routes** `/`, `/tickets/`, `/chili/`, `/merch/`, `/faq/`, `/contact/`, `/map/`.  
 2. **Import prototype HTML/CSS** from Netlify design and keep class structure.  
 3. **Build reusable components**: Header, Hero, Countdown, FeatureTiles, SponsorStrip, PricingTable, PickupSchedule, FAQAccordion, MapBlock, Footer.  
 4. **Populate Tickets page** from JSON (pricing, pickup, TicketTailor).  
