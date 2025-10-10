@@ -22,30 +22,30 @@ const featuredArtists = [
 const stageSchedules = [
   {
     name: 'Main Stage (Bancroft)',
-    sponsor: 'Sponsored by Casbah and Grand Ole BBQ',
+    sponsor: 'Sponsored by Casbah and GOBBQ',
     slots: [
-      { time: '11:30 - 12:10', artist: 'Night Carrots' },
-      { time: '12:30 - 1:10', artist: 'Le Chateau' },
+      { time: '11:30 - 12:10', artist: 'The Velvet Roses' },
+      { time: '12:30 - 1:10', artist: 'Vurv' },
       { time: '1:15', artist: 'Chili Winner - Judges' },
-      { time: '1:30 - 2:15', artist: 'Scary Pierre' },
+      { time: '1:30 - 2:15', artist: 'Night Carrots' },
       { time: '2:30 - 3:10', artist: 'The Creepy Creeps' },
-      { time: '3:25', artist: "Chili Winner - People's Choice" },
-      { time: '3:30 - 4:10', artist: 'The Mothmen' },
-      { time: '4:20 - 5:00', artist: 'Tamar Berk' },
+      { time: '3:20', artist: "Chili Winner - People's Choice" },
+      { time: '3:25 - 4:05', artist: 'TK and the Deadlist' },
+      { time: '4:20 - 5:00', artist: 'Rey Wolf' },
     ],
   },
   {
     name: 'Beer Garden Stage',
     sponsor: 'Sponsored by Park & Rec',
     slots: [
-      { time: '11:30 - 12:10', artist: 'Whiskey & Burlap' },
-      { time: '12:30 - 1:10', artist: 'Chloe Lou & The Liddells' },
-      { time: '1:15', artist: 'Chili Winner - Judges' },
-      { time: '1:30 - 2:15', artist: 'Julia Sage & The Bad Hombres' },
-      { time: '2:30 - 3:10', artist: 'Ypsitucky' },
-      { time: '3:25', artist: "Chili Winner - People's Choice" },
-      { time: '3:30 - 4:10', artist: 'Shawn Rohlf & The Buskers' },
-      { time: '4:20 - 5:00', artist: 'Michael Draper' },
+      { time: '11:30 - 12:10', artist: 'TBD' },
+      { time: '12:30 - 1:10', artist: 'TBD' },
+      { time: '1:15', artist: 'TBD' },
+      { time: '1:30 - 2:15', artist: 'TBD' },
+      { time: '2:30 - 3:10', artist: 'TBD' },
+      { time: '3:25', artist: 'TBD' },
+      { time: '3:30 - 4:10', artist: 'TBD' },
+      { time: '4:20 - 5:00', artist: 'TBD' },
     ],
   },
 ];
@@ -120,8 +120,8 @@ export default function MusicPage() {
             <p>{stage.sponsor}</p>
             <ul className="content-block__list">
               {stage.slots.map((slot) => (
-                <li key={`${stage.name}-${slot.time}-TBD`}>
-                  <strong>{slot.time}:</strong> TBD
+                <li key={`${stage.name}-${slot.time}-${slot.artist}`}>
+                  <strong>{slot.time}:</strong> {slot.artist}
                 </li>
               ))}
             </ul>
