@@ -1,579 +1,788 @@
-  {
-    "year": 2025,
-    "eventDate": "2025-12-07T11:00:00-08:00",
-    "location": "32nd & Thorn St, North Park, San Diego",
-    "ticketTailorUrl": "https://buytickets.at/sonofestchilicookoff/1876396",
-    "contactEmail": "info@sonofestchilicookoff.com",
-    "organizer": {
-      "name": "McKinley Elementary Foundation",
-      "url": "https://mckinleyfriends.org"
+{
+  "bands": [
+    {
+      "name": "The Good Hurt",
+      "href": "https://thegoodhurt.com",
+      "logo": "/images/logos/thegoodhurt.png",
+      "active": true,
+      "instagram": "thegoodhurt",
+      "category": [
+        "music"
+      ]
     },
-    "social": {
-      "facebook": "https://www.facebook.com/SoNoFestandChiliCookOff",
-      "instagram": "https://www.instagram.com/sonofest"
+    {
+      "name": "The Whiskey Gentry",
+      "href": "https://thewhiskeygentry.com",
+      "logo": "/images/logos/whiskeygentry.png",
+      "active": true,
+      "instagram": "thewhiskeygentry",
+      "category": [
+        "music"
+      ]
     },
-    "links": {
-      "chiliEntryForm": "https://docs.google.com/forms/d/e/1FAIpQLSexsA3ojwHwaSEuTOLhhcHMrpSWpxxYvZ02wdMFMRJ_wtDIyg/viewform",
-      "volunteerSignup": "",
-      "merchShop": "https://mckinleyptc.org/product-category/sono-fest/",
-      "vendorApplicationForm": "https://docs.google.com/forms/d/e/1FAIpQLSeagUIR553SO014qSmDx1d9BwRMpG5TMw9GRtly7rTG-RVqBw/viewform",
-      "foodTruckApplicationForm": "https://docs.google.com/forms/d/e/1FAIpQLSc8QPPX7t0tiOTi7SozP7xYK0R-_lbEmlPJBhIvSbahG0lGnw/viewform"
+    {
+      "name": "The Mighty Pines",
+      "href": "https://themightypines.com",
+      "logo": "/images/logos/mightypines.png",
+      "active": true,
+      "instagram": "themightypines",
+      "category": [
+        "music"
+      ]
+    }
+  ],
+  "contactEmail": "info@sonofestchilicookoff.com",
+  "eventDate": "2025-12-07T11:00:00-08:00",
+  "links": {
+    "chiliEntryForm": "https://docs.google.com/forms/d/e/1FAIpQLSexsA3ojwHwaSEuTOLhhcHMrpSWpxxYvZ02wdMFMRJ_wtDIyg/viewform",
+    "volunteerSignup": "",
+    "merchShop": "https://mckinleyptc.org/product-category/sono-fest/",
+    "vendorApplicationForm": "https://docs.google.com/forms/d/e/1FAIpQLSeagUIR553SO014qSmDx1d9BwRMpG5TMw9GRtly7rTG-RVqBw/viewform",
+    "foodTruckApplicationForm": "https://docs.google.com/forms/d/e/1FAIpQLSc8QPPX7t0tiOTi7SozP7xYK0R-_lbEmlPJBhIvSbahG0lGnw/viewform"
+  },
+  "location": "32nd \u0026 Thorn St, North Park, San Diego",
+  "organizer": {
+    "name": "McKinley Elementary Foundation",
+    "url": "https://mckinleyfriends.org"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/SoNoFestandChiliCookOff",
+    "instagram": "https://www.instagram.com/sonofest"
+  },
+  "sponsors": [
+    {
+      "name": "North Park Main Street",
+      "href": "https://northparkmainstreet.com",
+      "instagram": "",
+      "logo": "/images/logos/northparkmainstreet.png",
+      "active": false,
+      "category": [
+        "sponsor"
+      ],
+      "type": ""
     },
-    "sponsors": [
-      {
-        "name": "North Park Main Street",
-        "href": "https://northparkmainstreet.com",
-        "logo": "/images/logos/northparkmainstreet.png",
-        "active": false,
-        "category": ["sponsor"]
-      },
-      {
-        "name": "San Diego Ceramic Connection",
-        "href": "https://sdceramic.com",
-        "active": true,
-        "category": ["partner"]
-      },
-      {
-        "name": "Casbah",
-        "href": "https://www.instagram.com/casbahsandiego/?hl=en",
-        "logo": "/images/logos/casbah.png",
-        "active": true,
-        "category": ["sponsor","music"]
-      },
-      {
-        "name": "Pretzels & Pints",
-        "href": "https://www.instagram.com/pretzelsandpintsnp/?hl=en",
-        "active": false,
-        "logo": "/images/logos/pretzelspints.jpg",
-        "category": ["sponsor"]
-      },
-      {
-        "name": "Milberg Orthodontics",
-        "active": true,
-        "logo": "/images/logos/milberg.jpg",
-        "category": ["sponsor"]
-      },
-      {
-        "name": "Fernside",
-        "active": false,
-        "logo": "/images/logos/fernside.png",
-        "category": ["sponsor"]
-      },
-      {
-        "name": "Grand Ole BBQ",
-        "active": false,
-        "logo": "/images/logos/grandoldbbq.png",
-        "category": ["sponsor"]
-      },
-      {
-        "name": "Gemstone Gymnastics",
-        "active": false,
-        "logo": "/images/logos/gemstone.jpg",
-        "category": ["sponsor"]
-      },
-      {
-        "name": "Ruland Design Group",
-        "href": "https://rulanddesigngroup.com",
-        "active": false,
-        "logo": "/images/logos/rdg.png",
-        "category": ["sponsor"]
-      },
-      {
-        "name": "Camille Camacho Photography",
-        "active": false,
-        "logo": "/images/logos/camille.png",
-        "category": ["sponsor"]
-      },
-      {
-        "name": "Party Pop",
-        "active": false,
-        "logo": "/images/logos/partypop.png",
-        "category": ["sponsor"]
-      },
-      {
-        "name": "The UPS Store",
-        "active": false,
-        "logo": "/images/logos/ups.png",
-        "category": ["sponsor"]
-      },
-      {
-        "name": "Digital Joy",
-        "active": false,
-        "logo": "/images/logos/digitaljoy.png",
-        "category": ["sponsor"]
-      },
-      {
-        "name": "Sunrun",
-        "active": false,
-        "logo": "/images/logos/sunrun.jpg",
-        "category": ["sponsor"]
-      },
-      {
-        "name": "Fairplay North Park",
-        "active": false,
-        "logo": "/images/logos/fairplay.png",
-        "category": ["sponsor"]
-      },
-      {
-        "name": "Baja Bound",
-        "active": false,
-        "logo": "/images/logos/baja.png",
-        "category": ["sponsor"]
-      },
-      {
-        "name": "Kaleo Marketing",
-        "active": false,
-        "logo": "/images/logos/kaleo.png",
-        "category": ["sponsor"]
-      },
-      {
-        "name": "Brooke Russo Realtor",
-        "active": false,
-        "logo": "/images/logos/brooke.png",
-        "category": ["sponsor"]
-      },
-      {
-        "name": "Snell & Wilmer",
-        "active": true,
-        "logo": "/images/logos/snellwilmer.jpg",
-        "category": ["sponsor"],
-        "type": "community",
-        "instagram": "swlawnews"
-      },
-      {
-        "name": "Park & Rec",
-        "active": false,
-        "logo": "/images/logos/parkrec.png",
-        "category": ["sponsor"]
-      },
-      {
-        "name": "Prospera",
-        "active": false,
-        "logo": "/images/logos/prospera.jpg",
-        "category": ["sponsor"]
-      },
-      {
-        "name": "AKA Screen Printing",
-        "active": true,
-        "logo": "/images/logos/aka.png",
-        "category": ["merch","sponsor"]
-      },
-      {
-        "name": "Aloha Pacific Builders",
-        "active": false,
-        "logo": "/images/logos/aloha.png",
-        "category": ["sponsor"]
-      },
-      {
-        "name": "Original 40 Brewing",
-        "href": "https://original40brewing.com/",
-        "instagram": "original40beer",
-        "logo": "/images/logos/original40.png",
-        "active": true,
-        "category": ["chili"]
-      },
-      {
-        "name": "Finca",
-        "href": "https://finca.wine/",
-        "instagram": "fincanorthpark",
-        "logo": "/images/logos/finca.png",
-        "active": true,
-        "category": ["chili"]
-      },
-      {
-        "name": "North Park Creamery",
-        "href": "https://www.northparkcreamery.com/",
-        "instagram": "northparkcreamery",
-        "logo": "/images/logos/northparkcreamery.png",
-        "active": true,
-        "category": ["chili"]
-      },
-      {
-        "name": "Tacotarian",
-        "href": "https://eattacotarian.com/",
-        "instagram": "tacotarianlv",
-        "logo": "/images/logos/tacotarian.svg",
-        "active": true,
-        "category": ["chili"]
-      },
-      {
-        "name": "UrbanLife Cafe",
-        "href": "https://www.instagram.com/urbanlifecafesd/",
-        "instagram": "urbanlifecafesd",
-        "logo": "/images/logos/urbanlifecafe.jpg",
-        "active": true,
-        "category": ["chili"]
-      },
-      {
-        "name": "Super Cocina",
-        "href": "https://www.supercocinasd.com/",
-        "instagram": "supercocinasd",
-        "logo": "/images/logos/supercocina.png",
-        "active": true,
-        "category": ["chili"]
-      },
-      {
-        "name": "Ale Tales Taproom",
-        "href": "https://aletalestaproom.com/",
-        "instagram": "aletalestaproom",
-        "logo": "/images/logos/aletales.png",
-        "active": true,
-        "category": ["chili"]
-      },
-      {
-        "name": "Biersal",
-        "href": "https://www.biersalkitchen.com/",
-        "instagram": "biersal_kitchen",
-        "logo": "/images/logos/biersal.jpg",
-        "active": true,
-        "category": ["chili"]
-      },
-      {
-        "name": "Kairoa Brewing Co",
-        "href": "https://www.kairoa.com/",
-        "instagram": "kairoabrewingcompany",
-        "logo": "/images/logos/kairoa.png",
-        "active": true,
-        "category": ["chili"]
-      },
-      {
-        "name": "The Wise Ox",
-        "href": "https://www.thewiseoxsd.com/",
-        "instagram": "thewiseoxsd",
-        "logo": "/images/logos/wiseox.png",
-        "active": true,
-        "category": ["chili"]
-      },
-      {
-        "name": "Cori",
-        "href": "https://www.coripasta.com/",
-        "instagram": "cori_pasta",
-        "logo": "/images/logos/cori.png",
-        "active": true,
-        "category": ["chili"]
-      },
-      {
-        "name": "Mabel's Gone Fishing",
-        "href": "https://www.mabelsgonefishing.com/",
-        "instagram": "mabelsgonefishing",
-        "logo": "/images/logos/mabels.png",
-        "active": true,
-        "category": ["chili"]
-      },
-      {
-        "name": "VanBerg Construction",
-        "active": true,
-        "href": "https://vanbergconstruction.com",
-        "logo": "/images/logos/vanberg.jpg",
-        "category": ["sponsor"],
-        "type": "community"
-      },
-      {
-        "name": "Winning Ways",
-        "href": "https://www.winningwaysusa.com",
-        "logo": "/images/logos/winningways.png",
-        "active": true,
-        "type": "neighbor",
-        "category": ["sponsor"]
-      }
-    ],
-    "vendors": [
-      {
-        "name": "San Diego Crystals & Jewelry",
-        "contact": "Hussain Hamidi",
-        "email": "sdcrystalsandjewelry@gmail.com",
-        "phone": "619-626-9990",
-        "description": "Middle Eastern jewelry including necklaces, bracelets, rings, earrings, headpieces, anklets, belly chains, finger-to-wrist chains, and more.",
-        "href": "https://sdjnc.com/",
-        "instagram": "sdcrystlasnandjewelry",
-        "active": true,
-        "category": ["vendor"]
-      },
-      {
-        "name": "MONA Botanical Jewelry",
-        "contact": "Julyanna Roza",
-        "email": "julyanna.pinheiro@gmail.com",
-        "phone": "619-530-5147",
-        "description": "Real flower jewelry.",
-        "href": "https://monabotanicaljewelry.net",
-        "instagram": "mona.botanicaljewelry",
-        "active": true,
-        "category": ["vendor"]
-      },
-      {
-        "name": "The Art of MVP",
-        "contact": "Michele Pruyn",
-        "email": "theartofmvp@gmail.com",
-        "phone": "619-850-7449",
-        "description": "Hand painted functional resin art and on-site laser engraving.",
-        "href": "https://theartofmvp.com",
-        "instagram": "theartofmvp",
-        "facebook": "theartofmvp",
-        "active": true,
-        "category": ["vendor"]
-      },
-      {
-        "name": "mountain creations",
-        "contact": "Bill Sexton",
-        "email": "bsexton071@gmail.com",
-        "phone": "714-269-7878",
-        "description": "Wood cutting boards, earrings, pendants, and Christmas ornaments.",
-        "active": true,
-        "category": ["vendor"]
-      },
-      {
-        "name": "Olive wood crafts",
-        "contact": "Mohamed Belhajabdallah",
-        "email": "olivewoodware@gmail.com",
-        "phone": "551-998-4082",
-        "description": "Handmade olive wood kitchenware.",
-        "href": "https://www.olivewoodware.com",
-        "instagram": "olivewoodware",
-        "active": true,
-        "category": ["vendor"]
-      },
-      {
-        "name": "Jess Makes Macrame",
-        "contact": "Jessica Pickering",
-        "email": "jessmakesmacrame@gmail.com",
-        "phone": "516-287-4241",
-        "description": "Crochet plushies.",
-        "href": "https://www.jessmakesmacrame.com",
-        "instagram": "jessmakesmacrame",
-        "active": true,
-        "category": ["vendor"]
-      },
-      {
-        "name": "Action Bevel",
-        "contact": "Randolph Raum",
-        "email": "randy@actionbevel.com",
-        "phone": "619-281-2671",
-        "description": "Ceramics.",
-        "href": "https://actionbevel.com",
-        "active": true,
-        "category": ["vendor"]
-      },
-      {
-        "name": "Shooska Scented Car Jewelry",
-        "contact": "Stephanie Wells",
-        "email": "stephanie068@gmail.com",
-        "phone": "858-254-0007",
-        "description": "Decor for cars, home, and personal accessories.",
-        "href": "https://shooska.com",
-        "instagram": "shoosksvibe",
-        "active": true,
-        "category": ["vendor"]
-      },
-      {
-        "name": "Down To Ferment",
-        "contact": "Ryan Minor",
-        "email": "ryan@downtoferment.com",
-        "phone": "978-400-1974",
-        "description": "Locally-made fermented hot sauces.",
-        "href": "https://www.downtoferment.com",
-        "instagram": "down2ferment",
-        "active": true,
-        "category": ["vendor"]
-      },
-      {
-        "name": "Handmadebymahta",
-        "contact": "Mahta Taba",
-        "email": "mahta.taba@gmail.com",
-        "phone": "619-547-6879",
-        "description": "Handmade, one-of-a-kind accessories primarily crafted from polymer clay.",
-        "instagram": "handmadebymahta",
-        "active": true,
-        "category": ["vendor"]
-      },
-      {
-        "name": "Spice is Life",
-        "contact": "Sean Landholt",
-        "email": "Sean@spiceislife.com",
-        "phone": "858-232-6582",
-        "description": "Small-batch \"Choils\" chili oils.",
-        "href": "https://spiceislife.com",
-        "notes": "Social: Instagram, TikTok, Facebook.",
-        "active": true,
-        "category": ["vendor"]
-      },
-      {
-        "name": "Atomic Space Snacks",
-        "contact": "Jessy Dokken",
-        "email": "dokkenconsulting@gmail.com",
-        "phone": "310-613-0901",
-        "description": "Freeze-dried candy.",
-        "href": "https://atomicspacesnacks.myshopify.com",
-        "instagram": "atomicspacesnacks",
-        "active": true,
-        "category": ["vendor"]
-      },
-      {
-        "name": "Rock Your World",
-        "contact": "Kimberly Blunk",
-        "email": "Rockyourworld1@yahoo.com",
-        "phone": "619-357-2140",
-        "description": "Crystals, handcrafted gemstone jewelry, beaded suncatchers, Anza knives, macrame decor, and gifts.",
-        "href": "https://www.etsy.com/shop/rockyourworld1",
-        "facebook": "rockyourworld123",
-        "active": true,
-        "category": ["vendor"]
-      },
-      {
-        "name": "Golden tribe boutique",
-        "contact": "Taylor Medina",
-        "email": "Shopgoldentribe@gmail.com",
-        "phone": "909-618-5233",
-        "description": "Women's clothing.",
-        "href": "https://www.shopgoldentribe.com",
-        "instagram": "shopgoldentribe",
-        "active": true,
-        "category": ["vendor"]
-      },
-      {
-        "name": "BARKS & CRAFTS",
-        "contact": "Jessica Nguyen",
-        "email": "Jess@barksandcrafts.co",
-        "description": "Handcrafted snap-on pet bandanas in five sizes with matching accessories and seasonal designs.",
-        "href": "https://www.barksandcrafts.co",
-        "instagram": "barksandcraftsco",
-        "active": true,
-        "category": ["vendor"]
-      },
-      {
-        "name": "(Coloring Book Factory DBA) San Diego Caricature",
-        "contact": "Genevieve Zzyzyx",
-        "email": "ColoringBookFactory@gmail.com",
-        "phone": "619-490-5471",
-        "description": "Caricature entertainment and gifts.",
-        "href": "https://www.sandiegocaricature.com",
-        "instagram": "coloringbookfactory",
-        "active": true,
-        "category": ["vendor"]
-      },
-      {
-        "name": "Ninfasland",
-        "contact": "Maria Gonzalez",
-        "email": "ninfasland@gmail.com",
-        "phone": "619-941-8303",
-        "description": "Low-sugar fruit spreads, jams, and jellies.",
-        "instagram": "ninfasland",
-        "facebook": "Ninfasland Spreads",
-        "active": true,
-        "category": ["vendor"]
-      },
-      {
-        "name": "Iris Studio Jewelry",
-        "contact": "Kenyotta Boone",
-        "email": "Irisstudiojewelry@gmail.com",
-        "phone": "702-857-9734",
-        "description": "Handmade statement jewelry plus curated waterproof stainless steel pieces.",
-        "href": "https://www.irisstudiojewelry.com",
-        "instagram": "irisstudiojewelry",
-        "active": true,
-        "category": ["vendor"]
-      },
-      {
-        "name": "Retrend Jewelry",
-        "contact": "Katty Markey",
-        "email": "escobarmejiak@gmail.com",
-        "phone": "415-350-9391",
-        "description": "Handmade jewelry from Colombia, including gold-plated designs.",
-        "href": "https://retrendjewelry.com/",
-        "instagram": "rt_retrend",
-        "facebook": "rtretrend",
-        "active": true,
-        "category": ["vendor"]
-      },
-      {
-        "name": "Candle Cocoa & Co LLC",
-        "contact": "Sakshi Jain",
-        "email": "Candlecocoaco@gmail.com",
-        "phone": "619-943-7972",
-        "description": "Handmade candles, gel designs, and complementary self-care products.",
-        "href": "https://candlecocoa.com",
-        "instagram": "candlecocoa",
-        "active": true,
-        "category": ["vendor"]
-      },
-      {
-        "name": "Villas Chile",
-        "contact": "Nicholas Cabrera",
-        "email": "Villaschile@artofmexico.co",
-        "phone": "951-335-1635",
-        "description": "Gourmet chili oil and spicy jams.",
-        "href": "https://artofmexico.co",
-        "instagram": "villasgourmetchiles",
-        "active": true,
-        "category": ["vendor"]
-      },
-      {
-        "name": "O'Sweet Edith's",
-        "contact": "Tiffany Byars",
-        "email": "tiffanyrby@gmail.com",
-        "phone": "619-541-5090",
-        "description": "Packaged desserts like peach cobbler, rum bundt cake, coconut pineapple bundt, and more.",
-        "href": "https://osweetediths.com",
-        "instagram": "osweetediths",
-        "active": true,
-        "category": ["vendor"]
-      },
-      {
-        "name": "Botanic Beetle",
-        "contact": "Libby Daniele",
-        "email": "libby@botanicbeetle.com",
-        "phone": "619-738-2924",
-        "description": "Stained glass art.",
-        "href": "https://botanicbeetle.com",
-        "instagram": "botanicbeetle",
-        "active": true,
-        "category": ["vendor"]
-      },
-      {
-        "name": "Wynne by Design",
-        "contact": "Wynne Levy",
-        "email": "wynnelevy93@gmail.com",
-        "phone": "215-275-9159",
-        "description": "Handmade jewelry and resin products including coasters.",
-        "instagram": "wynnebydesign",
-        "active": true,
-        "category": ["vendor"]
-      },
-      {
-        "name": "Celestial Spaces LLC",
-        "contact": "Bryanna Ellul",
-        "email": "Celestialspacesbybry@gmail.com",
-        "phone": "586-292-5906",
-        "description": "Tarot readings.",
-        "href": "https://www.celestialspacesbybry.com",
-        "instagram": "celestialspacesbybry",
-        "active": true,
-        "category": ["vendor"]
-      }
-    ],
-    "bands": [
-      {
-        "name": "The Good Hurt",
-        "href": "https://thegoodhurt.com",
-        "logo": "/images/logos/thegoodhurt.png",
-        "active": true,
-        "instagram": "thegoodhurt",
-        "category": ["music"]
-      },
-      {
-        "name": "The Whiskey Gentry",
-        "href": "https://thewhiskeygentry.com",
-        "logo": "/images/logos/whiskeygentry.png",
-        "active": true,
-        "instagram": "thewhiskeygentry",
-        "category": ["music"]
-      },
-      {
-        "name": "The Mighty Pines",
-        "href": "https://themightypines.com",
-        "logo": "/images/logos/mightypines.png",
-        "active": true,
-        "instagram": "themightypines",
-        "category": ["music"]
-      }
-    ]
-  }
+    {
+      "name": "San Diego Ceramic Connection",
+      "href": "https://sdceramic.com",
+      "instagram": "",
+      "logo": "/images/logos/san-diego-ceramic-connection.png",
+      "active": true,
+      "category": [
+        "partner"
+      ],
+      "type": ""
+    },
+    {
+      "name": "Casbah",
+      "href": "https://www.instagram.com/casbahsandiego/?hl=en",
+      "instagram": "",
+      "logo": "/images/logos/casbah.png",
+      "active": true,
+      "category": [
+        "sponsor",
+        "music"
+      ],
+      "type": ""
+    },
+    {
+      "name": "Pretzels \u0026 Pints",
+      "href": "https://www.instagram.com/pretzelsandpintsnp/?hl=en",
+      "instagram": "",
+      "logo": "/images/logos/pretzelspints.jpg",
+      "active": false,
+      "category": [
+        "sponsor"
+      ],
+      "type": ""
+    },
+    {
+      "name": "Milberg Orthodontics",
+      "href": "",
+      "instagram": "",
+      "logo": "/images/logos/milberg.jpg",
+      "active": true,
+      "category": [
+        "sponsor"
+      ],
+      "type": ""
+    },
+    {
+      "name": "Fernside",
+      "href": "",
+      "instagram": "",
+      "logo": "/images/logos/fernside.png",
+      "active": false,
+      "category": [
+        "sponsor"
+      ],
+      "type": ""
+    },
+    {
+      "name": "Grand Ole BBQ",
+      "href": "",
+      "instagram": "",
+      "logo": "/images/logos/grandoldbbq.png",
+      "active": false,
+      "category": [
+        "sponsor"
+      ],
+      "type": ""
+    },
+    {
+      "name": "Gemstone Gymnastics",
+      "href": "",
+      "instagram": "",
+      "logo": "/images/logos/gemstone.jpg",
+      "active": false,
+      "category": [
+        "sponsor"
+      ],
+      "type": ""
+    },
+    {
+      "name": "Ruland Design Group",
+      "href": "https://rulanddesigngroup.com",
+      "instagram": "",
+      "logo": "/images/logos/rdg.png",
+      "active": false,
+      "category": [
+        "sponsor"
+      ],
+      "type": ""
+    },
+    {
+      "name": "Camille Camacho Photography",
+      "href": "",
+      "instagram": "",
+      "logo": "/images/logos/camille.png",
+      "active": false,
+      "category": [
+        "sponsor"
+      ],
+      "type": ""
+    },
+    {
+      "name": "Party Pop",
+      "href": "",
+      "instagram": "",
+      "logo": "/images/logos/partypop.png",
+      "active": false,
+      "category": [
+        "sponsor"
+      ],
+      "type": ""
+    },
+    {
+      "name": "The UPS Store",
+      "href": "",
+      "instagram": "",
+      "logo": "/images/logos/ups.png",
+      "active": false,
+      "category": [
+        "sponsor"
+      ],
+      "type": ""
+    },
+    {
+      "name": "Digital Joy",
+      "href": "",
+      "instagram": "",
+      "logo": "/images/logos/digitaljoy.png",
+      "active": false,
+      "category": [
+        "sponsor"
+      ],
+      "type": ""
+    },
+    {
+      "name": "Sunrun",
+      "href": "",
+      "instagram": "",
+      "logo": "/images/logos/sunrun.jpg",
+      "active": false,
+      "category": [
+        "sponsor"
+      ],
+      "type": ""
+    },
+    {
+      "name": "Fairplay North Park",
+      "href": "",
+      "instagram": "",
+      "logo": "/images/logos/fairplay.png",
+      "active": false,
+      "category": [
+        "sponsor"
+      ],
+      "type": ""
+    },
+    {
+      "name": "Baja Bound",
+      "href": "",
+      "instagram": "",
+      "logo": "/images/logos/baja.png",
+      "active": false,
+      "category": [
+        "sponsor"
+      ],
+      "type": ""
+    },
+    {
+      "name": "Kaleo Marketing",
+      "href": "",
+      "instagram": "",
+      "logo": "/images/logos/kaleo.png",
+      "active": false,
+      "category": [
+        "sponsor"
+      ],
+      "type": ""
+    },
+    {
+      "name": "Brooke Russo Realtor",
+      "href": "",
+      "instagram": "",
+      "logo": "/images/logos/brooke.png",
+      "active": false,
+      "category": [
+        "sponsor"
+      ],
+      "type": ""
+    },
+    {
+      "name": "Snell \u0026 Wilmer",
+      "href": "",
+      "instagram": "swlawnews",
+      "logo": "/images/logos/snellwilmer.jpg",
+      "active": true,
+      "category": [
+        "sponsor"
+      ],
+      "type": "community"
+    },
+    {
+      "name": "Park \u0026 Rec",
+      "href": "",
+      "instagram": "",
+      "logo": "/images/logos/parkrec.png",
+      "active": false,
+      "category": [
+        "sponsor"
+      ],
+      "type": ""
+    },
+    {
+      "name": "Prospera",
+      "href": "",
+      "instagram": "",
+      "logo": "/images/logos/prospera.jpg",
+      "active": false,
+      "category": [
+        "sponsor"
+      ],
+      "type": ""
+    },
+    {
+      "name": "AKA Screen Printing",
+      "href": "",
+      "instagram": "",
+      "logo": "/images/logos/aka.png",
+      "active": true,
+      "category": [
+        "merch",
+        "sponsor"
+      ],
+      "type": ""
+    },
+    {
+      "name": "Aloha Pacific Builders",
+      "href": "",
+      "instagram": "",
+      "logo": "/images/logos/aloha.png",
+      "active": false,
+      "category": [
+        "sponsor"
+      ],
+      "type": ""
+    },
+    {
+      "name": "Original 40 Brewing",
+      "href": "https://original40brewing.com/",
+      "instagram": "original40beer",
+      "logo": "/images/logos/original40.png",
+      "active": true,
+      "category": [
+        "chili"
+      ],
+      "type": ""
+    },
+    {
+      "name": "Finca",
+      "href": "https://finca.wine/",
+      "instagram": "fincanorthpark",
+      "logo": "/images/logos/finca.png",
+      "active": true,
+      "category": [
+        "chili"
+      ],
+      "type": ""
+    },
+    {
+      "name": "North Park Creamery",
+      "href": "https://www.northparkcreamery.com/",
+      "instagram": "northparkcreamery",
+      "logo": "/images/logos/northparkcreamery.png",
+      "active": true,
+      "category": [
+        "chili"
+      ],
+      "type": ""
+    },
+    {
+      "name": "Tacotarian",
+      "href": "https://eattacotarian.com/",
+      "instagram": "tacotarianlv",
+      "logo": "/images/logos/tacotarian.svg",
+      "active": true,
+      "category": [
+        "chili"
+      ],
+      "type": ""
+    },
+    {
+      "name": "UrbanLife Cafe",
+      "href": "https://www.instagram.com/urbanlifecafesd/",
+      "instagram": "urbanlifecafesd",
+      "logo": "/images/logos/urbanlifecafe.jpg",
+      "active": true,
+      "category": [
+        "chili"
+      ],
+      "type": ""
+    },
+    {
+      "name": "Super Cocina",
+      "href": "https://www.supercocinasd.com/",
+      "instagram": "supercocinasd",
+      "logo": "/images/logos/supercocina.png",
+      "active": true,
+      "category": [
+        "chili"
+      ],
+      "type": ""
+    },
+    {
+      "name": "Ale Tales Taproom",
+      "href": "https://aletalestaproom.com/",
+      "instagram": "aletalestaproom",
+      "logo": "/images/logos/aletales.png",
+      "active": true,
+      "category": [
+        "chili"
+      ],
+      "type": ""
+    },
+    {
+      "name": "Biersal",
+      "href": "https://www.biersalkitchen.com/",
+      "instagram": "biersal_kitchen",
+      "logo": "/images/logos/biersal.jpg",
+      "active": true,
+      "category": [
+        "chili"
+      ],
+      "type": ""
+    },
+    {
+      "name": "Kairoa Brewing Co",
+      "href": "https://www.kairoa.com/",
+      "instagram": "kairoabrewingcompany",
+      "logo": "/images/logos/kairoa.png",
+      "active": true,
+      "category": [
+        "chili"
+      ],
+      "type": ""
+    },
+    {
+      "name": "The Wise Ox",
+      "href": "https://www.thewiseoxsd.com/",
+      "instagram": "thewiseoxsd",
+      "logo": "/images/logos/wiseox.png",
+      "active": true,
+      "category": [
+        "chili"
+      ],
+      "type": ""
+    },
+    {
+      "name": "Cori",
+      "href": "https://www.coripasta.com/",
+      "instagram": "cori_pasta",
+      "logo": "/images/logos/cori.png",
+      "active": true,
+      "category": [
+        "chili"
+      ],
+      "type": ""
+    },
+    {
+      "name": "Mabel's Gone Fishing",
+      "href": "https://www.mabelsgonefishing.com/",
+      "instagram": "mabelsgonefishing",
+      "logo": "/images/logos/mabels.png",
+      "active": true,
+      "category": [
+        "chili"
+      ],
+      "type": ""
+    },
+    {
+      "name": "VanBerg Construction",
+      "href": "https://vanbergconstruction.com",
+      "instagram": "",
+      "logo": "/images/logos/vanberg.jpg",
+      "active": true,
+      "category": [
+        "sponsor"
+      ],
+      "type": "community"
+    },
+    {
+      "name": "Winning Ways",
+      "href": "https://www.winningwaysusa.com",
+      "instagram": "",
+      "logo": "/images/logos/winningways.png",
+      "active": true,
+      "category": [
+        "sponsor"
+      ],
+      "type": "neighbor"
+    }
+  ],
+  "ticketTailorUrl": "https://buytickets.at/sonofestchilicookoff/1876396",
+  "vendors": [
+    {
+      "name": "San Diego Crystals \u0026 Jewelry",
+      "contact": "Hussain Hamidi",
+      "email": "sdcrystalsandjewelry@gmail.com",
+      "phone": "619-626-9990",
+      "description": "Middle Eastern jewelry including necklaces, bracelets, rings, earrings, headpieces, anklets, belly chains, finger-to-wrist chains, and more.",
+      "href": "https://sdjnc.com/",
+      "instagram": "sdcrystlasnandjewelry",
+      "active": true,
+      "category": [
+        "vendor"
+      ]
+    },
+    {
+      "name": "MONA Botanical Jewelry",
+      "contact": "Julyanna Roza",
+      "email": "julyanna.pinheiro@gmail.com",
+      "phone": "619-530-5147",
+      "description": "Real flower jewelry.",
+      "href": "https://monabotanicaljewelry.net",
+      "instagram": "mona.botanicaljewelry",
+      "active": true,
+      "category": [
+        "vendor"
+      ]
+    },
+    {
+      "name": "The Art of MVP",
+      "contact": "Michele Pruyn",
+      "email": "theartofmvp@gmail.com",
+      "phone": "619-850-7449",
+      "description": "Hand painted functional resin art and on-site laser engraving.",
+      "href": "https://theartofmvp.com",
+      "instagram": "theartofmvp",
+      "facebook": "theartofmvp",
+      "active": true,
+      "category": [
+        "vendor"
+      ]
+    },
+    {
+      "name": "mountain creations",
+      "contact": "Bill Sexton",
+      "email": "bsexton071@gmail.com",
+      "phone": "714-269-7878",
+      "description": "Wood cutting boards, earrings, pendants, and Christmas ornaments.",
+      "active": true,
+      "category": [
+        "vendor"
+      ]
+    },
+    {
+      "name": "Olive wood crafts",
+      "contact": "Mohamed Belhajabdallah",
+      "email": "olivewoodware@gmail.com",
+      "phone": "551-998-4082",
+      "description": "Handmade olive wood kitchenware.",
+      "href": "https://www.olivewoodware.com",
+      "instagram": "olivewoodware",
+      "active": true,
+      "category": [
+        "vendor"
+      ]
+    },
+    {
+      "name": "Jess Makes Macrame",
+      "contact": "Jessica Pickering",
+      "email": "jessmakesmacrame@gmail.com",
+      "phone": "516-287-4241",
+      "description": "Crochet plushies.",
+      "href": "https://www.jessmakesmacrame.com",
+      "instagram": "jessmakesmacrame",
+      "active": true,
+      "category": [
+        "vendor"
+      ]
+    },
+    {
+      "name": "Action Bevel",
+      "contact": "Randolph Raum",
+      "email": "randy@actionbevel.com",
+      "phone": "619-281-2671",
+      "description": "Ceramics.",
+      "href": "https://actionbevel.com",
+      "active": true,
+      "category": [
+        "vendor"
+      ]
+    },
+    {
+      "name": "Shooska Scented Car Jewelry",
+      "contact": "Stephanie Wells",
+      "email": "stephanie068@gmail.com",
+      "phone": "858-254-0007",
+      "description": "Decor for cars, home, and personal accessories.",
+      "href": "https://shooska.com",
+      "instagram": "shoosksvibe",
+      "active": true,
+      "category": [
+        "vendor"
+      ]
+    },
+    {
+      "name": "Down To Ferment",
+      "contact": "Ryan Minor",
+      "email": "ryan@downtoferment.com",
+      "phone": "978-400-1974",
+      "description": "Locally-made fermented hot sauces.",
+      "href": "https://www.downtoferment.com",
+      "instagram": "down2ferment",
+      "active": true,
+      "category": [
+        "vendor"
+      ]
+    },
+    {
+      "name": "Handmadebymahta",
+      "contact": "Mahta Taba",
+      "email": "mahta.taba@gmail.com",
+      "phone": "619-547-6879",
+      "description": "Handmade, one-of-a-kind accessories primarily crafted from polymer clay.",
+      "instagram": "handmadebymahta",
+      "active": true,
+      "category": [
+        "vendor"
+      ]
+    },
+    {
+      "name": "Spice is Life",
+      "contact": "Sean Landholt",
+      "email": "Sean@spiceislife.com",
+      "phone": "858-232-6582",
+      "description": "Small-batch \"Choils\" chili oils.",
+      "href": "https://spiceislife.com",
+      "notes": "Social: Instagram, TikTok, Facebook.",
+      "active": true,
+      "category": [
+        "vendor"
+      ]
+    },
+    {
+      "name": "Atomic Space Snacks",
+      "contact": "Jessy Dokken",
+      "email": "dokkenconsulting@gmail.com",
+      "phone": "310-613-0901",
+      "description": "Freeze-dried candy.",
+      "href": "https://atomicspacesnacks.myshopify.com",
+      "instagram": "atomicspacesnacks",
+      "active": true,
+      "category": [
+        "vendor"
+      ]
+    },
+    {
+      "name": "Rock Your World",
+      "contact": "Kimberly Blunk",
+      "email": "Rockyourworld1@yahoo.com",
+      "phone": "619-357-2140",
+      "description": "Crystals, handcrafted gemstone jewelry, beaded suncatchers, Anza knives, macrame decor, and gifts.",
+      "href": "https://www.etsy.com/shop/rockyourworld1",
+      "facebook": "rockyourworld123",
+      "active": true,
+      "category": [
+        "vendor"
+      ]
+    },
+    {
+      "name": "Golden tribe boutique",
+      "contact": "Taylor Medina",
+      "email": "Shopgoldentribe@gmail.com",
+      "phone": "909-618-5233",
+      "description": "Women's clothing.",
+      "href": "https://www.shopgoldentribe.com",
+      "instagram": "shopgoldentribe",
+      "active": true,
+      "category": [
+        "vendor"
+      ]
+    },
+    {
+      "name": "BARKS \u0026 CRAFTS",
+      "contact": "Jessica Nguyen",
+      "email": "Jess@barksandcrafts.co",
+      "description": "Handcrafted snap-on pet bandanas in five sizes with matching accessories and seasonal designs.",
+      "href": "https://www.barksandcrafts.co",
+      "instagram": "barksandcraftsco",
+      "active": true,
+      "category": [
+        "vendor"
+      ]
+    },
+    {
+      "name": "(Coloring Book Factory DBA) San Diego Caricature",
+      "contact": "Genevieve Zzyzyx",
+      "email": "ColoringBookFactory@gmail.com",
+      "phone": "619-490-5471",
+      "description": "Caricature entertainment and gifts.",
+      "href": "https://www.sandiegocaricature.com",
+      "instagram": "coloringbookfactory",
+      "active": true,
+      "category": [
+        "vendor"
+      ]
+    },
+    {
+      "name": "Ninfasland",
+      "contact": "Maria Gonzalez",
+      "email": "ninfasland@gmail.com",
+      "phone": "619-941-8303",
+      "description": "Low-sugar fruit spreads, jams, and jellies.",
+      "instagram": "ninfasland",
+      "facebook": "Ninfasland Spreads",
+      "active": true,
+      "category": [
+        "vendor"
+      ]
+    },
+    {
+      "name": "Iris Studio Jewelry",
+      "contact": "Kenyotta Boone",
+      "email": "Irisstudiojewelry@gmail.com",
+      "phone": "702-857-9734",
+      "description": "Handmade statement jewelry plus curated waterproof stainless steel pieces.",
+      "href": "https://www.irisstudiojewelry.com",
+      "instagram": "irisstudiojewelry",
+      "active": true,
+      "category": [
+        "vendor"
+      ]
+    },
+    {
+      "name": "Retrend Jewelry",
+      "contact": "Katty Markey",
+      "email": "escobarmejiak@gmail.com",
+      "phone": "415-350-9391",
+      "description": "Handmade jewelry from Colombia, including gold-plated designs.",
+      "href": "https://retrendjewelry.com/",
+      "instagram": "rt_retrend",
+      "facebook": "rtretrend",
+      "active": true,
+      "category": [
+        "vendor"
+      ]
+    },
+    {
+      "name": "Candle Cocoa \u0026 Co LLC",
+      "contact": "Sakshi Jain",
+      "email": "Candlecocoaco@gmail.com",
+      "phone": "619-943-7972",
+      "description": "Handmade candles, gel designs, and complementary self-care products.",
+      "href": "https://candlecocoa.com",
+      "instagram": "candlecocoa",
+      "active": true,
+      "category": [
+        "vendor"
+      ]
+    },
+    {
+      "name": "Villas Chile",
+      "contact": "Nicholas Cabrera",
+      "email": "Villaschile@artofmexico.co",
+      "phone": "951-335-1635",
+      "description": "Gourmet chili oil and spicy jams.",
+      "href": "https://artofmexico.co",
+      "instagram": "villasgourmetchiles",
+      "active": true,
+      "category": [
+        "vendor"
+      ]
+    },
+    {
+      "name": "O'Sweet Edith's",
+      "contact": "Tiffany Byars",
+      "email": "tiffanyrby@gmail.com",
+      "phone": "619-541-5090",
+      "description": "Packaged desserts like peach cobbler, rum bundt cake, coconut pineapple bundt, and more.",
+      "href": "https://osweetediths.com",
+      "instagram": "osweetediths",
+      "active": true,
+      "category": [
+        "vendor"
+      ]
+    },
+    {
+      "name": "Botanic Beetle",
+      "contact": "Libby Daniele",
+      "email": "libby@botanicbeetle.com",
+      "phone": "619-738-2924",
+      "description": "Stained glass art.",
+      "href": "https://botanicbeetle.com",
+      "instagram": "botanicbeetle",
+      "active": true,
+      "category": [
+        "vendor"
+      ]
+    },
+    {
+      "name": "Wynne by Design",
+      "contact": "Wynne Levy",
+      "email": "wynnelevy93@gmail.com",
+      "phone": "215-275-9159",
+      "description": "Handmade jewelry and resin products including coasters.",
+      "instagram": "wynnebydesign",
+      "active": true,
+      "category": [
+        "vendor"
+      ]
+    },
+    {
+      "name": "Celestial Spaces LLC",
+      "contact": "Bryanna Ellul",
+      "email": "Celestialspacesbybry@gmail.com",
+      "phone": "586-292-5906",
+      "description": "Tarot readings.",
+      "href": "https://www.celestialspacesbybry.com",
+      "instagram": "celestialspacesbybry",
+      "active": true,
+      "category": [
+        "vendor"
+      ]
+    }
+  ],
+  "year": 2025
+}
