@@ -73,7 +73,7 @@ export default function ChiliEntryPage() {
           Questions? Email <a href="mailto:{siteContent.contactEmail}">{siteContent.contactEmail}</a> and our team will follow up.
         </p>
       </section>
-      <SponsorStrip title="Past Competitors" sponsors={siteContent.sponsors} category={['chili']} />
+      <SponsorStrip title="This Year's Competitors" sponsors={siteContent.sponsors} category={['chili']} />
     </>
   );
 }

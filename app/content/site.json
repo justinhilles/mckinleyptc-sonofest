@@ -165,11 +165,99 @@
         "category": ["sponsor"]
       },
       {
-        "name": "The Original 40",
+        "name": "Original 40 Brewing",
         "href": "https://original40brewing.com/",
         "instagram": "original40beer",
         "logo": "/images/logos/original40.png",
-        "active": false,
+        "active": true,
+        "category": ["chili"]
+      },
+      {
+        "name": "Finca",
+        "href": "https://finca.wine/",
+        "instagram": "fincanorthpark",
+        "logo": "/images/logos/finca.png",
+        "active": true,
+        "category": ["chili"]
+      },
+      {
+        "name": "North Park Creamery",
+        "href": "https://www.northparkcreamery.com/",
+        "instagram": "northparkcreamery",
+        "logo": "/images/logos/northparkcreamery.png",
+        "active": true,
+        "category": ["chili"]
+      },
+      {
+        "name": "Tacotarian",
+        "href": "https://eattacotarian.com/",
+        "instagram": "tacotarianlv",
+        "logo": "/images/logos/tacotarian.svg",
+        "active": true,
+        "category": ["chili"]
+      },
+      {
+        "name": "UrbanLife Cafe",
+        "href": "https://www.instagram.com/urbanlifecafesd/",
+        "instagram": "urbanlifecafesd",
+        "logo": "/images/logos/urbanlifecafe.jpg",
+        "active": true,
+        "category": ["chili"]
+      },
+      {
+        "name": "Super Cocina",
+        "href": "https://www.supercocinasd.com/",
+        "instagram": "supercocinasd",
+        "logo": "/images/logos/supercocina.png",
+        "active": true,
+        "category": ["chili"]
+      },
+      {
+        "name": "Ale Tales Taproom",
+        "href": "https://aletalestaproom.com/",
+        "instagram": "aletalestaproom",
+        "logo": "/images/logos/aletales.png",
+        "active": true,
+        "category": ["chili"]
+      },
+      {
+        "name": "Biersal",
+        "href": "https://www.biersalkitchen.com/",
+        "instagram": "biersal_kitchen",
+        "logo": "/images/logos/biersal.jpg",
+        "active": true,
+        "category": ["chili"]
+      },
+      {
+        "name": "Kairoa Brewing Co",
+        "href": "https://www.kairoa.com/",
+        "instagram": "kairoabrewingcompany",
+        "logo": "/images/logos/kairoa.png",
+        "active": true,
+        "category": ["chili"]
+      },
+      {
+        "name": "The Wise Ox",
+        "href": "https://www.thewiseoxsd.com/",
+        "instagram": "thewiseoxsd",
+        "logo": "/images/logos/wiseox.png",
+        "active": true,
+        "category": ["chili"]
+      },
+      {
+        "name": "Cori",
+        "href": "https://www.coripasta.com/",
+        "instagram": "cori_pasta",
+        "logo": "/images/logos/cori.png",
+        "active": true,
+        "category": ["chili"]
+      },
+      {
+        "name": "Mabel's Gone Fishing",
+        "href": "https://www.mabelsgonefishing.com/",
+        "instagram": "mabelsgonefishing",
+        "logo": "/images/logos/mabels.png",
+        "active": true,
         "category": ["chili"]
       },
       {
