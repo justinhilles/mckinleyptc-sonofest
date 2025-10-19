@@ -186,17 +186,20 @@ body {
 
 .sponsor-logo {
   width: 100%;
-  max-width: 180px;
-  aspect-ratio: 1;
-  min-height: 160px;
+  max-width: 200px;
   background: #fff;
   border: 3px solid var(--sono-green);
   border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   padding: 16px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.sponsor-logo--maroon {
+  background: var(--sono-maroon);
+  color: #fff;
 }
 
 .instagram {
@@ -317,7 +320,27 @@ body {
   }
 }
 
-.sponsor-logo a {
+.sponsor-card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  text-align: center;
+  gap: 12px;
+  height: 100%;
+  width: 100%;
+  flex: 1;
+}
+
+.sponsor-card__media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex: 1 1 auto;
+  min-height: 100px;
+}
+
+.sponsor-card__primary-link {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -325,19 +348,62 @@ body {
   height: 100%;
 }
 
-.sponsor-logo img {
+.sponsor-card__media img {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
-.sponsor-logo span {
+.sponsor-card__media span {
   display: block;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 0.9rem;
   color: var(--sono-green);
+}
+
+.sponsor-logo--maroon .sponsor-card__media span {
+  color: #fff;
+}
+
+.sponsor-card__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  width: 100%;
+}
+
+.sponsor-card__footer {
+  width: 100%;
+  padding: 8px 0 2px;
+  display: flex;
+  justify-content: center;
+  background: transparent;
+}
+
+.sponsor-card__link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--sono-maroon);
+}
+
+.sponsor-card__link:hover,
+.sponsor-card__link:focus-visible {
+  color: var(--sono-green);
+  text-decoration: underline;
+}
+
+.sponsor-logo--maroon .sponsor-card__link {
+  color: #fff;
+}
+
+.sponsor-logo--maroon .sponsor-card__link:hover,
+.sponsor-logo--maroon .sponsor-card__link:focus-visible {
+  color: var(--sono-cream);
 }
 
 .section__title {

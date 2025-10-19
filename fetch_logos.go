@@ -30,9 +30,48 @@ type Sponsor struct {
 // Enrichment flags / config
 type EnrichConfig struct {
 	Enable     bool
-	Provider   string // ddg | serpapi | openai (ddg is keyless default)
+	Provider   string // serpapi | openai | hybrid
 	SerpAPIKey string
 	OpenAIKey  string
+}
+
+var debug bool
+
+func dbg(format string, args ...interface{}) {
+	if !debug {
+		return
+	}
+	ts := time.Now().Format("15:04:05.000")
+	fmt.Printf("[DBG %s] "+format+"\n", append([]interface{}{ts}, args...)...)
+}
+
+// truncBytes truncates a byte slice to max length for debug output.
+func truncBytes(b []byte, max int) string {
+	if max <= 0 {
+		return ""
+	}
+	if len(b) <= max {
+		return string(b)
+	}
+	return string(b[:max]) + "... (truncated)"
+}
+
+// dbgDumpReq dumps HTTP request method, URL, and headers in debug mode.
+func dbgDumpReq(req *http.Request) {
+	if !debug || req == nil {
+		return
+	}
+	var b strings.Builder
+	fmt.Fprintf(&b, "Request %s %s\n", req.Method, req.URL.String())
+	// Print headers (mask Authorization)
+	for k, vals := range req.Header {
+		v := strings.Join(vals, "; ")
+		if strings.EqualFold(k, "Authorization") {
+			v = "****"
+		}
+		fmt.Fprintf(&b, "  %s: %s\n", k, v)
+	}
+	dbg("%s", b.String())
 }
 
 func main() {
@@ -44,10 +83,16 @@ func main() {
 	cats := flag.String("categories", "", "Comma-separated category filter (e.g. sponsor,chili)")
 	dryRun := flag.Bool("dry-run", false, "Run without downloading or writing changes")
 	enrich := flag.Bool("enrich-missing", false, "Discover missing sponsor href/instagram via search")
-	searchProvider := flag.String("search-provider", "ddg", "Search provider: ddg|serpapi|openai")
+	searchProvider := flag.String("search-provider", "hybrid", "Search provider: serpapi|openai|hybrid")
 	serpAPIKey := flag.String("serpapi-key", "", "SerpAPI key (or SERPAPI_KEY env / .env)")
 	openAIKey := flag.String("openai-key", "", "OpenAI API key (or OPENAI_API_KEY env / .env)")
+	debugFlag := flag.Bool("debug", false, "Verbose debug logging")
 	flag.Parse()
+
+	debug = *debugFlag
+	if debug {
+		fmt.Println("   • DEBUG MODE ON")
+	}
 
 	// Load .env first (if present), then backfill empty key flags from env
 	if err := loadDotEnv(*envFile); err == nil {
@@ -94,6 +139,9 @@ func main() {
 		SerpAPIKey: strings.TrimSpace(*serpAPIKey),
 		OpenAIKey:  strings.TrimSpace(*openAIKey),
 	}
+
+	// fmt.Println(econf.OpenAIKey)
+
 	if econf.Enable {
 		fmt.Printf("   • Enrichment: provider=%s\n", econf.Provider)
 	}
@@ -116,6 +164,9 @@ func main() {
 	for i := range sponsors {
 		s := sponsors[i]
 
+		sponsorStart := time.Now()
+		dbg("sponsor=%q href=%q logo=%q active=%v cats=%v", s.Name, s.Href, s.Logo, s.Active, s.Category)
+
 		// Filters
 		if *onlyActive && !s.Active {
 			continue
@@ -124,20 +175,17 @@ func main() {
 			continue
 		}
 
-		// Enrich website automatically when missing/bad; Instagram only when --enrich-missing
-		needHref := strings.TrimSpace(s.Href) == "" || isOpenAIDocsURL(s.Href)
+		// Enrich website automatically when missing/bad; Instagram always set if missing and discovered
+		needHref := strings.TrimSpace(s.Href) == ""
 		needIG := strings.TrimSpace(s.Instagram) == ""
-		shouldEnrich := needHref || (econf.Enable && needIG)
+		shouldEnrich := needHref || needIG
 		if shouldEnrich {
-			if isOpenAIDocsURL(s.Href) {
-				fmt.Printf("   ↻ %s href looks wrong (OpenAI docs); searching for official site...\n", s.Name)
-			}
-			// If we only need Href and enrichment flag is off, force DDG (keyless) provider
+			// Use the configured provider for website lookup even if --enrich-missing is off
 			eff := econf
-			if needHref && !econf.Enable {
-				eff.Provider = "ddg"
-			}
+			tEnrich := time.Now()
+			fmt.Printf("enrich start: provider=%s needHref=%v needIG=%v\n", eff.Provider, needHref, needIG)
 			foundHref, foundIG, err := enrichSponsor(client, ua, &s, eff)
+			fmt.Printf("enrich done in %s → href=%q ig=%q err=%v\n", time.Since(tEnrich), foundHref, foundIG, err)
 			if err != nil {
 				fmt.Printf("   (enrich warn) %s: %v\n", s.Name, err)
 			}
@@ -147,11 +195,11 @@ func main() {
 				changed = true
 				fmt.Printf("   🔗 set href → %s\n", foundHref)
 			}
-			// Only set Instagram when enrichment is explicitly enabled
-			if econf.Enable && needIG && strings.TrimSpace(foundIG) != "" {
-				sponsors[i].Instagram = foundIG
+			// Always set Instagram if it's missing and we discovered one (store handle)
+			if needIG && strings.TrimSpace(foundIG) != "" {
+				sponsors[i].Instagram = igHandle(foundIG)
 				changed = true
-				fmt.Printf("   📸 set instagram → %s\n", foundIG)
+				fmt.Printf("   📸 set instagram → @%s\n", sponsors[i].Instagram)
 			}
 			if changed {
 				updatedJSON = true
@@ -165,18 +213,21 @@ func main() {
 		if strings.TrimSpace(s.Logo) != "" && fileExists(localPath) {
 			fmt.Printf("✅ %-30s logo OK → %s\n", s.Name, rel(localPath))
 			skipped++
+			dbg("sponsor=%q done in %s", s.Name, time.Since(sponsorStart))
 			continue
 		}
 
 		if strings.TrimSpace(s.Href) == "" {
 			fmt.Printf("⚠️  %-30s no href to discover logo; logo path set=%t\n", s.Name, strings.TrimSpace(s.Logo) != "")
 			fail++
+			dbg("sponsor=%q done in %s", s.Name, time.Since(sponsorStart))
 			continue
 		}
 
 		fmt.Printf("→ %-30s discovering logo from %s\n", s.Name, s.Href)
 		if *dryRun {
 			fmt.Println("   (dry-run) skipping discovery/download")
+			dbg("sponsor=%q done in %s", s.Name, time.Since(sponsorStart))
 			continue
 		}
 
@@ -184,6 +235,7 @@ func main() {
 		if err != nil {
 			fmt.Printf("   ✖ discovery failed: %v\n", err)
 			fail++
+			dbg("sponsor=%q done in %s", s.Name, time.Since(sponsorStart))
 			continue
 		}
 
@@ -203,10 +255,12 @@ func main() {
 		if err := downloadImage(client, ua, s.Href, imgURL, target); err != nil {
 			fmt.Printf("   ✖ download failed: %v\n", err)
 			fail++
+			dbg("sponsor=%q done in %s", s.Name, time.Since(sponsorStart))
 			continue
 		}
 		fmt.Printf("   ✅ saved: %s\n", rel(target))
 		success++
+		dbg("sponsor=%q done in %s", s.Name, time.Since(sponsorStart))
 	}
 
 	fmt.Printf("\nSummary: %d saved, %d ok, %d failed\n", success, skipped, fail)
@@ -261,6 +315,8 @@ func writeSite(path string, original []byte, root map[string]json.RawMessage, up
 // ---- discovery & downloading ----
 
 func discoverLogoURL(client *http.Client, ua, href string) (imgURL, ext string, err error) {
+	dbg("discoverLogoURL: href=%s", href)
+	tDisc := time.Now()
 	base, err := url.Parse(href)
 	if err != nil || base.Scheme == "" || base.Host == "" {
 		return "", "", fmt.Errorf("invalid href: %s", href)
@@ -270,12 +326,15 @@ func discoverLogoURL(client *http.Client, ua, href string) (imgURL, ext string, 
 	html, err := getHTML(client, ua, href, href)
 	if err == nil && len(html) > 0 {
 		if u := findOGImage(html, base); u != "" && !isICO(u) {
+			dbg("discoverLogoURL: og:image %s in %s", u, time.Since(tDisc))
 			return u, extFromURLOrHead(client, ua, href, u), nil
 		}
 		if u := findIconLink(html, base); u != "" && !isICO(u) {
+			dbg("discoverLogoURL: <link rel=icon> %s in %s", u, time.Since(tDisc))
 			return u, extFromURLOrHead(client, ua, href, u), nil
 		}
 		if u := findLogoImg(html, base); u != "" && !isICO(u) {
+			dbg("discoverLogoURL: <img ...logo...> %s in %s", u, time.Since(tDisc))
 			return u, extFromURLOrHead(client, ua, href, u), nil
 		}
 	}
@@ -298,12 +357,17 @@ func discoverLogoURL(client *http.Client, ua, href string) (imgURL, ext string, 
 		"/logo.webp",
 		"/logo.svg",
 	}
+	dbg("discoverLogoURL: trying %d common candidates", len(candidates))
 	for _, c := range candidates {
 		u := base.ResolveReference(&url.URL{Path: c}).String()
+		tHead := time.Now()
+		dbg("HEAD %s", u)
 		if headOKNonICO(client, ua, href, u) {
+			dbg("candidate OK %s in %s", u, time.Since(tHead))
 			return u, extFromURLOrHead(client, ua, href, u), nil
 		}
 	}
+	dbg("discoverLogoURL: no image found after %s", time.Since(tDisc))
 	return "", "", errors.New("no viable image found")
 }
 
@@ -313,6 +377,9 @@ func getHTML(client *http.Client, ua, referer, pageURL string) ([]byte, error) {
 	if referer != "" {
 		req.Header.Set("Referer", referer)
 	}
+	dbgDumpReq(req)
+	t := time.Now()
+	dbg("GET %s (referer=%s)", pageURL, referer)
 	resp, err := client.Do(req)
 	if err != nil {
 		return nil, err
@@ -321,6 +388,7 @@ func getHTML(client *http.Client, ua, referer, pageURL string) ([]byte, error) {
 	if resp.StatusCode != http.StatusOK || !strings.Contains(strings.ToLower(resp.Header.Get("Content-Type")), "text/html") {
 		return nil, fmt.Errorf("status %d or non-html", resp.StatusCode)
 	}
+	dbg("GET %s status=%d ct=%q in %s", pageURL, resp.StatusCode, resp.Header.Get("Content-Type"), time.Since(t))
 	// 2MB cap
 	b, err := io.ReadAll(io.LimitReader(resp.Body, 2<<20))
 	return b, err
@@ -356,37 +424,46 @@ func findLogoImg(html []byte, base *url.URL) string {
 }
 
 func headOKNonICO(client *http.Client, ua, referer, u string) bool {
+	t := time.Now()
 	req, _ := http.NewRequest("HEAD", u, nil)
 	req.Header.Set("User-Agent", ua)
 	if referer != "" {
 		req.Header.Set("Referer", referer)
 	}
+	dbgDumpReq(req)
 	resp, err := client.Do(req)
 	if err != nil {
 		return false
 	}
 	defer resp.Body.Close()
 	if resp.StatusCode != http.StatusOK {
+		dbg("HEAD %s status=%d ct=%q in %s", u, resp.StatusCode, resp.Header.Get("Content-Type"), time.Since(t))
 		return false
 	}
 	ct := strings.ToLower(resp.Header.Get("Content-Type"))
 	if !strings.HasPrefix(ct, "image/") {
+		dbg("HEAD %s status=%d ct=%q in %s", u, resp.StatusCode, resp.Header.Get("Content-Type"), time.Since(t))
 		return false
 	}
+	dbg("HEAD %s status=%d ct=%q in %s", u, resp.StatusCode, resp.Header.Get("Content-Type"), time.Since(t))
 	return !strings.Contains(ct, "x-icon") && !strings.Contains(ct, "vnd.microsoft.icon")
 }
 
 func extFromURLOrHead(client *http.Client, ua, referer, u string) string {
 	ext := strings.ToLower(filepath.Ext(strings.Split(u, "?")[0]))
 	if ext == "" || ext == ".ico" {
+		t := time.Now()
+		dbg("HEAD (extFromURLOrHead) %s", u)
 		req, _ := http.NewRequest("HEAD", u, nil)
 		req.Header.Set("User-Agent", ua)
 		if referer != "" {
 			req.Header.Set("Referer", referer)
 		}
+		dbgDumpReq(req)
 		resp, err := client.Do(req)
 		if err == nil {
 			defer resp.Body.Close()
+			dbg("HEAD (extFromURLOrHead) %s status=%d ct=%q in %s", u, resp.StatusCode, resp.Header.Get("Content-Type"), time.Since(t))
 			ct := strings.ToLower(resp.Header.Get("Content-Type"))
 			switch {
 			case strings.HasPrefix(ct, "image/png"):
@@ -409,11 +486,14 @@ func extFromURLOrHead(client *http.Client, ua, referer, u string) string {
 }
 
 func downloadImage(client *http.Client, ua, referer, imgURL, target string) error {
+	t := time.Now()
+	dbg("GET image %s (referer=%s)", imgURL, referer)
 	req, _ := http.NewRequest("GET", imgURL, nil)
 	req.Header.Set("User-Agent", ua)
 	if referer != "" {
 		req.Header.Set("Referer", referer)
 	}
+	dbgDumpReq(req)
 	resp, err := client.Do(req)
 	if err != nil {
 		return err
@@ -429,6 +509,7 @@ func downloadImage(client *http.Client, ua, referer, imgURL, target string) erro
 	if strings.Contains(ct, "x-icon") || strings.Contains(ct, "vnd.microsoft.icon") {
 		return fmt.Errorf("ICO not allowed")
 	}
+	dbg("GET image %s status=%d ct=%q len=%s in %s", imgURL, resp.StatusCode, ct, resp.Header.Get("Content-Length"), time.Since(t))
 
 	// Ensure extension matches content-type
 	target = replaceExt(target, extFromContentType(ct))
@@ -562,81 +643,11 @@ func enrichSponsor(client *http.Client, ua string, s *Sponsor, cfg EnrichConfig)
 		return enrichViaSerpAPI(client, ua, name, cfg.SerpAPIKey)
 	case "openai":
 		return enrichViaOpenAI(client, ua, name, cfg.OpenAIKey)
+	case "hybrid":
+		return enrichViaHybrid(client, ua, name, cfg)
 	default:
-		// ddg keyless
-		return enrichViaDDG(client, ua, name)
+		return "", "", fmt.Errorf("unknown provider: %s", cfg.Provider)
 	}
-}
-
-// Try to choose a likely website domain and instagram profile from DuckDuckGo HTML results
-func enrichViaDDG(client *http.Client, ua, name string) (website, instagram string, err error) {
-	ws, _ := ddgFirstExternal(client, ua, name, name+" official site")
-	if ws == "" {
-		ws, _ = ddgFirstExternal(client, ua, name, name)
-	}
-	ig, _ := ddgFindInstagram(client, ua, name+" instagram")
-	return ws, ig, nil
-}
-
-func ddgFirstExternal(client *http.Client, ua, name, query string) (string, error) {
-	u := "https://duckduckgo.com/html/?q=" + url.QueryEscape(query)
-	body, err := httpGET(client, ua, u, "")
-	if err != nil {
-		return "", err
-	}
-	// Find result links: DuckDuckGo HTML uses result__a anchors; href often goes through /l/?uddg=...
-	re := regexp.MustCompile(`(?i)<a[^>]+class=\"result__a\"[^>]+href=\"([^\"]+)\"`)
-	for _, m := range re.FindAllSubmatch(body, -1) {
-		raw := string(m[1])
-		resolved := ddgResolveRedirect(raw)
-		if resolved == "" {
-			continue
-		}
-		// skip socials/aggregators for primary website
-		if isAggregatorDomain(resolved) || strings.Contains(resolved, "instagram.com/") {
-			continue
-		}
-		if looksLikeOfficial(name, resolved) {
-			return trimURL(resolved), nil
-		}
-	}
-	return "", errors.New("no external result")
-}
-
-func ddgFindInstagram(client *http.Client, ua, query string) (string, error) {
-	u := "https://duckduckgo.com/html/?q=" + url.QueryEscape(query)
-	body, err := httpGET(client, ua, u, "")
-	if err != nil {
-		return "", err
-	}
-	// Prefer instagram profile links
-	re := regexp.MustCompile(`(?i)https?://(?:www\.)?instagram\.com/([A-Za-z0-9_.]+)/?`)
-	if m := re.FindSubmatch(body); len(m) > 1 {
-		handle := string(m[1])
-		// ignore content links like /p/...
-		if strings.ToLower(handle) != "p" && strings.ToLower(handle) != "reel" && strings.ToLower(handle) != "stories" {
-			return "https://www.instagram.com/" + handle + "/", nil
-		}
-	}
-	return "", errors.New("no instagram found")
-}
-
-func ddgResolveRedirect(href string) string {
-	// DuckDuckGo may use "/l/?kh=-1&uddg=<encoded>" links. Extract uddg if present.
-	if strings.HasPrefix(href, "/l/") || strings.Contains(href, "uddg=") {
-		if u, err := url.Parse("https://duckduckgo.com" + href); err == nil {
-			if enc := u.Query().Get("uddg"); enc != "" {
-				if decoded, err := url.QueryUnescape(enc); err == nil {
-					return decoded
-				}
-			}
-		}
-	}
-	// Otherwise return as absolute if it's already a full URL
-	if strings.HasPrefix(href, "http://") || strings.HasPrefix(href, "https://") {
-		return href
-	}
-	return ""
 }
 
 func isAggregatorDomain(u string) bool {
@@ -692,6 +703,26 @@ func trimURL(u string) string {
 }
 
 // --- domain matching heuristics ---
+
+// igHandle normalizes an Instagram URL or handle to just the handle (no @, no URL)
+func igHandle(u string) string {
+	u = strings.TrimSpace(u)
+	if u == "" {
+		return ""
+	}
+	reIG := regexp.MustCompile(`(?i)https?://(?:www\.)?instagram\.com/([A-Za-z0-9_.]+)/?`)
+	if m := reIG.FindStringSubmatch(u); len(m) > 1 {
+		h := m[1]
+		// discard post/reel paths
+		if strings.EqualFold(h, "p") || strings.EqualFold(h, "reel") {
+			return ""
+		}
+		return h
+	}
+	// if they accidentally gave a handle already, keep it
+	u = strings.TrimPrefix(u, "@")
+	return u
+}
 func tokenizeName(n string) []string {
 	n = strings.ToLower(n)
 	re := regexp.MustCompile(`[^a-z0-9]+`)
@@ -729,33 +760,77 @@ func looksLikeOfficial(name, u string) bool {
 	return false
 }
 
-// Optional: SerpAPI
-func enrichViaSerpAPI(client *http.Client, ua, name, key string) (website, instagram string, err error) {
+// Collect multiple candidates from SerpAPI for retrieval-augmented selection.
+func serpCandidates(client *http.Client, ua, name, key string) (webCandidates []string, igCandidates []string, err error) {
 	if strings.TrimSpace(key) == "" {
-		return enrichViaDDG(client, ua, name)
+		return nil, nil, errors.New("SerpAPI key missing")
 	}
-	base := "https://serpapi.com/search.json?q=" + url.QueryEscape(name) + "&engine=google&num=10&api_key=" + url.QueryEscape(key)
+	// General web search (bias to San Diego to disambiguate)
+	base := "https://serpapi.com/search.json?q=" + url.QueryEscape(name+" san diego") + "&engine=google&num=10&api_key=" + url.QueryEscape(key)
 	body, err := httpGET(client, ua, base, "")
+	if err != nil {
+		return nil, nil, err
+	}
+	re := regexp.MustCompile(`\"link\":\"([^\"]+)\"`)
+	for _, m := range re.FindAllSubmatch(body, -1) {
+		link := string(m[1])
+		if isOpenAIDocsURL(link) {
+			continue
+		}
+		if !isAggregatorDomain(link) {
+			webCandidates = append(webCandidates, trimURL(link))
+		}
+	}
+	// Fallback: broader query if none found
+	if len(webCandidates) == 0 {
+		base2 := "https://serpapi.com/search.json?q=" + url.QueryEscape(name) + "&engine=google&num=10&api_key=" + url.QueryEscape(key)
+		body2, err2 := httpGET(client, ua, base2, "")
+		if err2 == nil {
+			for _, m := range re.FindAllSubmatch(body2, -1) {
+				link := string(m[1])
+				if isOpenAIDocsURL(link) {
+					continue
+				}
+				if !isAggregatorDomain(link) {
+					webCandidates = append(webCandidates, trimURL(link))
+				}
+			}
+		}
+	}
+
+	// Instagram-focused search
+	igQ := "https://serpapi.com/search.json?q=" + url.QueryEscape(name+" instagram san diego") + "&engine=google&num=10&api_key=" + url.QueryEscape(key)
+	igBody, _ := httpGET(client, ua, igQ, "")
+	reIG := regexp.MustCompile(`https?://(?:www\.)?instagram\.com/([A-Za-z0-9_.]+)/?`)
+	for _, mm := range reIG.FindAllSubmatch(igBody, -1) {
+		h := string(mm[1])
+		if strings.EqualFold(h, "p") || strings.EqualFold(h, "reel") {
+			continue
+		}
+		igCandidates = append(igCandidates, "https://www.instagram.com/"+h+"/")
+	}
+	return webCandidates, igCandidates, nil
+}
+
+func enrichViaSerpAPI(client *http.Client, ua, name, key string) (website, instagram string, err error) {
+	webs, igs, err := serpCandidates(client, ua, name, key)
 	if err != nil {
 		return "", "", err
 	}
-	// Extract URLs from "link":"..."
-	re := regexp.MustCompile(`\"link\":\"([^\"]+)\"`)
-	links := re.FindAllSubmatch(body, -1)
-	for _, m := range links {
-		link := string(m[1])
-		if !isAggregatorDomain(link) && looksLikeOfficial(name, link) {
-			website = trimURL(link)
+	// Website: pick the first that looks official
+	for _, link := range webs {
+		if looksLikeOfficial(name, link) {
+			website = link
 			break
 		}
 	}
-	// Instagram search
-	bodyIG, _ := httpGET(client, ua, "https://serpapi.com/search.json?q="+url.QueryEscape(name+" instagram")+"&engine=google&num=10&api_key="+url.QueryEscape(key), "")
-	reIG := regexp.MustCompile(`https?://(?:www\.)?instagram\.com/([A-Za-z0-9_.]+)/?`)
-	if mm := reIG.FindSubmatch(bodyIG); len(mm) > 1 {
-		h := string(mm[1])
-		if strings.ToLower(h) != "p" && strings.ToLower(h) != "reel" {
-			instagram = "https://www.instagram.com/" + h + "/"
+	// Instagram: pick the first candidate if any
+	if instagram == "" {
+		for _, ig := range igs {
+			if ig != "" {
+				instagram = ig
+				break
+			}
 		}
 	}
 	return website, instagram, nil
@@ -764,45 +839,285 @@ func enrichViaSerpAPI(client *http.Client, ua, name, key string) (website, insta
 // Optional: OpenAI (LLM guess). This may be less reliable; used only if explicitly set.
 func enrichViaOpenAI(client *http.Client, ua, name, key string) (website, instagram string, err error) {
 	if strings.TrimSpace(key) == "" {
-		return enrichViaDDG(client, ua, name)
+		return "", "", errors.New("OpenAI key missing")
 	}
-	// Minimal client to OpenAI Chat Completions API
-	payload := `{"model":"gpt-4o-mini","messages":[{"role":"system","content":"Return JSON with fields website and instagram for the official presence of the business. If unsure, leave empty strings."},{"role":"user","content":"Business name: ` + jsonEscape(name) + `"}],"temperature":0}`
-	req, _ := http.NewRequest("POST", "https://api.openai.com/v1/chat/completions", bytes.NewBufferString(payload))
+	// JSON-only Chat Completions request using strict schema and low temperature
+	dbg("OpenAI lookup %q", name)
+
+	type reqMsg struct {
+		Role    string `json:"role"`
+		Content string `json:"content"`
+	}
+	payloadObj := map[string]interface{}{
+		"model":           "gpt-5",
+		"response_format": map[string]string{"type": "json_object"},
+	}
+
+	sysPrompt := strings.Join([]string{
+		"You are a data extraction assistant.",
+		"Return ONLY a JSON object with EXACT fields {\"website\": string, \"instagram\": string}.",
+		"Provide the business’s OFFICIAL homepage and OFFICIAL Instagram profile.",
+		"Rules:",
+		"- Exclude aggregators/directories/marketplaces: Yelp, Google Maps, OpenTable, DoorDash, Grubhub, UberEats, TripAdvisor, Facebook pages, Linktree, etc.",
+		"- Website must be the business’s own domain (prefer https).",
+		"- Instagram must be a profile URL like https://www.instagram.com/<handle>/ (not hashtags, locations, posts).",
+		"- If uncertain about a field, return an empty string for that field.",
+		"Do not include any text outside the JSON.",
+		"",
+		"Example output:",
+		"{\"website\": \"https://example.com/\", \"instagram\": \"https://www.instagram.com/example/\"}",
+	}, "\n")
+
+	// Nudge for SD locality to reduce ambiguity
+	userPrompt := "Business name: " + jsonEscape(name) + "\nCity: San Diego\nState: CA"
+
+	payloadObj["messages"] = []reqMsg{
+		{Role: "system", Content: sysPrompt},
+		{Role: "user", Content: userPrompt},
+	}
+
+	b, _ := json.Marshal(payloadObj)
+	endpoint := "https://api.openai.com/v1/chat/completions"
+	if debug {
+		dbg("OpenAI POST %s", endpoint)
+		dbg("OpenAI payload: %s", string(b))
+	}
+	req, _ := http.NewRequest("POST", endpoint, bytes.NewReader(b))
 	req.Header.Set("User-Agent", ua)
 	req.Header.Set("Authorization", "Bearer "+key)
 	req.Header.Set("Content-Type", "application/json")
+	dbgDumpReq(req)
+
 	resp, err := client.Do(req)
 	if err != nil {
 		return "", "", err
 	}
+	if debug && resp != nil {
+		dbg("OpenAI status=%d ct=%q req-id=%q", resp.StatusCode, resp.Header.Get("Content-Type"), resp.Header.Get("x-request-id"))
+	}
 	defer resp.Body.Close()
-	b, _ := io.ReadAll(io.LimitReader(resp.Body, 1<<20))
-	// Extract simple URLs from the response to avoid adding a full schema
-	reW := regexp.MustCompile(`https?://[^\"\s]+`)
-	urls := reW.FindAllString(string(b), -1)
-	for _, u := range urls {
-		if strings.Contains(u, "instagram.com/") && instagram == "" {
-			// normalize probable profile
-			reIG := regexp.MustCompile(`https?://(?:www\.)?instagram\.com/([A-Za-z0-9_.]+)/?`)
-			if m := reIG.FindStringSubmatch(u); len(m) > 1 {
-				instagram = "https://www.instagram.com/" + m[1] + "/"
-				continue
-			}
+	rb, _ := io.ReadAll(io.LimitReader(resp.Body, 1<<20))
+	if debug {
+		dbg("OpenAI bytes=%d", len(rb))
+		dbg("OpenAI response body:\n%s", truncBytes(rb, 4000))
+	}
+	if resp.StatusCode != http.StatusOK {
+		return "", "", fmt.Errorf("openai http %d: %s", resp.StatusCode, truncBytes(rb, 400))
+	}
+
+	// Extract assistant message content
+	type chatResp struct {
+		Choices []struct {
+			Message struct {
+				Content string `json:"content"`
+			} `json:"message"`
+		} `json:"choices"`
+	}
+	var cr chatResp
+	if err := json.Unmarshal(rb, &cr); err != nil || len(cr.Choices) == 0 {
+		return "", "", fmt.Errorf("openai parse failure")
+	}
+	content := cr.Choices[0].Message.Content
+	content = strings.TrimSpace(content)
+	if strings.HasPrefix(content, "```") {
+		content = strings.TrimPrefix(content, "```json")
+		content = strings.TrimPrefix(content, "```JSON")
+		content = strings.TrimPrefix(content, "```")
+		if i := strings.LastIndex(content, "```"); i >= 0 {
+			content = content[:i]
 		}
-		if website == "" && looksLikeOfficial(name, u) {
-			website = trimURL(u)
+		content = strings.TrimSpace(content)
+	}
+	if !strings.HasPrefix(content, "{") {
+		reObj := regexp.MustCompile(`\{[\s\S]*\}`)
+		if m := reObj.FindString(content); m != "" {
+			content = m
+		}
+	}
+
+	// Parse strict JSON
+	var obj struct {
+		Website   string `json:"website"`
+		Instagram string `json:"instagram"`
+	}
+	if err := json.Unmarshal([]byte(content), &obj); err == nil {
+		website = strings.TrimSpace(obj.Website)
+		instagram = strings.TrimSpace(obj.Instagram)
+	} else {
+		// Fallback: regex any URLs from content if model deviates
+		reW := regexp.MustCompile(`https?://[^\s"]+`)
+		urls := reW.FindAllString(content, -1)
+		for _, u := range urls {
+			if instagram == "" && strings.Contains(u, "instagram.com/") {
+				reIG := regexp.MustCompile(`https?://(?:www\.)?instagram\.com/([A-Za-z0-9_.]+)/?`)
+				if m := reIG.FindStringSubmatch(u); len(m) > 1 {
+					instagram = "https://www.instagram.com/" + m[1] + "/"
+					continue
+				}
+			}
+			if website == "" && looksLikeOfficial(name, u) {
+				website = trimURL(u)
+			}
 		}
 	}
 	return website, instagram, nil
 }
 
+// chooseViaOpenAI asks the LLM to select the OFFICIAL website/instagram from candidate lists.
+func chooseViaOpenAI(name string, webCandidates, igCandidates []string, key string) (website, instagram string, err error) {
+	if strings.TrimSpace(key) == "" {
+		return "", "", errors.New("OpenAI key missing")
+	}
+
+	type reqMsg struct {
+		Role    string `json:"role"`
+		Content string `json:"content"`
+	}
+	payloadObj := map[string]interface{}{
+		"model":           "gpt-5",
+		"response_format": map[string]string{"type": "json_object"},
+	}
+
+	sysPrompt := strings.Join([]string{
+		"You are a data extraction assistant.",
+		"Choose the business's OFFICIAL homepage and OFFICIAL Instagram from the provided candidates for: " + name + ".",
+		"Return ONLY a JSON object with fields {\"website\": string, \"instagram\": string}.",
+		"Rules:",
+		"- Prefer domains owned by the business; exclude Yelp/Google/OpenTable/Linktree/Facebook/TikTok/Twitter/etc.",
+		"- Instagram must be a profile like https://www.instagram.com/<handle>/ (not hashtags, locations, posts).",
+		"- Use https URLs. If none are clearly official, return empty strings.",
+	}, "\n")
+
+	userPrompt := "Web candidates:\n" + strings.Join(webCandidates, "\n") +
+		"\n\nInstagram candidates:\n" + strings.Join(igCandidates, "\n")
+
+	payloadObj["messages"] = []reqMsg{
+		{Role: "system", Content: sysPrompt},
+		{Role: "user", Content: userPrompt},
+	}
+
+	b, _ := json.Marshal(payloadObj)
+	req, _ := http.NewRequest("POST", "https://api.openai.com/v1/chat/completions", bytes.NewReader(b))
+	req.Header.Set("Authorization", "Bearer "+key)
+	req.Header.Set("Content-Type", "application/json")
+
+	httpClient := &http.Client{Timeout: 30 * time.Second}
+	resp, err := httpClient.Do(req)
+	if err != nil {
+		return "", "", err
+	}
+	defer resp.Body.Close()
+	rb, _ := io.ReadAll(io.LimitReader(resp.Body, 1<<20))
+	if resp.StatusCode != http.StatusOK {
+		return "", "", fmt.Errorf("openai http %d: %s", resp.StatusCode, truncBytes(rb, 400))
+	}
+
+	type chatResp struct {
+		Choices []struct {
+			Message struct {
+				Content string `json:"content"`
+			} `json:"message"`
+		} `json:"choices"`
+	}
+	var cr chatResp
+	if err := json.Unmarshal(rb, &cr); err != nil || len(cr.Choices) == 0 {
+		return "", "", fmt.Errorf("openai parse failure")
+	}
+	content := cr.Choices[0].Message.Content
+	// Normalize content before JSON unmarshal (copy from enrichViaOpenAI)
+	content = strings.TrimSpace(content)
+	if strings.HasPrefix(content, "```") {
+		content = strings.TrimPrefix(content, "```json")
+		content = strings.TrimPrefix(content, "```JSON")
+		content = strings.TrimPrefix(content, "```")
+		if i := strings.LastIndex(content, "```"); i >= 0 {
+			content = content[:i]
+		}
+		content = strings.TrimSpace(content)
+	}
+	if !strings.HasPrefix(content, "{") {
+		reObj := regexp.MustCompile(`\{[\s\S]*\}`)
+		if m := reObj.FindString(content); m != "" {
+			content = m
+		}
+	}
+
+	// Parse strict JSON if possible
+	var obj struct {
+		Website   string `json:"website"`
+		Instagram string `json:"instagram"`
+	}
+	if json.Unmarshal([]byte(content), &obj) == nil {
+		website = strings.TrimSpace(obj.Website)
+		instagram = strings.TrimSpace(obj.Instagram)
+	} else {
+		// Fallback: pull URLs from content
+		reW := regexp.MustCompile(`https?://[^\s"]+`)
+		urls := reW.FindAllString(content, -1)
+		for _, u := range urls {
+			if instagram == "" && strings.Contains(u, "instagram.com/") {
+				reIG := regexp.MustCompile(`https?://(?:www\.)?instagram\.com/([A-Za-z0-9_.]+)/?`)
+				if m := reIG.FindStringSubmatch(u); len(m) > 1 {
+					instagram = "https://www.instagram.com/" + m[1] + "/"
+					continue
+				}
+			}
+			if website == "" && looksLikeOfficial(name, u) {
+				website = trimURL(u)
+			}
+		}
+	}
+	return website, instagram, nil
+}
+
+// enrichViaHybrid uses SerpAPI to gather candidates and OpenAI to choose the official links.
+// Fallbacks:
+//   - If OpenAI key is missing or choose fails, returns SerpAPI's best guess.
+//   - If SerpAPI fails, falls back to the previous OpenAI single-shot method.
+func enrichViaHybrid(client *http.Client, ua, name string, cfg EnrichConfig) (website, instagram string, err error) {
+	// 1) Gather candidates via SerpAPI
+	webs, igs, serr := serpCandidates(client, ua, name, cfg.SerpAPIKey)
+	if serr != nil || (len(webs) == 0 && len(igs) == 0) {
+		// Serp failed — try the single-shot OpenAI as a last resort
+		if strings.TrimSpace(cfg.OpenAIKey) == "" {
+			return "", "", nil
+		}
+		w, ig, oerr := enrichViaOpenAI(client, ua, name, cfg.OpenAIKey)
+		if oerr != nil {
+			dbg("OpenAI fallback error: %v", oerr)
+			return "", "", nil
+		}
+		return w, ig, nil
+	}
+	// 2) If OpenAI key present, ask it to choose; otherwise pick heuristically
+	if strings.TrimSpace(cfg.OpenAIKey) != "" {
+		w, ig, oerr := chooseViaOpenAI(name, webs, igs, cfg.OpenAIKey)
+		if oerr == nil && (w != "" || ig != "") {
+			return w, ig, nil
+		}
+	}
+	// 3) Heuristic fallback using SerpAPI candidates
+	for _, link := range webs {
+		if looksLikeOfficial(name, link) {
+			website = link
+			break
+		}
+	}
+	if instagram == "" && len(igs) > 0 {
+		instagram = igs[0]
+	}
+	return website, instagram, nil
+}
+
 func httpGET(client *http.Client, ua, u, referer string) ([]byte, error) {
+	t := time.Now()
+	dbg("HTTP GET %s", u)
 	req, _ := http.NewRequest("GET", u, nil)
 	req.Header.Set("User-Agent", ua)
 	if referer != "" {
 		req.Header.Set("Referer", referer)
 	}
+	dbgDumpReq(req)
 	resp, err := client.Do(req)
 	if err != nil {
 		return nil, err
@@ -811,7 +1126,11 @@ func httpGET(client *http.Client, ua, u, referer string) ([]byte, error) {
 	if resp.StatusCode != http.StatusOK {
 		return nil, fmt.Errorf("status %d", resp.StatusCode)
 	}
-	return io.ReadAll(io.LimitReader(resp.Body, 2<<20))
+	b, err := io.ReadAll(io.LimitReader(resp.Body, 2<<20))
+	if err == nil {
+		dbg("HTTP GET %s status=%d bytes=%d in %s", u, resp.StatusCode, len(b), time.Since(t))
+	}
+	return b, err
 }
 
 func jsonEscape(s string) string {

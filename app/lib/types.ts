@@ -7,10 +7,12 @@ export type CtaButton = {
 export type Sponsor = {
   name: string;
   href?: string;
+  instagram?: string;
   logo?: string;
   active?: boolean;
   category?: Array<'sponsor' | 'partner' | 'chili' | 'music' | 'booze' | 'foodtruck' | 'merch' | 'vendor'>;
   type?: 'community' | 'best-friend' | 'neighbor' | 'benefactor';
+  class?: string;
 };
 
 export type InstagramPost = {

@@ -83,7 +83,7 @@ export default function SponsorPage() {
         </p>
       </section>
       {/* <SponsorSpotlight items={spotlightSponsors} /> */}
-      <SponsorStrip title="Past Sponsors & Partners" sponsors={siteContent.sponsors} category={["sponsor","partner"]} />
+      <SponsorStrip title="Thank You Sponsors" sponsors={siteContent.sponsors} category={["sponsor","partner"]} />
 
       <section className="content-block">
         <h2 className="section__title">What Sponsors Can Receive</h2>

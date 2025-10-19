@@ -50,8 +50,11 @@ export default function SponsorStrip({
       {title ? <h2 className="sponsors-title">{title}</h2> : null}
       <ul className="sponsors-grid">
         {filtered.map((sponsor) => (
-          <li key={sponsor.name} className="sponsor-logo">
-            <SponsorLink sponsor={sponsor} />
+          <li
+            key={sponsor.name}
+            className={['sponsor-logo', sponsor.class?.trim() || ''].filter(Boolean).join(' ')}
+          >
+            <SponsorCard sponsor={sponsor} />
           </li>
         ))}
       </ul>
@@ -59,7 +62,8 @@ export default function SponsorStrip({
   );
 }
 
-function SponsorLink({ sponsor }: { sponsor: Sponsor }) {
+function SponsorCard({ sponsor }: { sponsor: Sponsor }) {
+  const instagramUrl = normalizeInstagramUrl(sponsor.instagram);
   const content = sponsor.logo ? (
     <Image
       alt={sponsor.name}
@@ -72,13 +76,52 @@ function SponsorLink({ sponsor }: { sponsor: Sponsor }) {
     <span>{sponsor.name}</span>
   );
 
-  if (sponsor.href) {
-    return (
-      <a href={sponsor.href} target="_blank" rel="noopener noreferrer">
-        {content}
-      </a>
-    );
+  const media = (
+    <div className="sponsor-card__media">
+      {sponsor.href ? (
+        <a href={sponsor.href} target="_blank" rel="noopener noreferrer" className="sponsor-card__primary-link">
+          {content}
+        </a>
+      ) : (
+        content
+      )}
+    </div>
+  );
+
+  const hasLinks = Boolean(sponsor.href || instagramUrl);
+
+  return (
+    <div className="sponsor-card">
+      {media}
+      {hasLinks ? (
+        <div className="sponsor-card__footer">
+          <div className="sponsor-card__links">
+            {sponsor.href ? (
+              <a href={sponsor.href} target="_blank" rel="noopener noreferrer" className="sponsor-card__link">
+                Website
+              </a>
+            ) : null}
+            {instagramUrl ? (
+              <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="sponsor-card__link">
+                Instagram
+              </a>
+            ) : null}
+          </div>
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
+function normalizeInstagramUrl(instagram?: string): string | null {
+  if (!instagram?.trim()) {
+    return null;
   }
 
-  return content;
+  if (/^https?:\/\//i.test(instagram)) {
+    return instagram;
+  }
+
+  const handle = instagram.replace(/^@/, '');
+  return `https://www.instagram.com/${handle}/`;
 }
