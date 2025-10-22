@@ -197,6 +197,26 @@ body {
   align-items: stretch;
 }
 
+.sponsor-logo--featured {
+  grid-column: 1 / -1;
+  width: 100%;
+  max-width: min(100%, calc(3 * 200px + 2 * 24px));
+  max-height: 250px;
+  padding: 24px;
+  justify-self: center;
+  overflow: hidden;
+}
+
+.sponsor-logo--featured .sponsor-card__media {
+  min-height: 140px;
+}
+
+@media (max-width: 640px) {
+  .sponsor-logo--featured {
+    max-width: 100%;
+  }
+}
+
 .sponsor-logo--maroon {
   background: var(--sono-maroon);
   color: #fff;

@@ -51,6 +51,18 @@
   },
   "sponsors": [
     {
+      "name": "Luxe Bidet",
+      "href": "https://luxebidet.com/",
+      "instagram": "luxebidet",
+      "logo": "/images/logos/luxebidet.svg",
+      "active": true,
+      "class": "sponsor-logo--featured",
+      "category": [
+        "sponsor"
+      ],
+      "type": "benefactor"
+    },
+    {
       "name": "North Park Main Street",
       "href": "https://northparkmainstreet.com",
       "instagram": "northparkmainstreet",
@@ -799,17 +811,6 @@
         "sponsor"
       ],
       "type": "neighbor"
-    },
-    {
-      "name": "Luxe Bidet",
-      "href": "https://luxebidet.com/",
-      "instagram": "luxebidet",
-      "logo": "/images/logos/luxe.jpg",
-      "active": true,
-      "category": [
-        "sponsor"
-      ],
-      "type": "benefactor"
     },
     {
       "name": "Renewal by Andersen",
