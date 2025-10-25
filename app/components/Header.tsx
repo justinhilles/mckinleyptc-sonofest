@@ -7,14 +7,16 @@ import Link from 'next/link';
 const TICKET_ON_SALE_DATE = new Date('2025-11-07T00:00:00-08:00');
 
 const NAV_ITEMS = [
-  { href: '/sponsor/', label: 'Sponsors' },
+
   { href: '/chili/', label: 'Chili' },
   { href: '/music/', label: 'Music' },
   { href: '/booze/', label: 'Booze' },
-  { href: '/merch/', label: 'Merch' },
   { href: '/vendors/', label: 'Vendors' },
-  { href: '/information/', label: 'Info' },
-  { href: '/volunteers/', label: 'Volunteers' },
+  { href: '/kids/', label: 'Kids' },
+  { href: '/merch/', label: 'Merch' },
+
+  { href: '/sponsor/', label: 'Sponsors' },
+  { href: '/information/', label: 'Information' },
 ];
 
 export default function Header() {
@@ -91,7 +93,7 @@ export default function Header() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          {ticketsAvailable ? 'Buy Tasting Passes' : 'Buy Passes - Nov 7'}
+          {ticketsAvailable ? 'Buy Tasting Passes' : 'Passes Nov 7'}
         </a>
       </div>
     </header>

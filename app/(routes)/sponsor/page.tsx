@@ -5,11 +5,6 @@ import { siteContent } from '@/app/lib/content';
 import { createPageMetadata } from '@/app/lib/metadata';
 import Image from 'next/image';
 
-const sponsorApplicationUrl =
-  'https://docs.google.com/forms/d/e/1FAIpQLSfrfx-Nzn7BUCzxKk4RiUB01QcMj-0gzs-pU-SCoDMpxvrbjg/viewform';
-const sponsorBenefitsPdf = '/docs/2025-26 SoNo Sponsorship Levels.pdf';
-const sponsorProspectusPdf = '/docs/2025-26 SoNo Sponsorletter.pdf';
-
 const audienceHighlights = [
   '20,000+ attendees travel from across San Diego County and Southern California for the one-day festival.',
   '35+ acclaimed restaurants compete in the legendary Chili Cook-Off for the chance to be crowned Best Chili in San Diego.',
@@ -34,17 +29,17 @@ export default function SponsorPage() {
   const ctas = [
     {
       label: 'Become A Sponsor',
-      href: sponsorApplicationUrl,
+      href: siteContent.links.sponsorApplicationForm,
       variant: 'primary' as const,
     },
     {
       label: 'View Sponsor Benefits',
-      href: sponsorBenefitsPdf,
+      href: siteContent.docs.sponsorPacket,
       variant: 'secondary' as const,
     },
     {
       label: 'Sponsorship Opportunities',
-      href: sponsorProspectusPdf,
+      href: siteContent.docs.sponsorProspectusPdf,
       variant: 'light' as const,
     },
   ];

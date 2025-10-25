@@ -22,6 +22,9 @@ body {
 .site-header {
   display: flex;
   justify-content: center;
+  width: 100%;
+  background: var(--sono-green);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
 }
 
 .site-header.footer-nav {
@@ -157,6 +160,60 @@ body {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1.5px;
+}
+
+.cta-strip {
+  width: 100%;
+  background: var(--sono-maroon);
+  color: #fff;
+  padding: 48px 16px;
+}
+
+.cta-strip__inner {
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.schedule-table__wrapper {
+  overflow-x: auto;
+  margin-top: 20px;
+  border-radius: 12px;
+  border: 2px solid var(--sono-green);
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 720px;
+  background: #fff;
+}
+
+.schedule-table th,
+.schedule-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.schedule-table th {
+  background: var(--sono-green);
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+}
+
+.schedule-table tr:last-child td {
+  border-bottom: none;
+}
+
+.schedule-table td {
+  font-size: 0.95rem;
 }
 
 .sponsors-section {

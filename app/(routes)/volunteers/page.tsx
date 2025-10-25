@@ -87,25 +87,14 @@ export default function VolunteersPage() {
         </ul>
       </section>
       <section className="content-block">
-        <h2 className="section__title">Group & Corporate Volunteering</h2>
-        <p>-
-          Want to bring a team from your company, club, or community group? We love welcoming new partners. Reach out and we
+        <h2 className="section__title">Group Volunteering</h2>
+        <p>Want to bring a team from your company, club, or community group? We love welcoming new partners. Reach out and we
           will reserve blocks of shifts so your crew can serve together.
         </p>
         <br />
+        <br />
         <a className="btn btn--ticket" href={`mailto:${siteContent.contactEmail}`}>
           Coordinate a Group Shift
-        </a>
-      </section>
-      <section className="content-block">
-        <h2 className="section__title">Ready to Help?</h2>
-        <p>
-          Sign up today and we will match you with the best shift for your interests and availability. Thank you for giving
-          your time to keep SoNo Fest thriving and supporting McKinley Elementary students.
-        </p>
-        <br />
-        <a className="btn btn--ticket" href={volunteerSignupUrl}>
-          Volunteer Registration
         </a>
       </section>
     </>

@@ -1,36 +1,4 @@
 {
-  "bands": [
-    {
-      "name": "The Good Hurt",
-      "href": "https://thegoodhurt.com",
-      "logo": "/images/logos/thegoodhurt.png",
-      "active": true,
-      "instagram": "thegoodhurt",
-      "category": [
-        "music"
-      ]
-    },
-    {
-      "name": "The Whiskey Gentry",
-      "href": "https://thewhiskeygentry.com",
-      "logo": "/images/logos/whiskeygentry.png",
-      "active": true,
-      "instagram": "thewhiskeygentry",
-      "category": [
-        "music"
-      ]
-    },
-    {
-      "name": "The Mighty Pines",
-      "href": "https://themightypines.com",
-      "logo": "/images/logos/mightypines.png",
-      "active": true,
-      "instagram": "themightypines",
-      "category": [
-        "music"
-      ]
-    }
-  ],
   "contactEmail": "info@sonofestchilicookoff.com",
   "eventDate": "2025-12-07T11:00:00-08:00",
   "links": {
@@ -38,12 +6,17 @@
     "volunteerSignup": "",
     "merchShop": "https://mckinleyptc.org/product-category/sono-fest/",
     "vendorApplicationForm": "https://docs.google.com/forms/d/e/1FAIpQLSeagUIR553SO014qSmDx1d9BwRMpG5TMw9GRtly7rTG-RVqBw/viewform",
-    "foodTruckApplicationForm": "https://docs.google.com/forms/d/e/1FAIpQLSc8QPPX7t0tiOTi7SozP7xYK0R-_lbEmlPJBhIvSbahG0lGnw/viewform"
+    "foodTruckApplicationForm": "https://docs.google.com/forms/d/e/1FAIpQLSc8QPPX7t0tiOTi7SozP7xYK0R-_lbEmlPJBhIvSbahG0lGnw/viewform",
+    "sponsorApplicationForm": "https://docs.google.com/forms/d/e/1FAIpQLSfrfx-Nzn7BUCzxKk4RiUB01QcMj-0gzs-pU-SCoDMpxvrbjg/viewform"
   },
   "location": "32nd \u0026 Thorn St, North Park, San Diego",
   "organizer": {
     "name": "McKinley Elementary Foundation",
     "url": "https://mckinleyfriends.org"
+  },
+  "docs": {
+    "sponsorPacket": "/docs/sponsorship-benefits.v2.pdf",
+    "sponsorProspectusPdf": "/docs/2025-26 SoNo Sponsorletter.pdf"
   },
   "social": {
     "facebook": "https://www.facebook.com/SoNoFestandChiliCookOff",
@@ -56,7 +29,6 @@
       "instagram": "luxebidet",
       "logo": "/images/logos/luxebidet.svg",
       "active": true,
-      "class": "sponsor-logo--featured",
       "category": [
         "sponsor"
       ],
@@ -312,7 +284,8 @@
       "logo": "/images/logos/parkrec.png",
       "active": true,
       "category": [
-        "sponsor"
+        "sponsor",
+        "music"
       ],
       "type": "best friend"
     },
@@ -357,6 +330,7 @@
       "logo": "/images/logos/original40.png",
       "active": true,
       "category": [
+        "booze",
         "chili"
       ],
       "type": "restaurant"
@@ -822,9 +796,250 @@
         "sponsor"
       ],
       "type": "best-friend"
+    },
+    {
+      "name": "The Velvet Roses",
+      "href": "",
+      "instagram": "thevelvetroses",
+      "logo": "",
+      "active": true,
+      "category": [
+        "music"
+      ],
+      "type": ""
+    },
+    {
+      "name": "Vurv",
+      "href": "",
+      "instagram": "vurvband",
+      "logo": "",
+      "active": true,
+      "category": [
+        "music"
+      ],
+      "type": ""
+    },
+    {
+      "name": "Night Carrots",
+      "href": "",
+      "instagram": "nightcarrotsband",
+      "logo": "/images/logos/nightcarrots.jpg",
+      "active": true,
+      "category": [
+        "music"
+      ],
+      "type": ""
+    },
+    {
+      "name": "The Creepy Creeps",
+      "href": "",
+      "instagram": "thecreepycreeps",
+      "logo": "",
+      "active": true,
+      "category": [
+        "music"
+      ],
+      "type": ""
+    },
+    {
+      "name": "TK and the Deadlist",
+      "href": "",
+      "instagram": "",
+      "logo": "",
+      "active": true,
+      "category": [
+        "music"
+      ],
+      "type": ""
+    },
+    {
+      "name": "Rey Wolf",
+      "href": "",
+      "instagram": "",
+      "logo": "",
+      "active": true,
+      "category": [
+        "music"
+      ],
+      "type": ""
+    },
+    {
+      "name": "Tribute Pizza",
+      "href": "https://www.tributepizza.com/",
+      "instagram": "tributepizza",
+      "logo": "",
+      "active": true,
+      "category": [
+        "chili"
+      ],
+      "type": ""
+    },
+    {
+      "name": "Dunedin",
+      "href": "",
+      "instagram": "",
+      "logo": "",
+      "active": true,
+      "category": [
+        "chili"
+      ],
+      "type": ""
+    },
+    {
+      "name": "The Smoking Gun",
+      "href": "https://thesmokinggunsd.com/",
+      "instagram": "thesmokinggunsd",
+      "logo": "",
+      "active": true,
+      "category": [
+        "chili"
+      ],
+      "type": ""
+    },
+    {
+      "name": "Carbon Angela's Kitchen",
+      "href": "",
+      "instagram": "",
+      "logo": "",
+      "active": true,
+      "category": [
+        "chili"
+      ],
+      "type": ""
+    },
+    {
+      "name": "Subterranean",
+      "href": "",
+      "instagram": "",
+      "logo": "",
+      "active": true,
+      "category": [
+        "chili"
+      ],
+      "type": ""
+    },
+    {
+      "name": "FC Balboa Youth Soccer Club",
+      "href": "",
+      "instagram": "",
+      "logo": "",
+      "active": true,
+      "category": [
+        "kids"
+      ],
+      "type": ""
+    },
+    {
+      "name": "Friends of North Park Library",
+      "href": "",
+      "instagram": "",
+      "logo": "",
+      "active": true,
+      "category": [
+        "kids"
+      ],
+      "type": ""
+    },
+    {
+      "name": "Replay Toys",
+      "href": "",
+      "instagram": "",
+      "logo": "",
+      "active": true,
+      "category": [
+        "kids"
+      ],
+      "type": ""
+    },
+    {
+      "name": "UCSD Kid Science Labs (Aarthi Popat)",
+      "href": "",
+      "instagram": "",
+      "logo": "",
+      "active": true,
+      "category": [
+        "kids"
+      ],
+      "type": ""
+    },
+    {
+      "name": "Scienceing Time",
+      "href": "https://www.scienceingtime.com/",
+      "instagram": "scienceingtime",
+      "logo": "",
+      "active": true,
+      "category": [
+        "kids"
+      ],
+      "type": ""
+    },
+    {
+      "name": "Play-Well TEKnologies",
+      "href": "https://www.play-well.org/",
+      "instagram": "playwelltek",
+      "logo": "",
+      "active": true,
+      "category": [
+        "kids"
+      ],
+      "type": ""
+    },
+    {
+      "name": "North Park Flag Football",
+      "href": "",
+      "instagram": "",
+      "logo": "",
+      "active": true,
+      "category": [
+        "kids"
+      ],
+      "type": ""
+    },
+    {
+      "name": "North Park Beer Company",
+      "href": "https://www.northparkbeerco.com/",
+      "instagram": "northparkbeerco",
+      "logo": "/images/logos/northparkbeerco.png",
+      "active": true,
+      "category": [
+        "booze"
+      ],
+      "type": ""
+    },
+    {
+      "name": "Pure Project",
+      "href": "https://www.purebrewing.org/",
+      "instagram": "purebrewing",
+      "logo": "/images/logos/pureproject.jpg",
+      "active": true,
+      "category": [
+        "booze"
+      ],
+      "type": "booze"
+    },
+    {
+      "name": "Fall Brewing Company",
+      "href": "https://www.fallbrewingcompany.com/",
+      "instagram": "fallbrewing",
+      "logo": "/images/logos/fallbrewing.jpg",
+      "active": true,
+      "category": [
+        "booze"
+      ],
+      "type": "booze"
+    },
+    {
+      "name": "Seek Beer Co.",
+      "href": "https://www.seekbeer.com/",
+      "instagram": "seekbeerco",
+      "logo": "/images/logos/seekbeerco.jpg",
+      "active": true,
+      "category": [
+        "booze"
+      ],
+      "type": "booze"
     }
   ],
   "ticketTailorUrl": "https://buytickets.at/sonofestchilicookoff/1876396",
-  "vendors": [],
   "year": 2025
 }

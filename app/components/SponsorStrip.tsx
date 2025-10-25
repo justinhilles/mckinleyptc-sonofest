@@ -6,7 +6,7 @@ type SponsorStripProps = {
   sponsors?: Sponsor[];
   title?: string;
   className?: string;
-  category?: Array<'sponsor' | 'partner' | 'chili' | 'music' | 'booze' | 'foodtruck' | 'merch' | 'vendor'>;
+  category?: Array<'sponsor' | 'partner' | 'chili' | 'music' | 'booze' | 'foodtruck' | 'merch' | 'vendor' | 'kids'>;
 };
 
 export default function SponsorStrip({

@@ -65,14 +65,14 @@ export default function ChiliEntryPage() {
         </p>
       </section>
 
-      <section id="community" className="content-block">
+      {/* <section id="community" className="content-block">
         <h2 className="section__title">Community Chili</h2>
         <p>Instructions Coming Soon!</p>
         <br />
         <p className="content-block__note">
           Questions? Email <a href="mailto:{siteContent.contactEmail}">{siteContent.contactEmail}</a> and our team will follow up.
         </p>
-      </section>
+      </section> */}
       <SponsorStrip title="This Year's Competitors" sponsors={siteContent.sponsors} category={['chili']} />
     </>
   );

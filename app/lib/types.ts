@@ -58,6 +58,10 @@ export type SiteContent = {
     facebook?: string;
     instagram?: string;
   };
+  docs?: {
+    sponsorPacket?: string;
+    sponsorProspectusPdf?: string;
+  };
   links: {
     chiliEntryForm?: string;
     volunteerSignup?: string;
@@ -66,6 +70,7 @@ export type SiteContent = {
     foodTruckApplicationForm: string;
     sponsorPacket?: string;
     donate?: string;
+    sponsorApplicationForm?: string;
   };
   sponsors?: Sponsor[];
   vendors?: Sponsor[];

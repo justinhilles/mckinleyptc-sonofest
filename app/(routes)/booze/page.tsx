@@ -10,28 +10,25 @@ const donationFormUrl =
 const breweries = [
   'Original 40 Brewing',
   'Kairoa Brewing Company',
-  'Coronado Brewing Co.',
-  'North Park Beer Co.',
-  'Belching Beaver Brewery',
-  'Mike Hess Brewing',
-  'Pizza Port Brewing',
+  // 'Coronado Brewing Co.',
+  'North Park Beer Company',
+  // 'Belching Beaver Brewery',
+  // 'Mike Hess Brewing',
+  // 'Pizza Port Brewing',
   'Pure Project',
-  'TapRoom Beer Co.',
-  'Fall Brewing',
-  'Blind Lady Ale House',
+  // 'TapRoom Beer Co.',
+  'Fall Brewing Company',
+  'Seek Beer Co.',
 ];
 
 const ciderAndMore = [
   'Bivouac Ciderworks',
-  'Juneshine Hard Kombucha',
-  'Spindrift Spiked',
 ];
 
 const serviceNotes = [
   'The Booze Garden is a 21+ space--IDs are checked at the entrance.',
-  'Tasting tokens are available on site; additional pours can be purchased while supplies last.',
+  'Tasting tickets are available on site; additional pours can be purchased while supplies last.',
   'A dedicated water station and shaded seating keep you refreshed between samples.',
-  'All proceeds go straight back to McKinley Elementary arts education.',
 ];
 
 export const metadata = createPageMetadata({
@@ -98,8 +95,11 @@ export default function BoozePage() {
           Interested in featuring your beverage brand? Fill out the donation form and our Booze Garden coordinators will follow
           up with availability, logistics, and pour details.
         </p>
+              <p className="content-block__note">
+          Questions? Email <a href="mailto:{siteContent.contactEmail}">{siteContent.contactEmail}</a> and our team will follow up.
+        </p>
       </section>
-      <SponsorStrip title="Past Breweries & Distilleries" sponsors={siteContent.sponsors} category={["booze"]} />
+      <SponsorStrip title="Raise a glass to our sponsors" sponsors={siteContent.sponsors} category={["booze"]} />
     </>
   );
 }

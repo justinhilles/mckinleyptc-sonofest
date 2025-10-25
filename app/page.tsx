@@ -49,7 +49,7 @@ export default function HomePage() {
     {
       title: 'Kids Zone',
       description: 'Crafts, games, and family activities on 32nd Street.',
-      href: '/information/#faq',
+      href: '/kids/',
       icon: <KidsIcon />,
     },
     {

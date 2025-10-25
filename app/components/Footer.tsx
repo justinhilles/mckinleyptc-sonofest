@@ -11,6 +11,7 @@ const FOOTER_LINKS = [
   { href: '/chili/', label: 'Chili' },
   { href: '/music/', label: 'Music' },
   { href: '/booze/', label: 'Booze Garden' },
+  { href: '/kids/', label: 'Kids Zone' },
   { href: '/merch/', label: 'Merch' },
   { href: '/volunteers/', label: 'Volunteers' },
   { href: '/information/', label: 'Information' },
@@ -37,6 +38,15 @@ export default function Footer() {
 
   return (
     <footer className="site-footer" role="contentinfo">
+      <section className="cta-strip cta-strip--footer">
+        <div className="cta-strip__inner">
+          <h2>Ready To Help?</h2>
+          <p>Sign up for a volunteer shift to help support McKinley Elementary programs.</p>
+          <a className="btn btn--light" href={siteContent.links.volunteerSignup || '/volunteers/'}>
+            Volunteer With Us
+          </a>
+        </div>
+      </section>
       <div className="site-footer__primary">
         <div className="site-footer__about">
           <p className="site-footer__statement">100% of proceeds benefit the McKinley Elementary Foundation.</p>

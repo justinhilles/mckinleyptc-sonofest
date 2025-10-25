@@ -76,9 +76,8 @@ export default function InformationPage() {
             <li key={note}>{note}</li>
           ))}
         </ul>
-        <p>
-          Looking for accessibility support or have another question? Include details in the form above and our volunteers will
-          reach out before the festival.
+         <p className="content-block__note">
+          Questions? Email <a href="mailto:{siteContent.contactEmail}">{siteContent.contactEmail}</a> and our team will follow up.
         </p>
       </section>
       <section className="content-block" id="volunteer">
@@ -93,7 +92,7 @@ export default function InformationPage() {
           Volunteer Registration
         </a>  
          </section>                  
-      <section className="content-block"  id="map">
+      {/* <section className="content-block"  id="map">
         <MapBlock
           image={{
             src: '/images/map.png',
@@ -105,7 +104,7 @@ export default function InformationPage() {
           downloadUrl="/docs/map.pdf"
           googleMapUrl="https://maps.app.goo.gl/6ZWpkAWJfG86tQcR8"
         />
-      </section>
+      </section> */}
 
       <section className="content-block" id="faq">
         <FAQAccordion items={faqItems} />

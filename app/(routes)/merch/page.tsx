@@ -104,6 +104,45 @@ const merchItems = [
   }
 ];
 
+const pickupSchedule = [
+  {
+    date: '10/15/2025',
+    time: '2:45 PM – 3:45 PM',
+    day: 'Wednesday',
+    location: 'McKinley (Yoga gate)',
+  },
+  {
+    date: '10/16/2025',
+    time: '8:00 AM – 8:30 AM',
+    day: 'Thursday',
+    location: 'McKinley (Yoga gate)',
+  },
+  {
+    date: '10/28/2025',
+    time: '2:45 PM – 3:45 PM',
+    day: 'Tuesday',
+    location: 'McKinley (Yoga gate)',
+  },
+  {
+    date: '10/29/2025',
+    time: '8:00 AM – 8:30 AM',
+    day: 'Wednesday',
+    location: 'McKinley (Yoga gate)',
+  },
+  {
+    date: '11/04/2025',
+    time: '8:00 AM – 8:30 AM',
+    day: 'Tuesday',
+    location: 'McKinley (Yoga gate)',
+  },
+  {
+    date: '11/06/2025',
+    time: '3:30 PM – 6:00 PM',
+    day: 'Thursday',
+    location: 'McKinley (Primetime/Auditorium gate)',
+  },
+];
+
 export default function MerchPage() {
   const shopUrl = siteContent.links.merchShop || siteContent.ticketTailorUrl;
 
@@ -153,15 +192,33 @@ export default function MerchPage() {
         </div>
       </section>
       <section id="pickup"className="content-block">
-        <h2 className="section__title">Pickup Schedule</h2>
+        <h2 className="section__title">Sale Schedule</h2>
         <p>
-          All Merch is available for pickup before the event by following the schedule below. If you are unable to pick up during these times, you can pickup the day of the event or please email <a href="mailto:{siteContent.contactEmail}">{siteContent.contactEmail}</a> to make alternate arrangements.
+          All Merch is available for sale before the event by following the schedule below. If you are unable to come during these times, you can pickup the day of the event or please email <a href="mailto:{siteContent.contactEmail}">{siteContent.contactEmail}</a> to make alternate arrangements.
         </p>
         <br />
-        {/* <ul className="content-block__list">
-          <li><strong>Friday, October 4:</strong> 5 PM - 7 PM at McKinley Elementary (4340 Bancroft St, San Diego, CA 92104)</li>
-          <li><strong>Sunday, October 6:</strong> 10 AM - 3 PM at SoNo Fest (Broadway Ave & Bancroft St, San Diego, CA 92104)</li>
-        </ul> */}
+        <div className="schedule-table__wrapper">
+          <table className="schedule-table">
+            <thead>
+              <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Time</th>
+                <th scope="col">Day</th>
+                <th scope="col">Location</th>
+              </tr>
+            </thead>
+            <tbody>
+              {pickupSchedule.map((row) => (
+                <tr key={`${row.date}-${row.time}`}>
+                  <td data-label="Date">{row.date}</td>
+                  <td data-label="Time">{row.time}</td>
+                  <td data-label="Day">{row.day}</td>
+                  <td data-label="Location">{row.location}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </section>
       <SponsorStrip title="Partners" sponsors={siteContent.sponsors} category={['merch']} />
       
