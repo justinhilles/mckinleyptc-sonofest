@@ -6,14 +6,8 @@ import { siteContent } from '@/app/lib/content';
 import { createPageMetadata } from '@/app/lib/metadata';
 import type { Sponsor } from '@/app/lib/types';
 
-const activities: any[] = [
-];
-
-const familyResources = [
-  'Kids under 12 sample chili for free with a grown-up tasting pass.',
-  'Stroller parking, nursing area, and handwashing live on the south end of 32nd Street.',
-  'Noise-canceling headphones and sensory tools are available—ask any Kids Zone volunteer.',
-  'Need accommodations or have questions ahead of time? Email us and we will be ready for you.',
+const activities = [
+  "Activities Coming Soon"
 ];
 
 const participationTips = [
@@ -123,9 +117,9 @@ export default function KidsZonePage() {
         </p>
         <br />
         <ul className="content-block__list">
-          {activities.length > 0 ? activities.map((activity) => (
+          {activities.map((activity) => (
             <li key={activity}>{activity}</li>
-          )) : <li>Activities Coming Soon</li>}
+          ))}
         </ul>
       </section>
 

@@ -58,9 +58,9 @@ export type SiteContent = {
     facebook?: string;
     instagram?: string;
   };
-  docs?: {
-    sponsorPacket?: string;
-    sponsorProspectusPdf?: string;
+  docs: {
+    sponsorPacket: string;
+    sponsorProspectusPdf: string;
   };
   links: {
     chiliEntryForm?: string;
@@ -68,9 +68,9 @@ export type SiteContent = {
     merchShop?: string;
     vendorApplicationForm: string;
     foodTruckApplicationForm: string;
-    sponsorPacket?: string;
-    donate?: string;
-    sponsorApplicationForm?: string;
+    sponsorPacket: string;
+    donate: string;
+    sponsorApplicationForm: string;
   };
   sponsors?: Sponsor[];
   vendors?: Sponsor[];

@@ -1,6 +1,6 @@
 import FAQAccordion from '@/app/components/FAQAccordion';
 import Hero from '@/app/components/Hero';
-import MapBlock from '@/app/components/MapBlock';
+// import MapBlock from '@/app/components/MapBlock';
 import { faqItems, siteContent } from '@/app/lib/content';
 import { createPageMetadata } from '@/app/lib/metadata';
 import Image from 'next/image';
@@ -12,18 +12,18 @@ import Image from 'next/image';
 //   { role: 'Volunteers', email: 'volunteers@sonofest.org' },
 // ];
 
-const mapLegend = [
-  { label: 'Entrances & Info' },
-  { label: 'Restaurant Chili Rows' },
-  { label: 'Live Music Stages' },
-  { label: 'Booze Garden' },
-  { label: 'Makers Market' },
-  { label: 'Kids Zone' },
-  { label: 'Restrooms & Handwashing' },
-  { label: 'ADA Access' },
-  { label: 'Bike Valet' },
-  { label: 'First Aid & Lost and Found' },
-];
+// const mapLegend = [
+//   { label: 'Entrances & Info' },
+//   { label: 'Restaurant Chili Rows' },
+//   { label: 'Live Music Stages' },
+//   { label: 'Booze Garden' },
+//   { label: 'Makers Market' },
+//   { label: 'Kids Zone' },
+//   { label: 'Restrooms & Handwashing' },
+//   { label: 'ADA Access' },
+//   { label: 'Bike Valet' },
+//   { label: 'First Aid & Lost and Found' },
+// ];
 
 const serviceNotes = [
   'Festival grounds are centered at 32nd & Thorn St - rideshare drop-off is on Thorn.',

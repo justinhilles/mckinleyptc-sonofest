@@ -55,7 +55,23 @@ export default function SponsorPage() {
         variant="short"
         title="Sponsor A Party That Gives Back"
         subhead="Support San Diego&apos;s favorite neighborhood chili festival and help fund essential arts education at McKinley Elementary."
-        ctas={ctas}
+        ctas={[
+    {
+      label: 'Become A Sponsor',
+      href: siteContent.links.sponsorApplicationForm,
+      variant: 'primary' as const,
+    },
+    {
+      label: 'View Sponsor Benefits',
+      href: siteContent.docs.sponsorPacket,
+      variant: 'secondary' as const,
+    },
+    {
+      label: 'Sponsorship Opportunities',
+      href: siteContent.docs.sponsorProspectusPdf,
+      variant: 'light' as const,
+    },
+  ]}
       />
 
       <section className="content-block">
