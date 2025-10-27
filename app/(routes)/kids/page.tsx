@@ -77,8 +77,7 @@ export default function KidsZonePage() {
       <section className="content-block" id="participate">
         <h2 className="section__title">How to Jump In</h2>
         <p>
-          Programming rides the energy of the day—think chalk art challenges, parachute games, and quick STEM builds. These
-          tips make it easy to plug into whatever is happening when you arrive.
+          Join us in the Kid Zone featuring organizations offering educational, cultural, athletics, or artistic programs in San Diego.
         </p>
         <br />
         <ul className="content-block__list">
@@ -92,7 +91,7 @@ export default function KidsZonePage() {
         </p>
       </section>
       <section className="content-block" id="schedule">
-        <h2 className="section__title">Mini Stage Schedule</h2>
+        <h2 className="section__title">Kids Stage Schedule</h2>
         <p>
           Quick performances and demos roll through the day. Final lineups post closer to the festival, but use the times
           below as a guide for planning breaks between chili tastings.
