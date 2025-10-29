@@ -255,7 +255,7 @@ body {
 }
 
 .sponsor-logo--featured {
-  grid-column: 1 / -1;
+  grid-column: span 3;
   width: 100%;
   max-width: min(100%, calc(3 * 200px + 2 * 24px));
   max-height: 250px;
@@ -264,12 +264,19 @@ body {
   overflow: hidden;
 }
 
+@media (max-width: 900px) {
+  .sponsor-logo--featured {
+    grid-column: span 2;
+  }
+}
+
 .sponsor-logo--featured .sponsor-card__media {
   min-height: 140px;
 }
 
 @media (max-width: 640px) {
   .sponsor-logo--featured {
+    grid-column: span 1;
     max-width: 100%;
   }
 }

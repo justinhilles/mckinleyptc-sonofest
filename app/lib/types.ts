@@ -12,6 +12,7 @@ export type Sponsor = {
   active?: boolean;
   category?: Array<'sponsor' | 'partner' | 'chili' | 'music' | 'booze' | 'foodtruck' | 'merch' | 'vendor'>;
   type?: 'community' | 'best-friend' | 'neighbor' | 'benefactor';
+  featured?: boolean;
   class?: string;
 };
 

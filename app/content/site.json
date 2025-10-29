@@ -29,11 +29,23 @@
       "instagram": "luxebidet",
       "logo": "/images/logos/luxebidet.svg",
       "active": true,
+      "featured": true,
       "category": [
         "sponsor"
       ],
       "type": "benefactor"
     },
+    {
+      "name": "Hyatt Vacation Club",
+      "href": "https://www.hyattvacationclub.com/home",
+      "instagram": "hyattvacayclub",
+      "logo": "/images/logos/hyattvacay.jpg",
+      "active": true,
+      "category": [
+        "sponsor"
+      ],
+      "type": "best friend"
+    },    
     {
       "name": "North Park Main Street",
       "href": "https://northparkmainstreet.com",
@@ -45,6 +57,17 @@
       ],
       "type": ""
     },
+    {
+      "name": "Community Plumbing",
+      "href": "https://mycommunityplumbing.com/index.html",
+      "instagram": "northparkmainstreet",
+      "logo": "/images/logos/communityplumbing.png",
+      "active": true,
+      "category": [
+        "sponsor"
+      ],
+      "type": ""
+    },    
     {
       "name": "San Diego Ceramic Connection",
       "href": "https://sdceramic.com",
@@ -330,7 +353,6 @@
       "logo": "/images/logos/original40.png",
       "active": true,
       "category": [
-        "booze",
         "chili"
       ],
       "type": "restaurant"
@@ -867,29 +889,29 @@
       "name": "Tribute Pizza",
       "href": "https://www.tributepizza.com/",
       "instagram": "tributepizza",
-      "logo": "",
+      "logo": "/images/logos/tributepizza.jpg",
       "active": true,
       "category": [
         "chili"
       ],
-      "type": ""
+      "type": "restaurant"
     },
     {
       "name": "Dunedin",
-      "href": "",
-      "instagram": "",
-      "logo": "",
+      "href": "http://www.dnp-sd.com/",
+      "instagram": "dunedinsd",
+      "logo": "/images/logos/dunedin.jpg",
       "active": true,
       "category": [
         "chili"
       ],
-      "type": ""
+      "type": "restaurant"
     },
     {
       "name": "The Smoking Gun",
       "href": "https://thesmokinggunsd.com/",
       "instagram": "thesmokinggunsd",
-      "logo": "",
+      "logo": "/images/logos/smokinggun.jpg",
       "active": true,
       "category": [
         "chili"
@@ -898,9 +920,9 @@
     },
     {
       "name": "Carbon Angela's Kitchen",
-      "href": "",
-      "instagram": "",
-      "logo": "",
+      "href": "https://angelas.kitchen/",
+      "instagram": "carbonangelaskitchen",
+      "logo": "/images/logos/carbonangelaskitchen.jpg",
       "active": true,
       "category": [
         "chili"
@@ -909,20 +931,20 @@
     },
     {
       "name": "Subterranean",
-      "href": "",
-      "instagram": "",
-      "logo": "",
+      "href": "https://subterraneancoffee.com/",
+      "instagram": "subterranean_northpark",
+      "logo": "/images/logos/subterranean.webp",
       "active": true,
       "category": [
         "chili"
       ],
-      "type": ""
+      "type": "restaurant"
     },
     {
       "name": "FC Balboa Youth Soccer Club",
-      "href": "",
-      "instagram": "",
-      "logo": "",
+      "href": "https://www.fcbalboa.org/",
+      "instagram": "futbolclubbalboa",
+      "logo": "/images/logos/fcbalboa.jpg",
       "active": true,
       "category": [
         "kids"
@@ -931,9 +953,9 @@
     },
     {
       "name": "Friends of North Park Library",
-      "href": "",
-      "instagram": "",
-      "logo": "",
+      "href": "https://sites.google.com/view/friendsnppl/home",
+      "instagram": "friendsofnplibrarysd",
+      "logo": "/images/logos/northparklibrary.jpg",
       "active": true,
       "category": [
         "kids"
@@ -942,9 +964,9 @@
     },
     {
       "name": "Replay Toys",
-      "href": "",
-      "instagram": "",
-      "logo": "",
+      "href": "https://replaytoysboutique.com/",
+      "instagram": "replaytoysboutique",
+      "logo": "/images/logos/replaytoys.jpg",
       "active": true,
       "category": [
         "kids"
@@ -952,8 +974,8 @@
       "type": ""
     },
     {
-      "name": "UCSD Kid Science Labs (Aarthi Popat)",
-      "href": "",
+      "name": "UCSD Kid Science Labs",
+      "href": "https://kidscience.ucsd.edu/",
       "instagram": "",
       "logo": "",
       "active": true,
@@ -964,9 +986,9 @@
     },
     {
       "name": "Scienceing Time",
-      "href": "https://www.scienceingtime.com/",
-      "instagram": "scienceingtime",
-      "logo": "",
+      "href": "https://scienceingtime.com/",
+      "instagram": "scienceing_time",
+      "logo": "/images/logos/scienceingtime.jpg",
       "active": true,
       "category": [
         "kids"
@@ -977,7 +999,7 @@
       "name": "Play-Well TEKnologies",
       "href": "https://www.play-well.org/",
       "instagram": "playwelltek",
-      "logo": "",
+      "logo": "/images/logos/playwell.jpg",
       "active": true,
       "category": [
         "kids"
@@ -1029,6 +1051,17 @@
       "type": "booze"
     },
     {
+      "name": "Mike Hess Brewing",
+      "href": "https://www.mikehessbrewing.com/",
+      "instagram": "mikehessbrewing",
+      "logo": "/images/logos/mikehess.jpg",
+      "active": true,
+      "category": [
+        "booze"
+      ],
+      "type": "booze"
+    },
+        {
       "name": "Seek Beer Co.",
       "href": "https://www.seekbeer.com/",
       "instagram": "seekbeerco",
@@ -1038,7 +1071,40 @@
         "booze"
       ],
       "type": "booze"
-    }
+    },
+            {
+      "name": "Bivouac Cider",
+      "href": "https://www.bivouaccider.com/",
+      "instagram": "bivouaccider",
+      "logo": "/images/logos/bivouac.jpg",
+      "active": true,
+      "category": [
+        "booze"
+      ],
+      "type": "booze"
+    },
+    {
+      "name": "Pop Pie Co.",
+      "href": "https://www.poppieco.com/",
+      "instagram": "eatpoppie",
+      "logo": "/images/logos/poppie.jpg",
+      "active": true,
+      "category": [
+        "chili"
+      ],
+      "type": "restaurant"
+    },
+    {
+      "name": "Stella Jeans",
+      "href": "https://www.stellajeans.com/",
+      "instagram": "stellajeansicecream",
+      "logo": "/images/logos/stellajeans.jpg",
+      "active": true,
+      "category": [
+        "chili"
+      ],
+      "type": "restaurant"
+    }       
   ],
   "ticketTailorUrl": "https://buytickets.at/sonofestchilicookoff/1876396",
   "year": 2025

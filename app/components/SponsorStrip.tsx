@@ -40,6 +40,10 @@ export default function SponsorStrip({
     return null;
   }
 
+  const sorted = [...filtered].sort(
+    (a, b) => Number(Boolean(b.featured)) - Number(Boolean(a.featured)),
+  );
+
   const sectionClasses = ['sponsors-section'];
   if (className) {
     sectionClasses.push(className);
@@ -49,14 +53,24 @@ export default function SponsorStrip({
     <section className={sectionClasses.join(' ')}>
       {title ? <h2 className="sponsors-title">{title}</h2> : null}
       <ul className="sponsors-grid">
-        {filtered.map((sponsor) => (
-          <li
-            key={sponsor.name}
-            className={['sponsor-logo', sponsor.class?.trim() || ''].filter(Boolean).join(' ')}
-          >
-            <SponsorCard sponsor={sponsor} />
-          </li>
-        ))}
+        {sorted.map((sponsor) => {
+          const itemClasses = ['sponsor-logo'];
+          if (sponsor.featured) {
+            itemClasses.push('sponsor-logo--featured');
+          }
+          if (sponsor.class?.trim()) {
+            itemClasses.push(sponsor.class.trim());
+          }
+
+          return (
+            <li
+              key={sponsor.name}
+              className={itemClasses.join(' ')}
+            >
+              <SponsorCard sponsor={sponsor} />
+            </li>
+          );
+        })}
       </ul>
     </section>
   );
