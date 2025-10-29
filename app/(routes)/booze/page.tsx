@@ -8,12 +8,12 @@ const donationFormUrl =
   'https://docs.google.com/forms/d/e/1FAIpQLScjJt2cmkmzpAjEjZXBjclMiRK2ENM56gKH4v0HM9P-MZsx-A/viewform';
 
 const breweries = [
-  'Original 40 Brewing',
-  'Kairoa Brewing Company',
+  //'Original 40 Brewing',
+  //'Kairoa Brewing Company',
   // 'Coronado Brewing Co.',
   'North Park Beer Company',
   // 'Belching Beaver Brewery',
-  // 'Mike Hess Brewing',
+  'Mike Hess Brewing',
   // 'Pizza Port Brewing',
   'Pure Project',
   // 'TapRoom Beer Co.',
