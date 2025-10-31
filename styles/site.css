@@ -839,6 +839,17 @@ body {
   font-size: 1.5rem;
 }
 
+.award-card__clap {
+  position: absolute;
+  bottom: 18px;
+  right: 18px;
+  font-size: 1.75rem;
+  opacity: 0;
+  transform: scale(0.7);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: none;
+}
+
 .award-card:focus-visible {
   outline: none;
 }
@@ -868,6 +879,51 @@ body {
       60% 0%,
       90% 40%,
       70% 80%;
+  }
+}
+
+.award-card:hover .award-card__clap,
+.award-card:focus-visible .award-card__clap {
+  opacity: 1;
+  animation: clap-pop 0.6s ease-in-out infinite alternate;
+}
+
+@keyframes clap-pop {
+  0% {
+    transform: scale(0.75) rotate(-10deg);
+  }
+  50% {
+    transform: scale(1) rotate(0deg);
+  }
+  100% {
+    transform: scale(0.85) rotate(10deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .award-card {
+    transition: none;
+  }
+
+  .award-card::after,
+  .award-card::before {
+    transition: none;
+  }
+
+  .award-card:hover,
+  .award-card:focus-visible {
+    transform: none;
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.18);
+  }
+
+  .award-card__clap {
+    animation: none !important;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .award-card:hover .award-card__clap,
+  .award-card:focus-visible .award-card__clap {
+    transform: scale(1);
   }
 }
 

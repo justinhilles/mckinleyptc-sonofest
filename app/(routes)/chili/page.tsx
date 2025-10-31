@@ -81,6 +81,7 @@ export default function ChiliEntryPage() {
                 <span className="award-card__icon" aria-hidden="true">🏆</span>
                 {award}
               </h3>
+              <span className="award-card__clap" aria-hidden="true">👏</span>
             </article>
           ))}
         </div>
