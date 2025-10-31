@@ -16,6 +16,13 @@ const steps = [
   'Attend the Friday night pickup for bowls and signage, then load in Sunday by 9 AM.',
 ];
 
+const awards = [
+  "Judges' Choice",
+  "People's Choice",
+  'Best Vegetarian/Vegan',
+  'Best Sweet',
+];
+
 export default function ChiliEntryPage() {
   const entryUrl = siteContent.links.chiliEntryForm || '/information/#contact';
 
@@ -63,6 +70,20 @@ export default function ChiliEntryPage() {
         <p className="content-block__note">
           Questions? Email <a href="mailto:{siteContent.contactEmail}">{siteContent.contactEmail}</a> and our team will follow up.
         </p>
+      </section>
+      <section className="content-block">
+        <h2 className="section__title">Awards Up for Grabs</h2>
+        <p>Bring your best pot—our judges and guests will be watching for these standouts:</p>
+        <div className="awards-grid">
+          {awards.map((award) => (
+            <article key={award} className="award-card" tabIndex={0}>
+              <h3 className="award-card__title">
+                <span className="award-card__icon" aria-hidden="true">🏆</span>
+                {award}
+              </h3>
+            </article>
+          ))}
+        </div>
       </section>
 
       {/* <section id="community" className="content-block">

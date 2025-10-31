@@ -96,7 +96,7 @@
       "href": "https://pretzelsandpints.com/",
       "instagram": "pretzelsandpints",
       "logo": "/images/logos/pretzelspints.jpg",
-      "active": false,
+      "active": true,
       "category": [
         "sponsor"
       ],
@@ -118,7 +118,7 @@
       "href": "https://www.fernsidebar.com/",
       "instagram": "fernsideftw",
       "logo": "/images/logos/fernside.png",
-      "active": false,
+      "active": true,
       "category": [
         "sponsor"
       ],
@@ -283,7 +283,7 @@
       "href": "",
       "instagram": "brookerussorealtor",
       "logo": "/images/logos/brooke.png",
-      "active": false,
+      "active": true,
       "category": [
         "sponsor"
       ],
@@ -511,6 +511,72 @@
       ],
       "type": "community"
     },
+    {
+      "name": "Justin McChesney-Wachs",
+      "href": "https://saltpepperskillet.com/",
+      "instagram": "saltpepperskillet",
+      "logo": "",
+      "active": true,
+      "category": [
+        "sponsor"
+      ],
+      "type": "community"
+    },   
+    {
+      "name": "Renata Paluch - Mortgage Broker",
+      "href": "",
+      "instagram": "",
+      "logo": "",
+      "active": true,
+      "category": [
+        "sponsor"
+      ],
+      "type": "community"
+    },  
+    {
+      "name": "Station Restaurant",
+      "href": "https://stationtavern.com/",
+      "instagram": "stationtavernsd",
+      "logo": "/images/logos/station.jpg",
+      "active": true,
+      "category": [
+        "sponsor"
+      ],
+      "type": "community"
+    },  
+    {
+      "name": "CH Projects",
+      "href": "https://ch-projects.com/",
+      "instagram": "lil_ch_world",
+      "logo": "/images/logos/chprojects.jpg",
+      "active": true,
+      "category": [
+        "sponsor"
+      ],
+      "type": "community"
+    },  
+    {
+      "name": "Dennis Cook Roofing",
+      "href": "https://www.denniscookroofing.com/",
+      "instagram": "",
+      "logo": "/images/logos/denniscook.png",
+      "active": true,
+      "category": [
+        "sponsor"
+      ],
+      "type": "community"
+    },  
+    {
+      "name": "Burn Bar",
+      "href": "",
+      "instagram": "",
+      "logo": "",
+      "active": false,
+      "category": [
+        "sponsor"
+      ],
+      "type": "community"
+    },                  
     {
       "name": "San Diego Crystals \u0026 Jewelry",
       "href": "https://sdjnc.com/",
@@ -1104,7 +1170,40 @@
         "chili"
       ],
       "type": "restaurant"
-    }       
+    },
+    {
+      "name": "Barons",
+      "href": "https://baronsmarket.com/?utm_campaign=sonofest&utm_medium=referral&utm_source=chili-page",
+      "instagram": "baronsmarket",
+      "logo": "/images/logos/barons.jpg",
+      "active": true,
+      "category": [
+        "chili"
+      ],
+      "type": "restaurant"
+    },
+    {
+      "name": "Kensington Cafe",
+      "href": "https://www.kensingtoncafesd.com/",
+      "instagram": "kensingtoncafe",
+      "logo": "/images/logos/kensingtoncafe.jpg",
+      "active": true,
+      "category": [
+        "chili"
+      ],
+      "type": "restaurant"
+    },
+    {
+      "name": "Falafel Heights",
+      "href": "https://www.falafelheights.com/",
+      "instagram": "falafelheights",
+      "logo": "/images/logos/falafelheights.jpg",
+      "active": true,
+      "category": [
+        "chili"
+      ],
+      "type": "restaurant"
+    }                       
   ],
   "ticketTailorUrl": "https://buytickets.at/sonofestchilicookoff/1876396",
   "year": 2025

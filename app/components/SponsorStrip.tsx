@@ -40,9 +40,12 @@ export default function SponsorStrip({
     return null;
   }
 
-  const sorted = [...filtered].sort(
-    (a, b) => Number(Boolean(b.featured)) - Number(Boolean(a.featured)),
-  );
+  const featuredSponsors = filtered.filter((sponsor) => Boolean(sponsor.featured));
+  const regularSponsors = filtered.filter((sponsor) => !sponsor.featured);
+  const orderedSponsors = [
+    ...shuffleSponsors(featuredSponsors),
+    ...shuffleSponsors(regularSponsors),
+  ];
 
   const sectionClasses = ['sponsors-section'];
   if (className) {
@@ -53,7 +56,7 @@ export default function SponsorStrip({
     <section className={sectionClasses.join(' ')}>
       {title ? <h2 className="sponsors-title">{title}</h2> : null}
       <ul className="sponsors-grid">
-        {sorted.map((sponsor) => {
+        {orderedSponsors.map((sponsor) => {
           const itemClasses = ['sponsor-logo'];
           if (sponsor.featured) {
             itemClasses.push('sponsor-logo--featured');
@@ -77,7 +80,8 @@ export default function SponsorStrip({
 }
 
 function SponsorCard({ sponsor }: { sponsor: Sponsor }) {
-  const instagramUrl = normalizeInstagramUrl(sponsor.instagram);
+  const websiteHref = appendTrackingParams(sponsor.href);
+  const instagramUrl = appendTrackingParams(normalizeInstagramUrl(sponsor.instagram) ?? undefined);
   const content = sponsor.logo ? (
     <Image
       alt={sponsor.name}
@@ -92,8 +96,8 @@ function SponsorCard({ sponsor }: { sponsor: Sponsor }) {
 
   const media = (
     <div className="sponsor-card__media">
-      {sponsor.href ? (
-        <a href={sponsor.href} target="_blank" rel="noopener noreferrer" className="sponsor-card__primary-link">
+      {websiteHref ? (
+        <a href={websiteHref} target="_blank" rel="noopener noreferrer" className="sponsor-card__primary-link">
           {content}
         </a>
       ) : (
@@ -102,7 +106,7 @@ function SponsorCard({ sponsor }: { sponsor: Sponsor }) {
     </div>
   );
 
-  const hasLinks = Boolean(sponsor.href || instagramUrl);
+  const hasLinks = Boolean(websiteHref || instagramUrl);
 
   return (
     <div className="sponsor-card">
@@ -110,8 +114,8 @@ function SponsorCard({ sponsor }: { sponsor: Sponsor }) {
       {hasLinks ? (
         <div className="sponsor-card__footer">
           <div className="sponsor-card__links">
-            {sponsor.href ? (
-              <a href={sponsor.href} target="_blank" rel="noopener noreferrer" className="sponsor-card__link">
+            {websiteHref ? (
+              <a href={websiteHref} target="_blank" rel="noopener noreferrer" className="sponsor-card__link">
                 Website
               </a>
             ) : null}
@@ -138,4 +142,42 @@ function normalizeInstagramUrl(instagram?: string): string | null {
 
   const handle = instagram.replace(/^@/, '');
   return `https://www.instagram.com/${handle}/`;
+}
+
+function appendTrackingParams(url?: string | null): string | undefined {
+  if (!url?.trim()) {
+    return undefined;
+  }
+
+  const trimmed = url.trim();
+  if (/^(mailto|tel|sms|javascript):/i.test(trimmed)) {
+    return trimmed;
+  }
+
+  const hasProtocol = /^[a-zA-Z][a-zA-Z\d+\-.]*:/.test(trimmed);
+
+  try {
+    const parsed = hasProtocol
+      ? new URL(trimmed)
+      : new URL(trimmed, 'https://sonofest.org');
+    parsed.searchParams.set('utm_campaign', 'sonofest');
+    parsed.searchParams.set('utm_medium', 'referral');
+
+    if (hasProtocol) {
+      return parsed.toString();
+    }
+
+    return `${parsed.pathname}${parsed.search}${parsed.hash}`;
+  } catch {
+    return trimmed;
+  }
+}
+
+function shuffleSponsors<T>(items: T[]): T[] {
+  const copy = [...items];
+  for (let i = copy.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy;
 }
