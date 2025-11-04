@@ -84,7 +84,7 @@ export default function MusicPage() {
         <p>Every chord supports McKinley Elementary arts education. Thank you for dancing with us!</p>
       </section>
 
-      <section className="content-block">
+      {/* <section className="content-block">
         <h2 className="section__title">Featured Artists</h2>
         <p>
           We love showcasing the bands, songwriters, and DJs who make San Diego sing. Here are just a few of the performers
@@ -96,13 +96,13 @@ export default function MusicPage() {
             <li key={artist}>{artist}</li>
           ))}
         </ul>
-      </section>
+      </section> */}
       <section className="content-block">
         <h2 className="section__title">Plan Your Groove</h2>
         <p>
-          Bring sun protection, dancing shoes, and plenty of energy. The stages face into the festival so you can grab chili,
-          check out the makers market, and still hear the show. Stop by the Info Booth if you need ear protection for the
-          little ones or directions to family-friendly zones.
+          Bring sun protection, dancing shoes, and plenty of energy. <br />
+          The stages face into the festival so you can grab chili,
+          check out the makers market, and still hear the show.
         </p>
         <br />
 

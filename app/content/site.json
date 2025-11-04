@@ -888,7 +888,7 @@
     {
       "name": "The Velvet Roses",
       "href": "",
-      "instagram": "thevelvetroses",
+      "instagram": "",
       "logo": "",
       "active": true,
       "category": [
@@ -900,7 +900,7 @@
       "name": "Vurv",
       "href": "",
       "instagram": "vurvband",
-      "logo": "",
+      "logo": "/images/logos/vurvband.jpg",
       "active": true,
       "category": [
         "music"
@@ -922,7 +922,7 @@
       "name": "The Creepy Creeps",
       "href": "",
       "instagram": "thecreepycreeps",
-      "logo": "",
+      "logo": "/images/logos/creepycreepsband.jpg",
       "active": true,
       "category": [
         "music"
@@ -933,7 +933,7 @@
       "name": "TK and the Deadlist",
       "href": "",
       "instagram": "",
-      "logo": "",
+      "logo": "/images/logos/tkdeadlistband.jpg",
       "active": true,
       "category": [
         "music"
@@ -943,8 +943,8 @@
     {
       "name": "Rey Wolf",
       "href": "",
-      "instagram": "",
-      "logo": "",
+      "instagram": "the.rey.wolf",
+      "logo": "/images/logos/reywolfband.jpg",
       "active": true,
       "category": [
         "music"
