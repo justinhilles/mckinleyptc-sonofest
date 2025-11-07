@@ -41,12 +41,7 @@ export default function ChiliEntryPage() {
             label: 'How It Works',
             href: "#faq",
             variant: 'secondary',
-          },
-                    {
-            label: 'Community Chili',
-            href: "#community",
-            variant: 'light',
-          },
+          }
         ]}
       />
       <section className="content-block">
