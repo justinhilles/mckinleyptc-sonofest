@@ -9,6 +9,6 @@
     {"when": "Fri Dec 5, 2–5 PM", "where": "McKinley Elementary, 3045 Felton St"},
     {"when": "Fri Dec 5, 6–8 PM", "where": "San Diego Ceramic Connection, 3216 Thorn St"},
     {"when": "Sat Dec 6, 1–4 PM", "where": "San Diego Ceramic Connection, 3216 Thorn St"},
-    {"when": "Sun Dec 7, 11–5 PM", "where": "Ticket Booth (limited)"}
+    {"when": "Sun Dec 7, 11–5 PM", "where": "Ticket Booth (limited)", "description": "Commemorative mugs must be picked up no later than 1 PM or they will be released for sale."}
   ]
 }

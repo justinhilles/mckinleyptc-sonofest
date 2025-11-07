@@ -24,8 +24,8 @@ export default function TastingPassesPage() {
         subhead="Choose your tasting pass and plan your pickup."
         ctas={[
           {
-            label: 'Get Tasting Passes',
-            href: "#pricing",
+            label: 'Buy Tasting Passes!',
+            href: `${siteContent.ticketTailorUrl}`,
           },
           {
             label: 'Pickup Info',
@@ -46,9 +46,6 @@ export default function TastingPassesPage() {
         <p>100% of proceeds power McKinley Elementary&apos;s art, music, dance, language, and garden programs.</p>
       </section>
       <PricingTable options={ticketsContent.options} ticketUrl={siteContent.ticketTailorUrl} />
-      <section className="content-block">
-        <p>Commemorative mugs must be picked up no later than December 7, 2025 at 1 PM or they will be released for sale.</p>
-      </section>
       <PickupSchedule items={ticketsContent.pickup} />
       <FAQAccordion items={ticketFaq} />
       <script

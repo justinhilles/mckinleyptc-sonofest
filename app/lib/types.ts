@@ -88,6 +88,7 @@ export type TicketOption = {
 export type PickupStop = {
   when: string;
   where: string;
+  description?: string;
 };
 
 export type TicketsContent = {
