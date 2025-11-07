@@ -24,7 +24,7 @@ export const metadata = createPageMetadata({
   title: 'Volunteers',
   description:
     'Sign up to volunteer with SoNo Fest & Chili Cook-Off and support McKinley Elementary by powering the festival behind the scenes.',
-  path: '/volunteers/',
+  path: `${siteContent.links.volunteerSignup || '/volunteers/'}`,
 });
 
 export default function VolunteersPage() {
@@ -36,8 +36,8 @@ export default function VolunteersPage() {
         subhead="Hundreds of neighbors lend a hand every December to make SoNo Fest happen. Join the crew and help McKinley Elementary thrive."
         ctas={[
           {
-            label: 'Sign Up Coming Soon',
-            href: '',
+            label: 'Sign Up Now',
+            href: `${siteContent.links.volunteerSignup}`,
             variant: 'primary' as const,
           },
           {

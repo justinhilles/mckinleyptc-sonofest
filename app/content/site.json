@@ -109,7 +109,8 @@
       "logo": "/images/logos/milberg.jpg",
       "active": true,
       "category": [
-        "sponsor"
+        "sponsor",
+        "kids"
       ],
       "type": "neighbor"
     },
@@ -713,7 +714,7 @@
       "name": "Rock Your World",
       "href": "https://www.etsy.com/shop/rockyourworld1",
       "instagram": "rockyourworldraleigh",
-      "logo": "/images/logos/rock-your-world.png",
+      "logo": "/images/logos/rockyourworld.webp",
       "active": true,
       "category": [
         "vendor"
@@ -1095,6 +1096,39 @@
       "type": ""
     },
     {
+      "name": "Bock Bar",
+      "href": "",
+      "instagram": "",
+      "logo": "",
+      "active": true,
+      "category": [
+        "booze"
+      ],
+      "type": ""
+    },    
+    {
+      "name": "Fierce and Kind Spirits",
+      "href": "",
+      "instagram": "",
+      "logo": "",
+      "active": true,
+      "category": [
+        "booze"
+      ],
+      "type": ""
+    },    
+    {
+      "name": "Coronado Brewing Company",
+      "href": "",
+      "instagram": "",
+      "logo": "",
+      "active": true,
+      "category": [
+        "booze"
+      ],
+      "type": ""
+    },    
+    {
       "name": "Pure Project",
       "href": "https://www.purebrewing.org/",
       "instagram": "purebrewing",
@@ -1173,7 +1207,7 @@
     },
     {
       "name": "Barons",
-      "href": "https://baronsmarket.com/?utm_campaign=sonofest&utm_medium=referral&utm_source=chili-page",
+      "href": "https://baronsmarket.com/",
       "instagram": "baronsmarket",
       "logo": "/images/logos/barons.jpg",
       "active": true,

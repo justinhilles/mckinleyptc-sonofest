@@ -46,18 +46,11 @@ export default function PricingTable({ options, ticketUrl }: PricingTableProps) 
           ))}
         </tbody>
       </table>
-      {new Date() >= new Date('2025-11-07') && (
         <div className="pricing-table__cta">
           <a className="btn btn--ticket" href={ticketUrl} target="_blank" rel="noopener noreferrer">
         Buy Tasting Passes on TicketTailor
           </a>
         </div>
-      )}
-      {new Date() < new Date('2025-11-07') && (
-        <div className="pricing-table__cta">
-          Tasting Passes Not Yet Available. Check Back Here November 7th!
-        </div>
-      )}
     </section>
   );
 }
