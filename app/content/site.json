@@ -1097,31 +1097,43 @@
     },
     {
       "name": "Bock Bar",
-      "href": "",
-      "instagram": "",
-      "logo": "",
+      "href": "https://www.bockbar.com/",
+      "instagram": "bocksouthpark",
+      "logo": "/images/logos/bock.jpg",
       "active": true,
       "category": [
         "booze"
       ],
       "type": ""
-    },    
+    },  
     {
-      "name": "Fierce and Kind Spirits",
-      "href": "",
-      "instagram": "",
-      "logo": "",
+      "name": "Societe",
+      "href": "https://www.societebrewing.com/",
+      "instagram": "societebrewing",
+      "logo": "/images/logos/societe.jpg",
       "active": true,
       "category": [
         "booze"
+      ],
+      "type": ""
+    },   
+    {
+      "name": "Fierce and Kind Spirits",
+      "href": "https://fiercenkind.com/",
+      "instagram": "fierce.kind",
+      "logo": "/images/logos/fierceandkind.jpg",
+      "active": true,
+      "category": [
+        "booze",
+        "chili"
       ],
       "type": ""
     },    
     {
       "name": "Coronado Brewing Company",
-      "href": "",
-      "instagram": "",
-      "logo": "",
+      "href": "https://coronadobrewing.com/",
+      "instagram": "coronadobrewing",
+      "logo": "/images/logos/coronado.jpg",
       "active": true,
       "category": [
         "booze"
@@ -1237,7 +1249,51 @@
         "chili"
       ],
       "type": "restaurant"
-    }                       
+    },
+        {
+      "name": "TnT Q Catering",
+      "href": "https://tntcaterssd.com/",
+      "instagram": "tntcaterssd",
+      "logo": "/images/logos/tnt.jpg",
+      "active": true,
+      "category": [
+        "chili"
+      ],
+      "type": "restaurant"
+    },
+        {
+      "name": "TnT Q Catering",
+      "href": "https://tntcaterssd.com/",
+      "instagram": "tntcaterssd",
+      "logo": "/images/logos/tnt.jpg",
+      "active": true,
+      "category": [
+        "chili"
+      ],
+      "type": "restaurant"
+    },
+    {
+      "name": "Harland Brewing",
+      "href": "https://harlandbeer.com/",
+      "instagram": "harland_southpark",
+      "logo": "/images/logos/harland.jpg",
+      "active": true,
+      "category": [
+        "chili"
+      ],
+      "type": "restaurant"
+    },
+    {
+      "name": "Shank & Bone",
+      "href": "https://www.shankandbone.com/",
+      "instagram": "shankandbone",
+      "logo": "/images/logos/shankandbone.jpg",
+      "active": true,
+      "category": [
+        "chili"
+      ],
+      "type": "restaurant"
+    } 
   ],
   "ticketTailorUrl": "https://buytickets.at/sonofestchilicookoff/1876396",
   "year": 2025
