@@ -90,7 +90,7 @@ export default function KidsZonePage() {
           <a href={`mailto:${siteContent.contactEmail}`}>{siteContent.contactEmail}</a> and our team will help you plan ahead.
         </p>
       </section>
-      <section className="content-block" id="schedule">
+      {/* <section className="content-block" id="schedule">
         <h2 className="section__title">Kids Stage Schedule</h2>
         <p>
           Quick performances and demos roll through the day. Final lineups post closer to the festival, but use the times
@@ -104,7 +104,7 @@ export default function KidsZonePage() {
             </li>
           ))}
         </ul>
-      </section>
+      </section> */}
       <section className="impact-strip">
         <p>Every Kids Zone activity fuels arts, music, and STEAM programs at McKinley Elementary.</p>
       </section>

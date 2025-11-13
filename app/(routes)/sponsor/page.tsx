@@ -7,14 +7,14 @@ import Image from 'next/image';
 
 const audienceHighlights = [
   '20,000+ attendees travel from across San Diego County and Southern California for the one-day festival.',
-  '35+ acclaimed restaurants compete in the legendary Chili Cook-Off for the chance to be crowned Best Chili in San Diego.',
+  '20+ acclaimed restaurants compete in the legendary Chili Cook-Off for the chance to be crowned Best Chili in San Diego.',
   'Two live-music stages, 30 vendors, food trucks, and kids zone keep guests on-site all afternoon.',
 ];
 
 const sponsorBenefits = [
-  'Tiered recognition across event signage, website, email marketing, and social media campaigns.',
+  //'Tiered recognition across event signage, website, email marketing, and social media campaigns.',
   'Opportunities for on-site activation, sampling, or dedicated booths at select sponsorship levels.',
-  'Inclusion in media outreach, community newsletters, and collaborations with neighborhood partners.',
+  // 'Inclusion in media outreach, community newsletters, and collaborations with neighborhood partners.',
   'Complimentary tasting tickets, mugs, and hospitality perks to share with staff or clients.',
 ];
 

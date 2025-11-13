@@ -3,10 +3,10 @@
   {"id": "tastings", "q": "How many tastings come with a pass?", "a": "Each tasting pass includes five generous samples from our competing restaurants."},
   {"id": "pickup", "q": "Where and when do I pick up my bowl or mug?", "a": "Pre-event pickup runs Friday and Saturday at McKinley Elementary and San Diego Ceramic Connection. A limited number of bowls are available onsite Sunday while supplies last."},
   {"id": "music", "q": "What kind of music will be on the stages?", "a": "We showcase San Diego bands across two stages with set times announced each fall."},
-  {"id": "kids", "q": "Can I bring kids and strollers?", "a": "Absolutely. Kids under 12 taste for free with a grown-up, and stroller parking is available near the Kids Zone."},
+  {"id": "kids", "q": "Can I bring kids and strollers?", "a": "Absolutely.  Stroller parking is available near the Kids Zone."},
   {"id": "booze", "q": "What's pouring in the booze garden?", "a": "Expect local beer, wine, and cocktail partners. IDs are checked at the entrance; only guests 21+ may enter."},
   {"id": "dogs", "q": "Are dogs allowed?", "a": "For everyone’s safety we welcome service animals only. Please leave pets at home."},
-  {"id": "transit", "q": "What are my parking or transit options?", "a": "We recommend biking, walking, or rideshare. Bike valet is available on 32nd St and there is limited paid parking in the neighborhood."},
+  {"id": "transit", "q": "What are my parking or transit options?", "a": "We recommend biking, walking, or rideshare. Limited street parking is available; plan your route at sdmts.com."},
   {"id": "weather", "q": "Is the event rain or shine?", "a": "Yes. SoNo Fest happens rain or shine, so dress for the weather."},
   {"id": "sustainability", "q": "How is SoNo Fest sustainable?", "a": "Bring your commemorative mug back each year, use our refill stations, and compost at the clearly marked bins throughout the fest."}
 ]

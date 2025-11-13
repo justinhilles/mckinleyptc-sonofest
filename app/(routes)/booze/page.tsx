@@ -64,27 +64,7 @@ export default function BoozePage() {
       <section className="impact-strip">
         <p>Cheers! 100% of festival proceeds support McKinley Elementary&#39;s art, music, and enrichment programs.</p>
       </section>
-      <section className="content-block">
-        <h2 className="section__title">What&#39;s Pouring</h2>
-        <p>
-          Each year we invite our favorite neighborhood brewers, cider makers, and beverage friends to pour inside the Booze
-          Garden. The 2025 lineup features local legends alongside fresh newcomers--here&#39;s a sample of who you&#39;ll find on tap.
-        </p>
-        <h3>Breweries</h3>
-        <ul className="content-block__list">
-          {breweries.map((name) => (
-            <li key={name}>{name}</li>
-          ))}
-        </ul>
-        <h3>Cider, Hard Tea &amp; More</h3>
-        <ul className="content-block__list">
-          {ciderAndMore.map((name) => (
-            <li key={name}>{name}</li>
-          ))}
-        </ul>
-        <p className="content-block__note">Lineup subject to change as additional beverage partners join the party.</p>
-      </section>
-      <section className="content-block">
+            <section className="content-block">
         <h2 className="section__title">Plan Your Pour</h2>
         <ul className="content-block__list">
           {serviceNotes.map((note) => (
@@ -99,6 +79,14 @@ export default function BoozePage() {
           Questions? Email <a href="mailto:{siteContent.contactEmail}">{siteContent.contactEmail}</a> and our team will follow up.
         </p>
       </section>
+      <section className="content-block">
+        <h2 className="section__title">What&#39;s Pouring</h2>
+        <p>
+          Each year we invite our favorite neighborhood brewers, cider makers, and beverage friends to pour inside the Booze
+          Garden. The 2025 lineup features local legends alongside fresh newcomers, all serving up delicious sips for a great cause.
+        </p>
+      </section>
+
       <SponsorStrip title="Raise a glass to our sponsors" sponsors={siteContent.sponsors} category={["booze"]} />
     </>
   );

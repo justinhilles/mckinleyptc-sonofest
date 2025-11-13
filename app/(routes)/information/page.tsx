@@ -27,8 +27,8 @@ import Image from 'next/image';
 
 const serviceNotes = [
   'Festival grounds are centered at 32nd & Thorn St - rideshare drop-off is on Thorn.',
-  'Plan for limited street parking; biking and transit are highly encouraged.',
-  'Need ADA accommodations? Check in at the Info Booth near 32nd & Thorn.',
+  'Plan for limited street parking; biking and transit are highly encouraged. Plan your route at sdmts.com.',
+  'If driving, consider parking North of Thorn St to avoid event street closures starting at 9 AM.',
   'Dogs are best left at home; certified service animals are welcome.',
 ];
 
@@ -46,7 +46,7 @@ export default function InformationPage() {
     <>
       <Hero
         variant="short"
-        title="OK, Soo..?"
+        title="Information"
         subhead={`All the details you need for the ${siteContent.year} SoNo Fest - contact the team, find the map, and browse FAQs.`}
         ctas={[
           {
