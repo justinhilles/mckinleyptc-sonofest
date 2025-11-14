@@ -16,7 +16,7 @@ const merchItems = [
     title: '2025 Commemorative Mug',
     description: 'Handcrafted locally and perfect for refills year after year and comes with 5 tastings',
     image: {
-      src: '/images/merch/mugs stacked.png',
+      src: '/images/merch/mugs.png',
       width: 640,
       height: 640,
       alt: '2025 SoNo Fest commemorative mug',
