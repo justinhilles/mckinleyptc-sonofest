@@ -1105,9 +1105,20 @@
         "booze"
       ],
       "type": ""
+    },
+    {
+      "name": "Brewjeria Company",
+      "href": "https://www.brewjeriacompany.com/",
+      "instagram": "brewjeriacompany",
+      "logo": "/images/logos/brewjeriacompany.jpg",
+      "active": true,
+      "category": [
+        "booze"
+      ],
+      "type": ""
     },  
     {
-      "name": "Societe",
+      "name": "Societe Brewing",
       "href": "https://www.societebrewing.com/",
       "instagram": "societebrewing",
       "logo": "/images/logos/societe.jpg",
@@ -1118,7 +1129,7 @@
       "type": ""
     },   
     {
-      "name": "Fierce and Kind Spirits",
+      "name": "Fierce & Kind Spirits",
       "href": "https://fiercenkind.com/",
       "instagram": "fierce.kind",
       "logo": "/images/logos/fierceandkind.jpg",
@@ -1185,7 +1196,7 @@
       "type": "booze"
     },
             {
-      "name": "Bivouac Cider",
+      "name": "Bivouac Ciderworks",
       "href": "https://www.bivouaccider.com/",
       "instagram": "bivouaccider",
       "logo": "/images/logos/bivouac.jpg",
