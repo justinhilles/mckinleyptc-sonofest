@@ -19,33 +19,44 @@ const featuredArtists = [
   'Tamar Berk',
 ];
 
+const musicInstagramHandles = new Map<string, string>(
+  (siteContent.sponsors ?? [])
+    .filter((sponsor) => sponsor.category?.includes('music') && sponsor.instagram)
+    .map((sponsor) => [sponsor.name, sponsor.instagram as string]),
+);
+
+const getInstagramHandle = (name: string) => musicInstagramHandles.get(name);
+
+const formatInstagramUrl = (handle: string) =>
+  handle.startsWith('http') ? handle : `https://www.instagram.com/${handle.replace(/^@/, '')}`;
+
 const stageSchedules = [
   {
     name: 'Main Stage (Bancroft)',
     sponsor: 'Sponsored by Casbah and GOBBQ',
     slots: [
-      { time: '11:30 - 12:10', artist: 'The Velvet Roses' },
-      { time: '12:30 - 1:10', artist: 'Vurv' },
-      { time: '1:15', artist: 'Chili Winner - Judges' },
-      { time: '1:30 - 2:15', artist: 'Night Carrots' },
-      { time: '2:30 - 3:10', artist: 'The Creepy Creeps' },
-      { time: '3:20', artist: "Chili Winner - People's Choice" },
-      { time: '3:25 - 4:05', artist: 'TK and the Deadlist' },
-      { time: '4:20 - 5:00', artist: 'Rey Wolf' },
+      { time: '11:30 AM - 12:10 PM', artist: 'The Velvet Roses', instagram: getInstagramHandle('The Velvet Roses') },
+      { time: '12:30 PM - 1:10 PM', artist: 'Vurv', instagram: getInstagramHandle('Vurv') },
+      { time: '1:15 PM', artist: 'Chili Winner - Judges', isChiliWinner: true },
+      { time: '1:30 PM - 2:15 PM', artist: 'Night Carrots', instagram: getInstagramHandle('Night Carrots') },
+      { time: '2:30 PM - 3:10 PM', artist: 'The Creepy Creeps', instagram: getInstagramHandle('The Creepy Creeps') },
+      { time: '3:20 PM', artist: "Chili Winner - People's Choice", isChiliWinner: true },
+      { time: '3:25 PM - 4:05 PM', artist: 'TK and the Deadlist', instagram: getInstagramHandle('TK and the Deadlist') },
+      { time: '4:20 PM - 5:00 PM', artist: 'Rey Wolf', instagram: getInstagramHandle('Rey Wolf') },
     ],
   },
   {
     name: 'Beer Garden Stage',
     sponsor: 'Sponsored by Park & Rec',
     slots: [
-      { time: '11:30 - 12:10', artist: 'TBD' },
-      { time: '12:30 - 1:10', artist: 'TBD' },
-      { time: '1:15', artist: 'TBD' },
-      { time: '1:30 - 2:15', artist: 'TBD' },
-      { time: '2:30 - 3:10', artist: 'TBD' },
-      { time: '3:25', artist: 'TBD' },
-      { time: '3:30 - 4:10', artist: 'TBD' },
-      { time: '4:20 - 5:00', artist: 'TBD' },
+      { time: '11:30 AM - 12:10 PM', artist: 'TBD', isChiliWinner: false },
+      { time: '12:30 PM - 1:10 PM', artist: 'TBD', isChiliWinner: false },
+      { time: '1:15 PM', artist: 'TBD', isChiliWinner: false },
+      { time: '1:30 PM - 2:15 PM', artist: 'TBD', isChiliWinner: false },
+      { time: '2:30 PM - 3:10 PM', artist: 'TBD', isChiliWinner: false },
+      { time: '3:25 PM', artist: 'TBD', isChiliWinner: false },
+      { time: '3:30 PM - 4:10 PM', artist: 'TBD', isChiliWinner: false },
+      { time: '4:20 PM - 5:00 PM', artist: 'TBD', isChiliWinner: false },
     ],
   },
 ];
@@ -118,13 +129,36 @@ export default function MusicPage() {
           <div key={stage.name} className="content-block__schedule">
             <h3>{stage.name}</h3>
             <p>{stage.sponsor}</p>
-            <ul className="content-block__list">
-              {stage.slots.map((slot) => (
-                <li key={`${stage.name}-${slot.time}-${slot.artist}`}>
-                  <strong>{slot.time}:</strong> {slot.artist}
-                </li>
-              ))}
-            </ul>
+            <div className="schedule-table__wrapper">
+              <table className="schedule-table" aria-label={`${stage.name} schedule`}>
+                <thead>
+                  <tr>
+                    <th scope="col">Time</th>
+                    <th scope="col">Artist / Set</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {stage.slots.map((slot) => (
+                    <tr
+                      key={`${stage.name}-${slot.time}-${slot.artist}`}
+                      className={slot.isChiliWinner ? 'chili-winner-row' : undefined}
+                    >
+                      <td data-label="Time">{slot.time}</td>
+                      <td data-label="Artist / Set">
+                        {slot.isChiliWinner ? '🏆 ' : ''}
+                        {slot.instagram ? (
+                          <a href={formatInstagramUrl(slot.instagram)} target="_blank" rel="noreferrer noopener">
+                            {slot.artist}
+                          </a>
+                        ) : (
+                          slot.artist
+                        )}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         ))}
         <p className="content-block__note">Lineup subject to change as the festival approaches.</p>

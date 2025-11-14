@@ -216,6 +216,15 @@ body {
   font-size: 0.95rem;
 }
 
+.schedule-table tr.chili-winner-row td {
+  background: #fff6cc;
+  font-weight: 600;
+}
+
+.content-block__schedule + .content-block__schedule {
+  margin-top: 40px;
+}
+
 .sponsors-section {
   margin: 80px auto;
   text-align: center;
