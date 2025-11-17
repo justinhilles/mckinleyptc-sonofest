@@ -956,7 +956,7 @@
       "name": "Whiskey & Burlap",
       "href": "",
       "instagram": "whiskeyburlap",
-      "logo": "",
+      "logo": "/images/logos/whiskeyburlap.jpg",
       "active": true,
       "category": [
         "music"
@@ -967,7 +967,7 @@
       "name": "Ypsitucky",
       "href": "",
       "instagram": "ypsitucky_band",
-      "logo": "",
+      "logo": "/images/logos/ypsitucky_band.jpg",
       "active": true,
       "category": [
         "music"
@@ -989,7 +989,7 @@
       "name": "Chloe Lou & The Liddells",
       "href": "",
       "instagram": "chloelouandtheliddells",
-      "logo": "",
+      "logo": "/images/logos/chloelouandtheliddells.jpg",
       "active": true,
       "category": [
         "music"
@@ -1000,7 +1000,7 @@
       "name": "Shawn Rohlf & The Buskers",
       "href": "",
       "instagram": "rohlfski",
-      "logo": "",
+      "logo": "/images/logos/rohlfski.jpg",
       "active": true,
       "category": [
         "music"
@@ -1011,7 +1011,7 @@
       "name": "Julia Sage & The Bad Hombres",
       "href": "",
       "instagram": "thejuliasage",
-      "logo": "",
+      "logo": "/images/logos/thejuliasage.jpg",
       "active": true,
       "category": [
         "music"
