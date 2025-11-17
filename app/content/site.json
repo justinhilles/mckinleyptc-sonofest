@@ -953,6 +953,72 @@
       "type": ""
     },
     {
+      "name": "Whiskey & Burlap",
+      "href": "",
+      "instagram": "whiskeyburlap",
+      "logo": "",
+      "active": true,
+      "category": [
+        "music"
+      ],
+      "type": ""
+    },
+    {
+      "name": "Ypsitucky",
+      "href": "",
+      "instagram": "ypsitucky_band",
+      "logo": "",
+      "active": true,
+      "category": [
+        "music"
+      ],
+      "type": ""
+    },
+    {
+      "name": "Amandas",
+      "href": "",
+      "instagram": "theamandasband",
+      "logo": "",
+      "active": true,
+      "category": [
+        "music"
+      ],
+      "type": ""
+    },
+    {
+      "name": "Chloe Lou & The Liddells",
+      "href": "",
+      "instagram": "chloelouandtheliddells",
+      "logo": "",
+      "active": true,
+      "category": [
+        "music"
+      ],
+      "type": ""
+    },
+    {
+      "name": "Shawn Rohlf & The Buskers",
+      "href": "",
+      "instagram": "rohlfski",
+      "logo": "",
+      "active": true,
+      "category": [
+        "music"
+      ],
+      "type": ""
+    },
+    {
+      "name": "Julia Sage & The Bad Hombres",
+      "href": "",
+      "instagram": "thejuliasage",
+      "logo": "",
+      "active": true,
+      "category": [
+        "music"
+      ],
+      "type": ""
+    },
+    {
       "name": "Tribute Pizza",
       "href": "https://www.tributepizza.com/",
       "instagram": "tributepizza",
