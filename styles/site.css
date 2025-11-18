@@ -1076,6 +1076,55 @@ body {
   margin-top: 16px;
 }
 
+.site-footer__presenting {
+  display: grid;
+  gap: 12px;
+  text-align: center;
+  align-content: start;
+}
+
+.site-footer__presenting-label {
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--sono-green);
+}
+
+.site-footer__presenting-card {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 24px;
+  border: 2px solid var(--sono-green);
+  border-radius: 16px;
+  background: #fdfaf4;
+  min-height: 120px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.site-footer__presenting-card:hover,
+.site-footer__presenting-card:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.site-footer__presenting-card:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+.site-footer__presenting-logo {
+  width: 200px;
+  max-width: 100%;
+  height: auto;
+}
+
+.site-footer__presenting-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
 .site-footer__links,
 .site-footer__primary ul:not(.site-footer__social-list) {
   list-style: none;

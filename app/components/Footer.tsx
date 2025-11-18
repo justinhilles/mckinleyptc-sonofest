@@ -19,6 +19,43 @@ const FOOTER_LINKS = [
 
 export default function Footer() {
   const socialLinks: Array<{ href: string; label: string; icon: ReactNode }> = [];
+  const presentingSponsor =
+    siteContent.sponsors?.find(
+      (sponsor) => sponsor.active !== false && sponsor.type === 'benefactor',
+    ) ??
+    siteContent.sponsors?.find((sponsor) => sponsor.active !== false && sponsor.featured);
+  let presentingSponsorCard: ReactNode = null;
+
+  if (presentingSponsor) {
+    const logoContent = presentingSponsor.logo ? (
+      <Image
+        className="site-footer__presenting-logo"
+        src={presentingSponsor.logo}
+        alt={`${presentingSponsor.name} logo`}
+        width={220}
+        height={120}
+        sizes="(min-width: 768px) 220px, 60vw"
+      />
+    ) : (
+      <span className="site-footer__presenting-name">{presentingSponsor.name}</span>
+    );
+
+    presentingSponsorCard = presentingSponsor.href ? (
+      <a
+        className="site-footer__presenting-card"
+        href={presentingSponsor.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        title={presentingSponsor.name}
+      >
+        {logoContent}
+      </a>
+    ) : (
+      <div className="site-footer__presenting-card" title={presentingSponsor.name}>
+        {logoContent}
+      </div>
+    );
+  }
 
   if (siteContent.social.facebook) {
     socialLinks.push({
@@ -50,13 +87,13 @@ export default function Footer() {
       <div className="site-footer__primary">
         <div className="site-footer__about">
           <p className="site-footer__statement">100% of proceeds benefit the McKinley Elementary Foundation.</p>
-                     <p className="site-footer__date">
+          <p className="site-footer__date">
             {new Date(siteContent.eventDate).toLocaleDateString('en-US', {
               year: 'numeric',
               month: 'long',
               day: 'numeric',
             })}
-            </p>
+          </p>
           <p className="site-footer__location">{siteContent.location}</p>
 
           {socialLinks.length ? (
@@ -83,6 +120,12 @@ export default function Footer() {
             </>
           ) : null}
         </div>
+        {presentingSponsor ? (
+          <div className="site-footer__presenting">
+            <span className="site-footer__presenting-label">Presented By</span>
+            {presentingSponsorCard}
+          </div>
+        ) : null}
         <nav aria-label="Footer">
           <ul className="site-footer__links">
             {FOOTER_LINKS.map((link) => (
